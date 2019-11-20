@@ -34,6 +34,6 @@ namespace :deploy do
 end
 
 set :default_env, {
-  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"]
+  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
 }
