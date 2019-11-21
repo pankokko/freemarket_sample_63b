@@ -7,7 +7,6 @@
 |name|string|null: false|
 |comment|text||
 |icon|string||
-|address|string|null: false|
 |phone_number|integer|null: false, unique: true|
 |mail|string|null: false|
 |password|integer|null: false|
@@ -20,9 +19,21 @@
 - has_many :payments
 - has_many :comments
 - has_many :likes
-- has_many :items, through: :likes
+- has_many :items
 - has_many :users, through: :users_historys
 - has_many :users_historys
+- has_one  :address
+
+## addressテーブル
+
+|postalcode|integer|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|building|string|null: false|
+|house_number|string|null: false|
+
+### Association
+- belongs_to :user
 
 
 ## commentsテーブル
@@ -31,6 +42,7 @@
 |------|----|-------|
 |content|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: failse|
 
 ### Association
 
@@ -52,6 +64,7 @@
 |date|string|null: false|
 |size|string||
 |user_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: failse|
 
 ### Association
 
@@ -59,7 +72,8 @@
 - has_many :images
 - has_many :likes
 - belongs_to :brand
-- has_many :users, through: :likes
+- belongs_to :user
+- belongs_to :category
 
 
 ## categorysテーブル
@@ -67,8 +81,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: false, foreign_key: true|
 
 ### Association
 
@@ -106,8 +118,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
 
 ### Association
 
@@ -144,7 +154,7 @@
 
 |Column|Type|Options|
 |user_id|integer|null: false, foreign_key: true|
-|trading_historys_id|integer|null: false, foreign_key: true|
+|historys_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
