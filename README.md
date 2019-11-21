@@ -1,8 +1,5 @@
 # README
 
-|Column|Type|Options|
-|------|----|-------|
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -24,6 +21,8 @@
 - has_many :comments
 - has_many :likes
 - has_many :items, through: :likes
+- has_many :users, through: :users_historys
+- has_many :users_historys
 
 
 ## commentsテーブル
@@ -60,7 +59,7 @@
 - has_many :images
 - has_many :likes
 - belongs_to :brand
-- has_many :items, through: :likes
+- has_many :users, through: :likes
 
 
 ## categorysテーブル
@@ -86,7 +85,7 @@
 
 ### Association
 
-belongs_to :item
+- belongs_to :item
 
 
 ## paymentsテーブル
@@ -128,6 +127,28 @@ belongs_to :item
 - belongs_to :user
 - belongs_to :item
 
+
+## historysテーブル
+
+|Column|Type|Options|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
+|status|integer|null: false|
+
+### Association
+- has_many :users, through: :users_historys
+- has_many :items
+
+
+## users_historysテーブル
+
+|Column|Type|Options|
+|user_id|integer|null: false, foreign_key: true|
+|trading_historys_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :history
 
 
 
