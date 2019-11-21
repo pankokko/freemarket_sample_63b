@@ -5,6 +5,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|birth|integer|null: false|
 |comment|text||
 |icon|string||
 |phone_number|integer|null: false, unique: true|
@@ -29,7 +30,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postalcode|integer|null: false|
-|prefectures|string|null: false|
+|prefectures|integer|null: false|
 |city|string|null: false|
 |building|string|null: false|
 |house_number|string|null: false|
@@ -61,11 +62,11 @@
 |price|integer|null: false|
 |description|text|null: false|
 |status|integer|null: false|
-|ship_fee|string|null: false|
-|ship|string|null: false|
-|prefecture|string|null: false|
-|date|string|null: false|
-|size|string||
+|ship_fee|integer|null: false|
+|ship|integer|null: false|
+|ship_area|integer|null: false|
+|date|integer|null: false|
+|size|integer||
 |user_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: failse, foreign_key: true|
 
@@ -83,7 +84,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|integer|null: false|
 
 ### Association
 
