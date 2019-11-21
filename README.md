@@ -42,7 +42,7 @@
 |------|----|-------|
 |content|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: failse|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 
@@ -64,7 +64,7 @@
 |date|string|null: false|
 |size|string||
 |user_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: failse|
+|brand_id|integer|null: failse, foreign_key: true|
 
 ### Association
 
@@ -93,7 +93,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
-|URL|string|null: false|
+|url|string|null: false|
 
 ### Association
 
