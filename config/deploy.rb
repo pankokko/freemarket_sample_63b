@@ -26,7 +26,7 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 # secrets.yml用のシンボリックリンクを追加
-set :linked_files, %w{ config/credentials.yml.enc }
+set :linked_files, %w{ config/master.key }
 
 # linked_filesは配列になっているので、そこにmaster.keyを追加
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
@@ -39,13 +39,13 @@ namespace :deploy do
     invoke 'unicorn:start'
   end
 
-  desc 'upload credentials.yml.enc'
+  desc 'upload master.key'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
-      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
+      upload!('config/master.key', "#{shared_path}/config/master.key")
     end
   end
   before :starting, 'deploy:upload'
