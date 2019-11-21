@@ -26,11 +26,14 @@
 
 ## addressテーブル
 
+|Column|Type|Options|
+|------|----|-------|
 |postalcode|integer|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
 |building|string|null: false|
 |house_number|string|null: false|
+|user_id|integer|null: false, foreign_key true|
 
 ### Association
 - belongs_to :user
@@ -57,7 +60,7 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |ship_fee|string|null: false|
 |ship|string|null: false|
 |prefecture|string|null: false|
