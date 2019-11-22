@@ -13,28 +13,20 @@ body {
   box-sizing: border-box;
   
 }
-
-.contents__img {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-
 .contents {
   max-width: 1020px;
   margin: 0 0 0 auto;
+  &__img {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  &__mein{
+    position: relative;
+  }
+  &__category {
+    padding: 56px 0px 30px;
+  }
 }
 
-.contents__mein{
-  position: relative;
-}
-
-.contents__category {
-  padding: 56px 0px 30px;
-}
-
-.category {
-  margin-bottom: 16px;
-  text-align: center;
-}
