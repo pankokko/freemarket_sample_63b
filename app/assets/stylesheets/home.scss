@@ -1,0 +1,40 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  position: relative;
+  min-height: 100%;
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+  
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+
+.contents__img {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.contents {
+  max-width: 1020px;
+  margin: 0 0 0 auto;
+}
+
+.contents__mein{
+  position: relative;
+}
+
+.contents__category {
+  padding: 56px 0px 30px;
+}
+
+.category {
+  margin-bottom: 16px;
+  text-align: center;
+}
