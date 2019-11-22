@@ -1,3 +1,5 @@
+%head
+  %script{:src => "https://www.google.com/recaptcha/api.js"}
 %body
   .login-wrapper
     .login-header
@@ -15,9 +17,31 @@
             %line.cls-1{:x1 => "72.32", :x2 => "36.41", :y1 => "33.2", :y2 => "50.88"}
             %text.cls-2{:transform => "translate(86.41 62.77)"} Fmarket
     .login-contents
+      .login-contents__first
+        %p.login-contents__first--text
+          アカウントをお持ちでない方はこちら
+        .login-contents__first--btn
+          新規会員登録
+      .login-contents__second
+        .login-contents__second--Facebook
+          %i.fa.fa-facebook-square.fa-lg
+          Facebookでログイン
+        .login-contents__second--Google
+          %i.fa.fa-google
+          Googleでログイン
+      .login-contents__therd
+        .login-form--mail
+          %input.login-input-mail.input-def{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        .login-form--password
+          %input.login-input-password.input-def{:name => "password", :placeholder => "パスワード", :type => "password"}/
+        .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfTGMQUAAAAAGCeFt77wZAR0i6mb6ZIAznZjdq0\r\n"}
+        .login-form--btn
+          %button.login-btn-submit{:type => "submit"} ログイン
+        %a.loguin-form--text{:href => "http://localhost:3000/signup/index"}
+          パスワードをお忘れの方
     .login-footer
       .login-footer__main
-        %ul.var
+        %ul.login-var
           %li
             %a.a-def{:href => "#"} プライバシーポリシー
           %li
