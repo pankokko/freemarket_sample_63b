@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root  'signup#index'
-  resources :signup do
+  resources :signup, only: [:index] do
     collection do
-      get :test
+      get :login
+      get :registration
     end
   end
 end
