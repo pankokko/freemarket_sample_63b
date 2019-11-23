@@ -7,26 +7,32 @@
 }
 body{
   background: #f5f5f5;
+  color:#333;
 }
-
 a:hover{
-background-color:rgba(#eee,0.5);
+  background-color:rgba(#eee,0.5);
 }
-
 a{
   text-decoration: none;
   color:black;
 }
-
-.fa-angle-right{
-  margin:0 8px;
-  font-size:20px;
-  color:#888;
+h2{
+  font-weight:bold;
 }
+
+
 main{
   width:1020px;
   margin:40px auto 0;
 }
+.main-info{
+  position:relative;
+  line-height:72px;
+  display:block;
+  color:#333;
+  font-size:16px;
+}
+
 .clearfix:after{
   content: '';
   display:block;
@@ -35,29 +41,29 @@ main{
 .i-content{
   float:right;
   width:700px;
-  .mypage-user__icon{
-    height:200px;
-    position:relative;
-    padding:20px;
-    background-color:green;
-    text-align:center;
-    background-size:cover;
-      &-container{
-        display:block;
-        position:absolute;
-        top:30%;
-        left:0;
-        right:0;
-        color:#333;
-          &-picture{
-            overflow:hidden;
-            width:60px;
-            height:60px;
-            margin:0 auto;
-            border-radius: 50%;
-          }
+    .mypage-user__icon{
+      height:200px;
+      position:relative;
+      padding:20px;
+      background-color:green;
+      text-align:center;
+      background-size:cover;
+        &-container{
+          display:block;
+          position:absolute;
+          top:30%;
+          left:0;
+          right:0;
+          color:#333;
+            &-picture{
+              overflow:hidden;
+              width:60px;
+              height:60px;
+              margin:0 auto;
+              border-radius: 50%;
       }
-      }
+    }
+  }
 }
 
 .mypage-number{
@@ -66,7 +72,7 @@ main{
       display:inline-block;
       font-size:14px;
   }
- }
+}
 
 .mypage-tab-container{
   background-color:#fff;
@@ -82,41 +88,32 @@ main{
     display:inline-block;
     text-align:center;
     vertical-align:top;
-    }
+  }
 }
  
-
 .active{
   background-color:#fff;
     &__h3{
       font-size:22px;
-    }
-}
-.main-info{
-  position:relative;
-  line-height:72px;
-  display:block;
-  color:#333;
-  font-size:16px;
+  }
 }
 
 #mypage-tab__notification{
   display:block;
-    li {
+    li{
       position:relative;
       border-bottom:1px solid #eee;
-    }
-.mypage-item__body{
-margin:0 40px 0 68px;
-}
-time{
-display: inline-block;
-color: #888;
-  i {
-    margin:8px 0 8px 8px;
-  }
-
-}
+      }
+      .mypage-item__body{
+        margin:0 40px 0 68px;
+      }
+        time{
+          display: inline-block;
+          color: #888;
+          i{
+            margin:8px 0 8px 8px;
+           }
+         }
 .mypage-item__text{
   overflow: hidden;
   display: block;
@@ -151,9 +148,6 @@ img{
 }
 }
 
-
-
-
 .fa.fa-chevron-right{
   position: absolute;
   top: 50%;
@@ -183,7 +177,7 @@ img{
   margin:40px 0;
   background-color:#fff;
   &__tag-head{
-   padding:16px;
+   padding:0 16px;
    background-color:#fff;
    font-size:16px;
    line-height:72px;
@@ -258,4 +252,10 @@ color:#ccc;
     font-size:16px;
     margin:0 0 0 8px;
   }
+}
+
+.fa-angle-right{
+  margin:0 8px;
+  font-size:20px;
+  color:#888;
 }
