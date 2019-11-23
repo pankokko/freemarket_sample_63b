@@ -1,3 +1,103 @@
 %body
-  %h1 Test!!
-  %p test
+  .header
+    .header__main
+      .header__top
+        .header__logo
+          %svg{:viewbox => "0 0 281.19 84.08", :xmlns => "http://www.w3.org/2000/svg"}
+          %defs
+          %title アセット 3
+          %g{"data-name" => "レイヤー 2", :id => "レイヤー_2"}
+            %g{"data-name" => "レイヤー 1", :id => "レイヤー_1-2"}
+              %polygon.cls-1{:points => "36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"}
+              %polyline.cls-1{:points => "0.5 21.31 36.41 42.04 72.32 21.31"}
+              %polyline.cls-1{:points => "36.41 83.5 36.41 49.36 36.41 42.04"}
+              %line.cls-1{:x1 => "36.41", :x2 => "0.5", :y1 => "52.41", :y2 => "31.67"}
+              %line.cls-1{:x1 => "72.32", :x2 => "36.41", :y1 => "33.2", :y2 => "50.88"}
+              %text.cls-2{:transform => "translate(86.41 62.77)"} Fmarket
+        .header__form
+          %form#form2{:action => "", :method => "get"}
+          %input#sbox2{:name => "s", :placeholder => "何かをお探しですか？", :type => "text"}/
+          %button#sbtn2{:type => "submit", :value => "btm",}
+      .header__down
+        .header__list
+          .header__listbox
+            .header__itemlist
+            %i.fa.fa-list-ul
+            カテゴリーから探す
+          .header__brandlist
+          %i.fa.fa-list-alt
+            ブランドから探す
+        .header__login
+          新規登録
+          ログイン
+  %nav
+    %ul.mypage-nav__ul
+      %li
+        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
+        %i.fa.fa-arrow-right
+      %li
+        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
+  %main.container.clearfix
+    .i-content
+      %section.mypage-user__icon
+        %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+        .user-picture
+          = link_to "UserName" , root_path, class:"main-username"
+        .mypage-number
+          .mypage-number__text
+            評価
+            %span.mypage-bold 
+              4
+          .mypage-number__text
+            出品数
+            %span.bold 
+              5
+      %section.mypage-tab-container
+        %ul.mypage-tabs
+          %li.active
+            %h3 
+              = link_to "お知らせ", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "やることリスト", root_path, class:"main-info"
+        .mypage-tab__content
+          %ul#mypage-tab__notification
+            %li 
+              %a.mypage-tag__item__link{:href => "#"}
+                .mypage-item__picture
+                  %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+                .mypage-item__body
+                  .mypage-item__text
+                    「今なら販売手数料無料！詳細はこちらから」
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        1時間前
+                  %i.fa.fa-arrow-right
+            %li 
+              %a.mypage-tag__item__link{:href => "#"}
+                .mypage-item__picture
+                  %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+                .mypage-item__body
+                  .mypage-item__text
+                    「タイムセール実施中！詳細はこちらから」
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        2時間前
+                  %i.fa.fa-arrow-right
+            %li.mypage-go__list
+              %a.mypage-index{:href => "#"}
+                一覧を見る
+      %section.mypage-info__container
+        %h2.mypage-info__container__tag-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.active
+            %h3 
+              = link_to "取引中", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "過去の取引", root_path, class:"main-info"
+        .mypage-tab__content
+          

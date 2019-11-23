@@ -1,0 +1,126 @@
+.header {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+
+}
+
+.header__main{
+  width: 1020px;
+  margin:  0 auto;
+  padding: 8px 0px 0px;
+}
+.header__top {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.header__logo {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  margin-right: 45px;
+}
+
+.header__form {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+
+#form2{
+  vertical-align: baseline;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  font: inherit;
+  }
+  #sbox2{
+  background-color: rgb(245, 245, 245);
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.4em;
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  border-radius: 4px;
+  outline: none;
+  padding: 0px 50px 0px 10px;
+  transition: all 0.3s ease-out 0s;
+  }
+  #sbtn2{
+  background-color: transparent;
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  -webkit-appearance: none;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 0px 4px 4px 0px;
+  padding: 0px;
+  }
+  
+.header__down {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.header__list {
+  display: flex;
+  margin-left: -3px;
+}
+
+.header__listbox {
+  padding-left: 0px;
+  cursor: pointer;
+  height: 44px;
+  position: relative;
+  z-index: 3;
+  padding: 0px 10px;
+}
+
+.header__itemlist {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  white-space: nowrap;
+}
+.header__brandlist {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.cls-1 {
+  fill:#dc4912;
+  stroke:#fff;
+  stroke-miterlimit:10;
+}
+
+.cls-2 {
+  font-size:48px;
+  fill:#231815;
+  font-family:
+  YuGo-Bold-83pv-RKSJ-H, YuGothic;
+}

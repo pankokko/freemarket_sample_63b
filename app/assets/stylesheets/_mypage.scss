@@ -1,0 +1,169 @@
+* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+main{
+width:1020px;
+margin:40px auto 0;
+}
+
+.clearfix:after{
+content: '';
+display:block;
+clear:both;  
+}
+
+.i-content{
+  float:right;
+  background-color:green;
+  width:700px;
+
+
+.mypage-user__icon{
+  height:200px;
+  position:relative;
+  padding:20px;
+  text-align:center;
+  background-size:cover;
+  &__main-username{
+    position:absolute;
+    top:50%;
+  }
+}
+
+}
+
+
+.mypage-number{
+  margin:8px 0 0;
+  &__text{
+    display:inline-block;
+    font-size:14px;
+  }
+}
+
+.mypage-tab-container{
+  background-color:#fff;
+  margin:0;
+}
+
+.mypage-tabs{
+  background-color:#eee;
+  font-size:0;
+  list-style:none;
+  
+}
+.mypage-tabs li{
+  width:50%;
+    display:inline-block;
+    text-align:center;
+    vertical-align:top;
+  }
+
+
+.active{
+  background-color:#fff;
+  &__h3{
+    font-size:22px;
+  }
+}
+
+.main-info{
+  position:relative;
+  line-height:72px;
+  display:block;
+  color:#333;
+  font-size:16px;
+}
+
+#mypage-tab__notification{
+display:block;
+ li {
+   position:relative;
+   border-bottom:1px solid #eee;
+ }
+.mypage-item__body{
+margin:0 40px 0 68px;
+
+}
+
+time{
+  display: inline-block;
+    color: #888;
+    i {
+      margin:8px 0 8px 8px;
+    }
+    
+}
+.mypage-item__text{
+  overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    max-height: 4.4em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+}
+.mypage-item__picture{
+  position:relative;
+  overflow:hidden;
+  float:left;
+  width: 48px;
+  height: 48px;
+}
+.mypage-tag__item__link{
+display: block;
+    min-height: 80px;
+    background-color:yellow;
+    padding: 16px;
+    color: #333;
+}
+img{
+position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+}
+
+.fa.fa-arrow-right{
+  position: absolute;
+top: 50%;
+right: 16px;
+-webkit-transform: translate(0, -50%);
+transform: translate(0, -50%);
+}
+
+.mypage-go__list{
+  border:0;
+  }
+  .mypage-index{
+    display: block;
+    height: 56px;
+    margin: 0 auto;
+    background: #eee;
+    color: #333;
+    line-height: 56px;
+    text-align: center;
+    transition:all 0.1sec;
+}
+.mypage-index:hover{
+    background-color:rgba(84,190,238,0.5);
+}
+
+.mypage-info__container{
+  margin:40px 0;
+  background-color:#fff;
+  &__tag-head{
+   padding:16px;
+   background-color:#fafa;
+   font-size:16px;
+   line-height:72px;
+  }
+}
