@@ -33,7 +33,7 @@
     .address-contents
       %h2.address-contents__head
         発送元・お届け先住所入力
-      %form.address-form{:action => "#", :method => "POST", :novalidate => "novalidate"}
+      %form.address-form{:action => "http://localhost:3000/signup/card", :method => "POST", :novalidate => "novalidate"}
         .address-form-list
           .form__group
             %label{:for => "name"} お名前

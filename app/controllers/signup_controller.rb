@@ -13,4 +13,7 @@ class SignupController < ApplicationController
 
   def address
   end
+
+  def card
+  end
 end

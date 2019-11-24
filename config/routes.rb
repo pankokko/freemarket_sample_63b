@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :registration
       get :sms_confirmation
       get :address
+      get :card
     end
   end
 end
