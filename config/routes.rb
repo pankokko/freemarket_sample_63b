@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get :login
       get :registration
       get :sms_confirmation
+      get :address
     end
   end
 end

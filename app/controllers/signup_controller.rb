@@ -10,4 +10,7 @@ class SignupController < ApplicationController
 
   def sms_confirmation
   end
+
+  def address
+  end
 end
