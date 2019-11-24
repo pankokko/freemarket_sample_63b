@@ -1,10 +1,10 @@
-.registration-wrapper {
+.sms_confirmation-wrapper {
   height: 100%;
   width: 100vw;
   background-color: #f5f5f5;
 }
 
-.registration-header {
+.sms_confirmation-header {
   width: 100%;
   height: 130px;
   display: flex;
@@ -13,7 +13,7 @@
     .progress-var {
       display: flex;
       margin-left: 60px;
-        .active {
+        .active-list {
           color: red;
         }
         &__list {
@@ -25,8 +25,17 @@
           margin: 0 40px 0 0;
           min-width: 60px;
           text-align: center;
-            .active-status {
+            .storough {
               background-color: red;
+              &::after {
+                background-color: red;
+              }
+            }
+            .active {
+              background-color: red;
+              &::before {
+                background-color: red;
+              }
             }
             &--status {
               width: 12px;
@@ -61,7 +70,7 @@
     }
 }
 
-.registration-contents {
+.sms_confirmation-contents {
   background-color: white;
   margin: 0 auto;
   width: 700px;
@@ -73,8 +82,9 @@
       line-height: 100px;
       border-bottom: solid 1px #f5f5f5;
     }
-    .registration-form {
-      &__list {
+    .sms_confirmation-form { 
+      padding: 8px 40px 64px 40px;
+      &-list {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -87,14 +97,6 @@
           label {
             display: inline-block;
           }
-          &-alert {
-            background-color: red;
-            color: white;
-            font-size: 12px;
-            padding: 3px 6px;
-            margin: 0 0 0 8px;
-            border-radius: 2px;
-          }
           .input-def {
             box-sizing: border-box;
             width: 100%;
@@ -105,24 +107,15 @@
             background: #fff;
             line-height: 1.5;
             font-size: 16px;
-          }
-          .half {
-            width: calc(50% - 6px);
-          }
-          &-text {
-            font-weight: bold;
-          }
-          .select-def {
-            width: 76px;
-            height: 48px;
-            background-color: white;
-          }
-          .form-info-text {
-            color: #888;
-            font-size: 15px;
+            margin-top: 8px;
           }
         }
-        .registration-btn-submit {
+        .form-text {
+          font-size: 14px;
+          text-align: center;
+          margin-top: 5px;
+        }
+        .sms_confirmation-btn-submit {
           display: block;
           width: 100%;
           height: 48px;
@@ -133,9 +126,8 @@
           text-align: center;
           margin-top: 32px;
         }
-        .form__group--regi {
+        .form__group-text {
           margin-top: 32px;
-          margin-bottom: 40px;
         }
         a {
           text-decoration: none;
@@ -143,9 +135,8 @@
         }
       }
     }
-}
-
-.registration-footer {
+  }
+.sms_confirmation-footer {
   width: 100%;
   height: 30%;
   display: flex;
@@ -155,11 +146,11 @@
       flex-direction: column;
       align-items: center;
     }
-    .registration-var {
+    .sms_confirmation-var {
       display: flex;
       padding: 30px 0;
     }
-    .registration-copylight {
+    .sms_confirmation-copylight {
       font-size: 13px;
     }
 }
@@ -171,4 +162,3 @@
 #first:last-child::before {
   content: none;
 }
-

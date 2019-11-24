@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get :login
       get :registration
+      get :sms_confirmation
     end
   end
 end
