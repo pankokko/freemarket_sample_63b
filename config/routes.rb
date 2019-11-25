@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root  ‘signup#index’
+  root  'signup#index'
   resources :signup, only: [:index] do
     collection do
       get :login
