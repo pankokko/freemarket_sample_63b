@@ -83,3 +83,4 @@ gem "haml-rails"
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'active_hash'
