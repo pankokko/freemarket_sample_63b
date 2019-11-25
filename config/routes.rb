@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get :sms_confirmation
       get :address
       get :card
+      get :complete
     end
   end
 end

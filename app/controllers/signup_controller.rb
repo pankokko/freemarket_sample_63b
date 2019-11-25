@@ -16,4 +16,7 @@ class SignupController < ApplicationController
 
   def card
   end
+
+  def complete
+  end
 end
