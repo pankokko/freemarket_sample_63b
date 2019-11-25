@@ -6,6 +6,9 @@ class SignupController < ApplicationController
   end
 
   def registration
+    @days = Days.all
+    @months = Months.all
+    @years = Years.all
   end
 
   def sms_confirmation
@@ -16,6 +19,8 @@ class SignupController < ApplicationController
   end
 
   def card
+    @months = Months.all
+    @cardyears = Cardyears.all
   end
 
   def complete
