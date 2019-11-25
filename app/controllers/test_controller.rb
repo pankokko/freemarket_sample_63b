@@ -3,7 +3,7 @@ class TestController < ApplicationController
   def index
   end
 
-  def edit
+  def show
   end
   
 end
