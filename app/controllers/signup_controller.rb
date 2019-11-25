@@ -12,6 +12,7 @@ class SignupController < ApplicationController
   end
 
   def address
+    @prefecture = Prefecture.all
   end
 
   def card
