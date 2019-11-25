@@ -31,9 +31,9 @@
   -webkit-box-pack: justify;
   justify-content: space-between;
   margin-top: 8px;
+  position:relative
 }
 &__list {
-  display: flex;
   margin-left: -3px;
 }
 &__listbox {
@@ -118,14 +118,13 @@
 }
 
 .brandlist {
-  display: block;
   font-size: 14px;
   font-weight: 600;
   line-height: 36px;
   white-space: nowrap;
 }
 
-svg {
+.header__mark {
   width: 140px;
 }
 
@@ -193,5 +192,70 @@ svg {
 
 .list__brand {
   text-decoration: none;
+  color: black;
+}
+
+.header__information {
+  display: flex;
+  float: right;
+}
+
+.header__information__like {
+  display: block;
+  
+}
+
+
+.header__information__notice {
+  padding: 0px 14px;
+}
+
+.notice {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
+  transform: scale(1);
+  transition: all 0.3s ease-out 0s;
+}
+
+.header__information__list {
+  padding: 0px 14px;
+}
+
+.list {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
+  transform: scale(1);
+  transition: all 0.3s ease-out 0s;
+}
+
+.header__information__my__page {
+  padding-right: 0px;
+  padding: 0px 14px;
+}
+
+.my__page {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
+  transform: scale(1);
+  transition: all 0.3s ease-out 0s;
+}
+
+
+
+.link {
+  text-decoration: none;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 32px;
   color: black;
 }

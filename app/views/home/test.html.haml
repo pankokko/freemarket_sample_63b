@@ -3,7 +3,7 @@
     .header__main
       .header__top
         .header__logo
-          %svg.header__mark{:viewbox => "0 0 281.19 84.08", :xmlns => "http://www.w3.org/2000/svg"}
+          %svg{:viewbox => "0 0 281.19 84.08", :xmlns => "http://www.w3.org/2000/svg"}
             %defs
               :css
                 .cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
@@ -32,8 +32,17 @@
               .brandlist
                 %i.fa.fa-list-alt
                 %a.list__brand{:href => "#"} ブランドから探す
-        .header__user
-          .header__user_new
-            %a.user_new{:href => "#"} 新規会員登録
-          .header__login
-          %a.login{:href => "#"} ログイン
+        %ul.header__information
+          %li.header__information__like
+            = link_to "#", class: "link" do
+              %i.fa.fa-heart-o いいね！一覧
+          %li.header__information__notice
+            = link_to "#", class: "link" do
+              %i.fa.fa-bell-o お知らせ     
+          %li.header__information__list
+            = link_to "#", class: "link" do
+              %i.fa.fa-check やることリスト 
+          %li.header__information__my__page
+            = link_to "#", class: "link" do
+              %i.fa.fa-user マイページ
+ 
