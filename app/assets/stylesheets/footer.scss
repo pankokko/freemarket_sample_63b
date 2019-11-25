@@ -1,3 +1,4 @@
+
 img {
   vertical-align: middle;
 }
@@ -5,16 +6,16 @@ div {
   display: block;
 }
 .footer-up-box {
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmEGT4vtI_tCq77fazvtr50qKYY&s(5 kB)
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmEGT4vtI_tCq77fazvtr50qKYY&s
-");
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmEGT4vtI_tCq77fazvtr50qKYY&s");
 }
+
 .main-left {
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
   justify-content: center;
 }
+
 .main {
   display: flex;
   -webkit-box-pack: justify;
@@ -22,37 +23,44 @@ https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmE
   width: 750px;
   margin: 0px auto;
 }
+
 .left-first {
   color: rgb(255, 255, 255);
   font-size: 24px;
   font-weight: 600;
   margin: 40px 0 0;
 }
+
 .left-second {
   color: rgb(255, 255, 255);
   font-size: 35px;
   margin-bottom: 0 20px;
 }
+
 .right-image {
   height: 260px;
   width: 300px;
 }
+
 .footer__img {
   height: 68px;
   margin-right: 20px;
   width: 68px;
   margin-top: 15px;
 }
+
 .app-image {
   height: 40px;
   margin-right: 8px;
   width: 144px;
   line-height:98px;
 }
+
 .google-image {
   height: 40px;
   width: 144px;
 }
+
 .images-box{
   display:flex;
   align-items: center;
@@ -149,3 +157,4 @@ https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmE
   margin-left: 20px;
   font-size: 3em;
  }
+
