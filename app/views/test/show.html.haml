@@ -1,0 +1,129 @@
+%body
+  %nav.mypage-header-nav
+    %ul.mypage-header-nav__ul
+      %li
+        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
+        %i.fa.fa-angle-right
+      %li
+        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
+        %i.fa.fa-angle-right
+      %li
+        = link_to "プロフィール", root_path, class:"nav-mercari_mypage" 
+  %main.container.clearfix
+    .i-content.change-profile
+      %section.mypage-i-container
+        %h2.mypage-i-container__head
+          プロフィール
+      %form.mypage-i-container__form{:action => "", :method => "POST"}
+        %input{:name => "__csrf_value", :type => "hidden", :value =>""}/
+        .mypage-i-container__form-profile-icon
+          .mypage-i-container__form-profile-icon-image
+            %img{:height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+          %input.input-default{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", :value => "UserName"}/
+        .mypage-i-container__form-profile-content
+          %textarea.textarea-default{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
+          %button.btn-default.btn-red{:type => "submit"} 変更する          
+    .mypage-l-side
+      .mypage-l-side__nav
+        %ul.mypage-l-side__nav-ul
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item.active{:href => "#"}
+              マイページ
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              お知らせ
+              %span.mypage-l-side-nav-ul__list-item__number
+                10
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              やることリスト
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              いいね！一覧
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              出品する
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              出品した商品 - 出品中
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              出品した商品 - 取引中
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              出品した商品 - 売却済み
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              購入した商品 - 取引中
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              購入した商品 - 過去の取引
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              ニュース一覧
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              評価一覧
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              ガイド
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              お問い合わせ
+              %i.fa.fa-chevron-right
+        %h3.mypage-nav-head
+          メルペイ
+        %ul.mypage-l-side__nav-ul
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              残高・振込申請
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              ポイント
+              %i.fa.fa-chevron-right
+        %h3.mypage-nav-head
+          設定
+        %ul.mypage-l-side__nav-ul
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              プロフィール
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              発送元・お届け先住所変更
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              支払い方法
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              メール/パスワード
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              本人情報
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              電話番号の確認
+              %i.fa.fa-chevron-right
+          %li.mypage-l-side__nav-ul__list
+            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+              ログアウト
+              %i.fa.fa-chevron-right
