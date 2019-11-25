@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'homes/index'
-  root  'test#index'
-  resources :home do
+  root  'signup#index'
+  resources :signup, only: [:index] do
     collection do
-      get :test
+      get :login
+      get :registration
+      get :sms_confirmation
+      get :address
+      get :card
+      get :complete
     end
   end
+  get 'homes/index'
 end
