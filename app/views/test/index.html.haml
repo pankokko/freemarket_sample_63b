@@ -5,13 +5,13 @@
         = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
         %i.fa.fa-angle-right
       %li
-        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
+      = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
   %main.container.clearfix
     .i-content
       %section.mypage-user__icon
-        %a.mypage-user__icon-container{:href => "#"}
+        = link_to root_path, class:"mypage-user__icon-container" do
           .mypage-user__icon-container-picture
-            %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => "60x60"
           %h2.mypage-user-name
             UserName
           .mypage-number
@@ -34,9 +34,9 @@
         .mypage-tab__content
           %ul#mypage-tab__notification
             %li 
-              %a.mypage-tag__item__link{:href => "#"}
+              = link_to root_path, class:"mypage-tag__item__link" do
                 .mypage-item__picture
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  = image_tag "//static.mercdn.net/images/mercari_profile.png", :size => '60x60'
                 .mypage-item__body
                   .mypage-item__text
                     「今なら販売手数料無料！詳細はこちらから」
@@ -46,9 +46,9 @@
                         1時間前
                   %i.fa.fa-chevron-right
             %li 
-              %a.mypage-tag__item__link{:href => "#"}
-                .mypage-item__picture
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture                   
+                  = image_tag "//static.mercdn.net/images/mercari_profile.png", :size => '60x60'
                 .mypage-item__body
                   .mypage-item__text
                     「タイムセール実施中！詳細はこちらから」
@@ -58,7 +58,7 @@
                         2時間前
                   %i.fa.fa-chevron-right
             %li.mypage-go__list
-              %a.mypage-index{:href => "#"}
+              = link_to root_path, class:"mypage-index" do
                 一覧を見る
       %section.mypage-info__container
         %h2.mypage-info__container__tag-head
@@ -73,9 +73,9 @@
         .mypage-tab__content
           %ul#mypage-tab__notification
             %li 
-              %a.mypage-tag__item__link{:href => "#"}
-                .mypage-item__picture
-                  %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture                  
+                  = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => '60x60'
                 .mypage-item__body
                   .mypage-item__text
                     「いちばんよくわかるHTML5 & CSS3デザインきちんと入門」を購入しました。取引が完了しました。
@@ -85,9 +85,9 @@
                         1時間前
                   %i.fa.fa-chevron-right
             %li 
-              %a.mypage-tag__item__link{:href => "#"}
+              = link_to root_path, class:"mypage-tag__item__link" do
                 .mypage-item__picture
-                  %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+                  = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => '60x60'
                 .mypage-item__body
                   .mypage-item__text
                     「PHPの絵本」を購入しました。取引が完了しました。
@@ -97,108 +97,108 @@
                         2時間前
                   %i.fa.fa-chevron-right
             %li.mypage-go__list
-              %a.mypage-index{:href => "#"}
+              = link_to root_path, class:"mypage-index" do
                 一覧を見る
     .mypage-l-side
       .mypage-l-side__nav
         %ul.mypage-l-side__nav-ul
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item.active{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               マイページ
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               お知らせ
               %span.mypage-l-side-nav-ul__list-item__number
                 10
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               やることリスト
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               いいね！一覧
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               出品する
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               出品した商品 - 出品中
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               出品した商品 - 取引中
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               出品した商品 - 売却済み
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               購入した商品 - 取引中
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               購入した商品 - 過去の取引
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               ニュース一覧
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               評価一覧
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               ガイド
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               お問い合わせ
               %i.fa.fa-chevron-right
         %h3.mypage-nav-head
           メルペイ
         %ul.mypage-l-side__nav-ul
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               残高・振込申請
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               ポイント
               %i.fa.fa-chevron-right
         %h3.mypage-nav-head
           設定
         %ul.mypage-l-side__nav-ul
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               プロフィール
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               発送元・お届け先住所変更
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               支払い方法
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               メール/パスワード
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               本人情報
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               電話番号の確認
               %i.fa.fa-chevron-right
           %li.mypage-l-side__nav-ul__list
-            %a.mypage-l-side-nav-ul__list-item{:href => "#"}
+            = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
               ログアウト
               %i.fa.fa-chevron-right
