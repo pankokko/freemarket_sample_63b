@@ -81,11 +81,11 @@
 - belongs_to :category
 
 
-## categorysテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false|
+|name|string|null: false|
 
 ### Association
 
