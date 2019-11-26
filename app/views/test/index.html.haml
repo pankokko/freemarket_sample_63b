@@ -1,4 +1,4 @@
-%body
+%body.mypage
   %nav.mypage-header-nav
     %ul.mypage-header-nav__ul
       %li
@@ -25,7 +25,7 @@
                 5
       %section.mypage-tab-container
         %ul.mypage-tabs
-          %li.active
+          %li.mypage-active-list
             %h3 
               = link_to "お知らせ", root_path, class:"main-info"
           %li
@@ -64,7 +64,7 @@
         %h2.mypage-info__container__tag-head
           購入した商品
         %ul.mypage-tabs
-          %li.active
+          %li.mypage-active-list
             %h3 
               = link_to "取引中", root_path, class:"main-info"
           %li
