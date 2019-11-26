@@ -68,6 +68,7 @@
 |date|integer|null: false|
 |size|integer||
 |user_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: failse, foreign_key: true|
 
 ### Association
@@ -80,11 +81,11 @@
 - belongs_to :category
 
 
-## categorysテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false|
+|name|string|null: false|
 
 ### Association
 
@@ -104,13 +105,13 @@
 - belongs_to :item
 
 
-## paymentsテーブル
+## cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|card_number|integer|null: false|
-|pay_point|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 
@@ -145,6 +146,7 @@
 ## historysテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 |status|integer|null: false|
@@ -157,6 +159,7 @@
 ## users_historysテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |historys_id|integer|null: false, foreign_key: true|
 
