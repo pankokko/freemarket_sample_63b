@@ -6,4 +6,6 @@ class TestController < ApplicationController
   def show
   end
   
+  def logout
+  end
 end
