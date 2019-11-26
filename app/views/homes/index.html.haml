@@ -37,28 +37,31 @@
         .header__login
         %a.login{:href => "#"} ログイン
 
+
+
+
 .home--wrapper
   -#メインコンテンツ
   .home--content
     .top--slide
       .top--slide__image
-        .top--slide__image__tag
+        .top--slide__image__url
     .popular--category
       -#人気のカテゴリ４種類
       %h2.popular--category__title
         人気のカテゴリー
       .popular--category__button
-        %ul.popular--category__button__lists
-          %li.popular--category__button__list
+        %ul.category--button
+          %li.category--button__list
             %a{class: "category--button"}
               レディース
-          %li.popular--category__button__list
+          %li.category--button__list
             %a{class: "category--button"}
               メンズ
-          %li.popular--category__button__list
+          %li.category--button__list
             %a{class: "category--button"}
               家電・スマホ・カメラ
-          %li.popular--category__button__list
+          %li.category--button__list
             %a{class: "category--button"}
               おもちゃ・ホビー・グッズ
     .categories--new--items
@@ -322,6 +325,10 @@
                       %figcaption
                         %span
                           可愛い小鳥
+
+
+
+
 
 %aside.footer-up
   .footer-up-box
