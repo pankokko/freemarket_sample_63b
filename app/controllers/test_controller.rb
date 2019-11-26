@@ -12,4 +12,7 @@ class TestController < ApplicationController
   def identification
     @prefecture = Prefecture.all
   end
+
+  def card
+  end
 end
