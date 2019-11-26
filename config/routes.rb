@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :test, only: [:index, :show] do
     collection do 
       get :logout
+      get :identification
     end
   end
   resources :signup, only: [:index] do
