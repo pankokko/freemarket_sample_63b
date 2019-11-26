@@ -8,4 +8,8 @@ class TestController < ApplicationController
   
   def logout
   end
+
+  def identification
+    @prefecture = Prefecture.all
+  end
 end
