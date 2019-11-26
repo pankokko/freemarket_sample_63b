@@ -9,6 +9,9 @@
   height: 18%;
   display: flex;
   justify-content: center;
+    &-logo {
+      width:185px;
+    }
 }
 
 .signup-contents {
@@ -86,33 +89,25 @@
   height: 30%;
   display: flex;
   justify-content: center;
+    &-logo {
+      width: 100px;
+    }
     &__main {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-}
-
-.signup-var {
-  display: flex;
-  padding: 30px 0;
-}
-
-.a-def {
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
-  padding: 0 0 0 20px;
-}
-
-#image {
-  width:185px;
-}
-
-#image2 {
-  width: 100px;
-}
-
-.signup-copylight {
-  font-size: 13px;
+    .signup-var {
+      display: flex;
+      padding: 30px 0;
+        .a-def {
+          text-decoration: none;
+          color: black;
+          font-size: 12px;
+          padding: 0 0 0 20px;
+        }
+    }
+    .signup-copylight {
+      font-size: 13px;
+    }
 }

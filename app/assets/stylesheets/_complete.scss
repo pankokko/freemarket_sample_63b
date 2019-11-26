@@ -10,6 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+    &-logo {
+      width:185px;
+    }
     .progress-var {
       display: flex;
       margin-left: 60px;
@@ -27,18 +30,25 @@
           text-align: center;
             .storough {
               background-color: red;
-              &::before {
-                background-color: red;
-              }
-              &::after {
-                background-color: red;
-              }
+                &::before {
+                  background-color: red;
+                }
+                &::after {
+                  background-color: red;
+                }
             }
             .active {
               background-color: red;
-              &::before {
-                background-color: red;
-              }
+                &::before {
+                  background-color: red;
+                }
+            }
+            #last:last-child::after {
+              content: none;
+            }
+            
+            #first:last-child::before {
+              content: none;
             }
             &--status {
               width: 12px;
@@ -176,6 +186,9 @@
   height: 30%;
   display: flex;
   justify-content: center;
+    &-logo {
+      width: 100px;
+    }
     &__main {
       display: flex;
       flex-direction: column;
@@ -184,16 +197,14 @@
     .complete-var {
       display: flex;
       padding: 30px 0;
+        .a-def {
+          text-decoration: none;
+          color: black;
+          font-size: 12px;
+          padding: 0 0 0 20px;
+        }
     }
     .complete-copylight {
       font-size: 13px;
     }
-}
-
-#last:last-child::after {
-  content: none;
-}
-
-#first:last-child::before {
-  content: none;
 }
