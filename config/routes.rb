@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     collection do 
       get :logout
       get :identification
+      get :card
+      get :regi_card
     end
   end
   resources :signup, only: [:index] do

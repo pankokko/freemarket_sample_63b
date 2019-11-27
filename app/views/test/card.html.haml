@@ -1,0 +1,28 @@
+%body.mypage
+  %nav.mypage-header-nav
+    %ul.mypage-header-nav__ul
+      %li
+        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
+        %i.fa.fa-angle-right
+      %li
+        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
+        %i.fa.fa-angle-right
+      %li
+        = link_to "プロフィール", root_path, class:"nav-mercari_mypage" 
+  %main.container.clearfix
+    .i-content.change-profile
+      %h2.card-content__head
+        支払い方法
+      .card-content__middle
+        %p.card-content__middle-text
+          クレジットカード一覧
+        .card-content-btnbox
+          = link_to regi_card_test_index_path, class:"card-btn-submit" do
+            %i.fa.fa-credit-card
+            クレジットカードを追加する
+        .card-content-textbox
+          = link_to root_path, class:"card-content__bottom-text" do
+            支払い方法について
+            %i.fa.fa-chevron-right
+    .mypage-l-side
+      = render 'shared/sidebar'
