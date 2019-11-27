@@ -17,11 +17,11 @@
         %p.card-content__middle-text
           クレジットカード一覧
         .card-content-btnbox
-          %a.card-btn-submit{:href => "#"}
+          = link_to regi_card_test_index_path, class:"card-btn-submit" do
             %i.fa.fa-credit-card
             クレジットカードを追加する
         .card-content-textbox
-          %a.card-content__bottom-text{href: "#"}
+          = link_to root_path, class:"card-content__bottom-text" do
             支払い方法について
             %i.fa.fa-chevron-right
     .mypage-l-side
