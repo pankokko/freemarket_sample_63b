@@ -141,14 +141,13 @@
       z-index: 1;
       width: 100%;
     }
-}
-
-.fa.fa-chevron-right{
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+    .fa.fa-chevron-right{
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
 }
 
 .mypage-go__list{

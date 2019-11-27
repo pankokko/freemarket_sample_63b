@@ -16,8 +16,13 @@
       .card-content__middle
         %p.card-content__middle-text
           クレジットカード一覧
-        %a.card-btn-submit{:href => "https://www.mercari.com/jp/mypage/card/create/"}
-          %i.fa.fa-credit-card
-          クレジットカードを追加する
+        .card-content-btnbox
+          %a.card-btn-submit{:href => "#"}
+            %i.fa.fa-credit-card
+            クレジットカードを追加する
+        .card-content-textbox
+          %a.card-content__bottom-text{href: "#"}
+            支払い方法について
+            %i.fa.fa-chevron-right
     .mypage-l-side
       = render 'shared/sidebar'

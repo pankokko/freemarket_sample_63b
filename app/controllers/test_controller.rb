@@ -15,4 +15,9 @@ class TestController < ApplicationController
 
   def card
   end
+
+  def regi_card
+    @months = Months.all
+    @cardyears = Cardyears.all
+  end
 end
