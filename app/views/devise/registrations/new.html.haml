@@ -35,16 +35,16 @@
     .registration-contents
       %h2.registration-contents__head
         会員情報入力
-      %form.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
+      %form.registration-form{action: "/users", method: "POST", novalidate: "novalidate"}
         .registration-form__list
           .form__group
-            %label{for: "name"} ニックネーム
+            %label{for: "nickname"} ニックネーム
             %span.form__group-alert 必須
-            %input.input-def{name: "name", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
+            %input.input-def{name: "nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
           .form__group
-            %label{for: "mail"} メールアドレス
+            %label{for: "email"} メールアドレス
             %span.form__group-alert 必須
-            %input.input-def{name: "mail", placeholder: "例) PC・携帯どちらでも可", type: "text", value: ""}/
+            %input.input-def{name: "email", placeholder: "例) PC・携帯どちらでも可", type: "text", value: ""}/
           .form__group
             %label{for: "password"} パスワード
             %span.form__group-alert 必須

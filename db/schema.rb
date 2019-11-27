@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 2019_11_26_104731) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "bad", null: false
-    t.string "normal", null: false
-    t.string "good", null: false
-    t.integer "password", null: false
-    t.string "mail", null: false
-    t.integer "phone_number"
     t.string "icon"
     t.text "comment"
-    t.integer "birth", null: false
-    t.string "name", null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
+    t.string "nickname", null: false
+    t.string "family_name_kanji", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kanji", null: false
+    t.string "first_name_kana", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

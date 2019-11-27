@@ -3,19 +3,30 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+    before_action :get_days, only: [:new,:create]
   # GET /resource/sign_up
-   def new
+
+
+  def get_days
     @days = Days.all
     @months = Months.all
     @years = Years.all
-     super
-   end
+  end
 
-  
-   def create
+
+   def new
      super
    end
+ 
+   def create
+    @User = User.create!(user_params)
+    if @User.save
+      redirect_to "/signup/sms_confirmation" ,  notice: 'ログインとデータの保存に成功しました。'
+    else 
+      render :new
+    super
+   end
+  end
 
   # GET /resource/edit
    def edit
@@ -33,46 +44,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
 
 
-
-  def sms_confirmation
-  end
-
-
-private
-def User_params
-  params.require(:user).permit(:name, :birth, :password, :mail)
+def user_params
+  params.permit(:nickname, :email, :password, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day)
 end
 
 
 
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+def configure_sign_up_params
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:password])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_kana])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_kanji])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kana])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kanji])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:year])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:month])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:day])
+end
 
-  # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
-
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
-
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
 end

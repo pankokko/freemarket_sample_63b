@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'   
   } 
 
-  
-
-
   root  'signup#index'
   resources :test, only: [:index, :show] do
     collection do 
