@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'confirmation/index'
   root  'signup#index'
   resources :test, only: [:index, :show] do
     collection do 
