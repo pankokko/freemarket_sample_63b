@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root  'signup#index'
   get 'homes/index'
+  resources :test, only: [:index, :show] do
+    collection do 
+      get :logout
+      get :identification
+    end
+  end
   resources :signup, only: [:index] do
     collection do
       get :login

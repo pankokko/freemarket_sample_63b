@@ -1,0 +1,10 @@
+%body.mypage
+  %main.container.clearfix
+    .i-content
+      .i-content-logout-container
+        %form.i-content-logout-container-btn{action: "", method: "POST"}
+          .i-content-logout-container-btn-wrapper
+            %input{name: "after_save_callback", type: "hidden", value: ""}/
+            %button.btn-default.btn-red{type: "submit"} ログアウト
+    .mypage-l-side
+      = render 'shared/sidebar'
