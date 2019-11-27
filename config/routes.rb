@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'   
+  } 
+
+  
+
+
   root  'signup#index'
   resources :test, only: [:index, :show] do
     collection do 
