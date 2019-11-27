@@ -5,15 +5,19 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|birth|integer|null: false|
-|comment|text||
+|nickname|string|null: false|
+|family_name_kana|string|null: false|
+|family_name_kanji|string|null: false|
+|first_name_kanji|string|null: false|
+|first_name_kana|string|null: false|
+|year|integer|null: false|
+|month|integer|null: false|
+|day|integer|null: false|
+|comment|text|
 |icon|string||
-|phone_number|integer|null: false, unique: true|
 |mail|string|null: false|
 |password|integer|null: false|
-|good|string|null: false|
-|normal|string|null: false|
-|bad|string|null: false|
+
 
 ### Association
 
