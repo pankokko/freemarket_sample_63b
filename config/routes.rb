@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'homelogin/index'
   get 'confirmation/index'
   root  'signup#index'
   get 'homes/index'
