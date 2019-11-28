@@ -35,18 +35,18 @@
     .registration-contents
       %h2.registration-contents__head
         会員情報入力
-      %form.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
+      %form.registration-form{action: "/users", method: "POST", novalidate: "novalidate"}
         .registration-form__list
           .form__group
             %label{for: "nickname"} ニックネーム
             %span.form__group-alert 必須
             %input.input-def{name: "nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
           .form__group
-            %label{for: "nickname"} メールアドレス
+            %label{for: "email"} メールアドレス
             %span.form__group-alert 必須
-            %input.input-def{name: "mail", placeholder: "例) PC・携帯どちらでも可", type: "text", value: ""}/
+            %input.input-def{name: "email", placeholder: "例) PC・携帯どちらでも可", type: "text", value: ""}/
           .form__group
-            %label{for: "nickname"} パスワード
+            %label{for: "password"} パスワード
             %span.form__group-alert 必須
             %input.input-def{name: "password", placeholder: "7文字以上", type: "password"}/
             .form__group-checbox
@@ -87,7 +87,7 @@
             %p.form-info-text
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .form__group
-            = recaptcha_tags
+            .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfTGMQUAAAAAGCeFt77wZAR0i6mb6ZIAznZjdq0\r\n"}
           .form__group
             %p
               「次へ進む」のボタンを押すことにより、
@@ -97,4 +97,27 @@
           %p.form__group--regi
             %a{href: "/jp/help_center/article/423/", target: "_blank"}
               本人情報の登録について
-    = render "shared/sabfooter"
+    .registration-footer
+      .registration-footer__main
+        %ul.registration-var
+          %li
+            %a.a-def{href: "#"} プライバシーポリシー
+          %li
+            %a.a-def{href: "#"} メルカリ利用規約
+          %li
+            %a.a-def{href: "#"} 特定商取引に関する表記
+        %svg.registration-footer-logo{viewbox: "0 0 147.09 129.96", xmlns: "http://www.w3.org/2000/svg"}
+          %defs
+            :css
+              .cls-3,.cls-4{fill:#231815;stroke-miterlimit:10;opacity:0.19;}.cls-3{stroke:#fff;}.cls-4{font-size:36px;stroke:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
+          %title アセット 13
+          %g{"data-name" => "レイヤー 2", id: "レイヤー_2"}
+            %g{"data-name" => "レイヤー 1", id: "レイヤー_1-2"}
+              %polygon.cls-3{points: "71.54 83.5 35.63 62.77 35.63 21.31 71.54 0.58 107.45 21.31 107.45 62.77 71.54 83.5"}
+              %polyline.cls-3{points: "35.63 21.31 71.54 42.04 107.45 21.31"}
+              %polyline.cls-3{points: "71.54 83.5 71.54 49.36 71.54 42.04"}
+              %line.cls-3{x1: "71.54", x2: "35.63", y1: "52.41", y2: "31.67"}
+              %line.cls-3{x1: "107.45", x2: "71.54", y1: "33.2", y2: "50.88"}
+              %text.cls-4{transform: "translate(0.5 117.04)"} Fmarket
+        %p.registration-copylight
+          © 2019 Mercari
