@@ -1,4 +1,5 @@
 %body.mypage
+  = render "shared/header"
   %nav.mypage-header-nav
     %ul.mypage-header-nav__ul
       %li
@@ -26,3 +27,4 @@
           %button.btn-default.btn-red{type: "submit"} 変更する
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"
