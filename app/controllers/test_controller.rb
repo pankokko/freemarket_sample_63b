@@ -12,4 +12,12 @@ class TestController < ApplicationController
   def identification
     @prefecture = Prefecture.all
   end
+
+  def card
+  end
+
+  def regi_card
+    @months = Months.all
+    @cardyears = Cardyears.all
+  end
 end
