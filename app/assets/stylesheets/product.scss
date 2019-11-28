@@ -470,36 +470,31 @@ a{
   }
 }
 
-.fa.fa-facebook-official{
+.proface{
   color: navy;
   font-size: 44px;
   transition: 10s;
   -webkit-transition: 10s;
 }
-.fa.fa-facebook-official:hover{
+.product-hover:hover{
   transform: rotate(7200deg);
   -webkit-transform: rotate(7200deg);
 }
-.fa.fa-twitter-square{
+.protwi{
   color:  skyblue;
   font-size: 44px;
   transition: 10s;
   -webkit-transition: 10s;
 }
-.fa.fa-twitter-square:hover{
-  transform: rotate(7200deg);
-  -webkit-transform: rotate(7200deg);
-}
-.fa.fa-pinterest-square{
+
+
+.propin{
   color: red;
   font-size: 44px;
   transition: 10s;
   -webkit-transition: 10s;
 }
-.fa.fa-pinterest-square:hover{
-  transform: rotate(7200deg);
-  -webkit-transform: rotate(7200deg);
-}
+
 
 
 .product--indexes {
