@@ -2,7 +2,6 @@ require 'rails_helper'
 describe User do
   describe '#create' do
       
-
     it "nicknameの値が4文字未満の時にバリデーションがかかるか" do
       user = build(:user, nickname: "aiu")
       user.valid?
@@ -32,7 +31,7 @@ describe User do
       user.valid?
       expect(user.errors[:year]).to include("can't be blank")
     end
-    
+
     it "monthの値が空の時バリデーションがかかるか" do 
       user = build(:user, month: "")
       user.valid?

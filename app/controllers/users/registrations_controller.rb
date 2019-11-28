@@ -6,7 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     before_action :get_days, only: [:new,:create]
   # GET /resource/sign_up
 
-
   def get_days
     @days = Days.all
     @months = Months.all
@@ -19,12 +18,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
  
    def create
-    @User = User.create!(user_params)
-    if @User.save
+    binding.pry
+    if verify_recaptcha(model: @User)
+      @User = User.create!(user_params)
+      @User.save
       redirect_to "/signup/sms_confirmation" ,  notice: 'ログインとデータの保存に成功しました。'
     else 
-      render :new
-    super
+      super
    end
   end
 
@@ -43,6 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      super
    end
 
+  
 
 def user_params
   params.permit(:nickname, :email, :password, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day)
