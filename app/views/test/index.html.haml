@@ -1,11 +1,6 @@
 %body.mypage
-  %nav.mypage-header-nav
-    %ul.mypage-header-nav__ul
-      %li
-        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
-        %i.fa.fa-angle-right
-      %li
-      = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
+  - breadcrumb :mypage
+  = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content
       %section.mypage-user__icon

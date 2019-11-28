@@ -1,5 +1,35 @@
 crumb :root do
-  link "Home", root_path
+  link "メルカリ", root_path
+end
+
+crumb :mypage do
+  link "マイページ", test_index_path
+  parent :root
+end
+
+crumb :mypage_edit do
+  link "プロフィール", test_path
+  parent :mypage
+end
+
+crumb :mypage_card do
+  link "支払い方法", card_test_index_path
+  parent :mypage
+end
+
+crumb :mypage_regi_card do
+  link "クレジットカード情報入力", regi_card_test_index_path
+  parent :mypage_card
+end
+
+crumb :mypage_identification do
+  link "本人情報の登録", identification_test_index_path
+  parent :mypage
+end
+
+crumb :mypage_logout do
+  link "ログアウト", logout_test_index_path
+  parent :mypage
 end
 
 # crumb :projects do
