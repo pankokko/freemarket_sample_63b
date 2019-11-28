@@ -234,6 +234,9 @@
 
 
 
+
+
+
 .evaluation {
   display: inline-block;
 }
@@ -250,11 +253,11 @@
 
   a{
     text-decoration: none;
+    color: #0099e8;
   }
-}
-
-.item-detail{
-  text-decoration: none; 
+  a:hover{
+  text-decoration: underline;
+  }
 }
 
 .items-image-elements{
@@ -274,9 +277,9 @@
 
 .items-name{
   font-size: 24px;
-    text-align: center;
-    word-wrap: break-word;
-    line-height: 1.4;
+  text-align: center;
+  line-height: 1.4;
+  color: #333;
 }
 
 .items-img-box{
@@ -327,6 +330,15 @@ a{
 .iteme-price{
   margin: 0 16px 0 0;
   font-size: 50px;
+  font-weight: 600;
+}
+
+.iteme-tax{
+  font-size: 10px;
+}
+
+.iteme-shipping{
+  font-size: 16px;
 }
 
 .huhuhuhu{
@@ -381,6 +393,14 @@ a{
     span{
       font-size: 14px;
     }
+    span:hover{
+      display: inline-block;
+      animation: hurueru .1s  infinite;
+    }
+}
+
+@keyframes hurueru {
+  50% {transform: translate(2px, 2px) rotateZ(0deg)}
 }
 
 .item-btn-left{
@@ -414,7 +434,12 @@ a{
       font-family: FontAwesome;
     }
   }
-
+  a{
+    color: #0099e8;
+  }
+  a:hover{
+  text-decoration: underline;
+  }
 }
 
 .media-box{
@@ -437,12 +462,35 @@ a{
 .fa.fa-facebook-official{
   color: navy;
   font-size: 44px;
+  transition: 10s;
+  -webkit-transition: 10s;
+}
+.fa.fa-facebook-official:hover{
+  transform: rotate(7200deg);
+  -webkit-transform: rotate(7200deg);
 }
 .fa.fa-twitter-square{
   color:  skyblue;
   font-size: 44px;
+  transition: 10s;
+  -webkit-transition: 10s;
+}
+.fa.fa-twitter-square:hover{
+  transform: rotate(7200deg);
+  -webkit-transform: rotate(7200deg);
 }
 .fa.fa-pinterest-square{
   color: red;
   font-size: 44px;
+  transition: 10s;
+  -webkit-transition: 10s;
 }
+.fa.fa-pinterest-square:hover{
+  transform: rotate(7200deg);
+  -webkit-transform: rotate(7200deg);
+}
+
+
+
+
+
