@@ -18,7 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
  
    def create
-    binding.pry
     if verify_recaptcha(model: @User)
       @User = User.create!(user_params)
       @User.save
@@ -51,18 +50,7 @@ end
 
 
 
-def configure_sign_up_params
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:password])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_kana])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_kanji])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kana])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kanji])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:year])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:month])
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:day])
-end
-
-
+ def configure_sign_up_params
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :nickname, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day])
+ end
 end
