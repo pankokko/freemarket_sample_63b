@@ -19,8 +19,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
  
    def create
     @User = User.create!(user_params)
+    if verify_recaptcha(model: @User)
     @User.save
     redirect_to "/signup/sms_confirmation" ,  notice: 'ログインとデータの保存に成功しました。'
+    else 
+      redirect_to "/users/sign_up"
+    end
    end
 
    def edit
