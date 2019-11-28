@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'homelogin/index'
-  get 'confirmation/index'
   root 'signup#index'
-  get 'homes/index'
+  resources :homelogin, only: [:index]
+  resources :confirmation, only: [:index]
+  resources :homes, only: [:index]
+  resources :exhibit, only: [:index]
   resources :test, only: [:index, :show] do
     collection do 
       get :logout
