@@ -1,0 +1,182 @@
+.complete-wrapper {
+  height: 100%;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+.complete-header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    &-logo {
+      width:185px;
+    }
+    .progress-var {
+      display: flex;
+      margin-left: 60px;
+        .active-list {
+          color: red;
+        }
+        &__list {
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          font-size: 12px;
+          color: #888;
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          text-align: center;
+            .storough {
+              background-color: red;
+                &::before {
+                  background-color: red;
+                }
+                &::after {
+                  background-color: red;
+                }
+            }
+            .active {
+              background-color: red;
+                &::before {
+                  background-color: red;
+                }
+            }
+            #last:last-child::after {
+              content: none;
+            }
+            
+            #first:last-child::before {
+              content: none;
+            }
+            &--status {
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ccc;
+              border-radius: 50%;
+                &::before {
+                  position: absolute;
+                  bottom: 5px;
+                  z-index: -1;
+                  display: block;
+                  content: '';
+                  width: 65px;
+                  height: 2px;
+                  background: #ccc;
+                  right: 50%;
+                }
+                &::after {
+                  position: absolute;
+                  bottom: 5px;
+                  z-index: -1;
+                  display: block;
+                  content: '';
+                  width: 65px;
+                  height: 2px;
+                  background: #ccc;
+                  left: 50%;
+                }
+            }
+        }
+    }
+}
+
+.complete-contents {
+  background-color: white;
+  margin: 0 auto;
+  width: 700px;
+    &__head {
+      height: 100px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 100px;
+      border-bottom: solid 1px #f5f5f5;
+    }
+    .complete-content { 
+      padding: 8px 40px 64px 40px;
+        &-list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 138px;
+            .complete-content-text {
+              margin-top: 32px;
+              font-size: 18px;
+              text-align: center;
+            }
+            .red-btn {
+              display: block;
+              width: 100%;
+              height: 48px;
+              text-decoration: none;
+              font-size: 16px;
+              background-color: #ea352d;
+              color: white;
+              line-height: 48px;
+              text-align: center;
+              margin-top: 32px;
+            }
+        }
+    }
+}
+
+.complete-footer-image {
+  width: 700px;
+  margin: 0 auto;
+    &-box {
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwDFa0eoJpKEcdhJ1ujAmbXmEGT4vtI_tCq77fazvtr50qKYY&s");
+        .main {
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          width: 700px;
+          margin: 0px auto;
+            &-left {
+              display: flex;
+              flex-direction: column;
+              -webkit-box-pack: center;
+              justify-content: center;
+                .left-first {
+                  color: rgb(255, 255, 255);
+                  font-size: 20px;
+                  font-weight: 600;
+                  margin: 40px 0 0;
+                }
+                .left-second {
+                  color: rgb(255, 255, 255);
+                  font-size: 30px;
+                  margin-bottom: 0 20px;
+                }
+                .images-box{
+                  display:flex;
+                  align-items: center;
+                    svg {
+                      height: 68px;
+                      width: 68px;
+                      margin-top: 15px;
+                    }
+                    .app-image {
+                      height: 40px;
+                      margin-right: 8px;
+                      width: 144px;
+                      line-height:98px;
+                    }
+                    .google-image {
+                      height: 40px;
+                      width: 144px;
+                    }
+                }
+            }
+            &-right {
+                .right-image {
+                  height: 260px;
+                  width: 300px;
+                }
+            }
+        }
+    }
+}

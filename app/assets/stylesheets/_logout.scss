@@ -1,0 +1,17 @@
+.i-content-logout-container{
+ margin:0;
+ background:#fff;
+   &-btn{
+    padding:64px;  
+    margin-top:50px;
+    border-top: 1px solid #f5f5f5;
+   &-wrapper{
+    max-width: 320px;
+    margin: 0 auto;
+   }
+  }
+}
+
+.btn-default.btn-red{
+  width:80%;
+}

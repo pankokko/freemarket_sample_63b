@@ -1,0 +1,175 @@
+* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+}
+.mypage{
+ background: #f5f5f5;
+ color:#333;
+  a{
+   text-decoration: none;
+   color:black;
+  }
+  h2{
+   font-weight:bold;
+ }
+}
+
+.container{
+  width:1020px;
+  margin:40px auto 40px;
+}
+
+.clearfix:after{
+  content: '';
+  display:block;
+  clear:both;  
+}
+
+.input-default{
+    height: 38px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    width: 220px;
+    margin: 0 0 0 8px;
+    vertical-align: middle;
+}
+
+.i-content.change-profile{
+    background:#fff;
+    .mypage-i-container{
+      background:#fff;
+      margin:0;
+        &__head{
+          font-size:24px;
+          padding:8px 24px;
+          border-bottom:1px solid #f5f5f5;
+          text-align:center;
+         }
+        &__form{
+        input{
+          border:0;
+          outline:0;
+          font-family:inherit;
+        }
+    }
+    &__form-profile-icon{
+      padding: 72px 16px 24px;
+      background: url(/jp/assets/img/mypage/user-bg.jpg?37328315);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:red;
+      text-align: center;
+      font-size: 0;
+        &-image{
+          overflow: hidden;
+          display:inline-block;
+          vertical-align: middle;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+            }
+    }
+    &__form-profile-content{
+    padding:40px 16px;
+      .textarea-default{
+        min-height: 216px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 0px 10px 0;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+  }
+}
+.mypage-number{
+  margin:8px 0 0;
+    &__text{
+      display:inline-block;
+      font-size:14px;
+  }
+}
+
+.mypage-tab-container{
+  background-color:#fff;
+  margin:0;
+}
+
+.mypage-tabs{
+  background-color:#eee;
+  font-size:0;
+  list-style:none;
+  li{
+    width:50%;
+    display:inline-block;
+    text-align:center;
+    vertical-align:top;
+  }
+}
+
+.mypage-go__list{
+  border:0;
+  padding:16px;
+  }
+  .mypage-index{
+    display: block;
+    height: 56px;
+    margin: 0 auto;
+    background: #eee;
+    color: #333;
+    line-height: 56px;
+    text-align: center;
+}
+.mypage-index:hover{
+    background-color:rgba(#eee,0.5);
+}
+
+
+.mypage-nav-head{
+  margin:40px 0 0;
+  font-size:17px;
+  font-weight: bold;
+}
+ 
+.mypage-user-name{
+  margin:8px 0 0;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.4;
+  
+}
+.mypage-number__text{
+  span{
+    font-size:16px;
+    margin:0 0 0 8px;
+  }
+}
+
+.fa-angle-right{
+  margin:0 8px;
+  font-size:20px;
+  color:#888;
+}
+}
+
+.btn-default.btn-red{
+  margin:16px 0 0;
+  background:#ea352d;
+  border :1px solid #ea352d;
+  color:#fff;
+  display:block;
+  cursor: pointer;
+  width:100%;
+  text-align:center;
+  line-height:48px;
+  font-size:14px;
+}

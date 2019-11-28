@@ -1,0 +1,206 @@
+* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+}
+.mypage{
+ background: #f5f5f5;
+ color:#333;
+  a{
+   text-decoration: none;
+   color:black;
+  }
+    h2{
+     font-weight:bold;
+  }
+}
+
+.container{
+  width:1020px;
+  margin:40px auto 0;
+}
+.main-info{
+  position:relative;
+  line-height:72px;
+  display:block;
+  color:#333;
+  font-size:16px;
+}
+
+.clearfix:after{
+  content: '';
+  display:block;
+  clear:both;  
+}
+.i-content{
+  float:right;
+  width:700px;
+    .mypage-user__icon{
+      height:200px;
+      position:relative;
+      padding:20px;
+      background-color:green;
+      text-align:center;
+      background-size:cover;
+        &-container{
+          display:block;
+          position:absolute;
+          top:30%;
+          left:0;
+          right:0;
+          color:#333;
+            &-picture{
+              overflow:hidden;
+              width:60px;
+              height:60px;
+              margin:0 auto;
+              border-radius: 50%;
+            }
+        }
+    }
+}
+.mypage-number{
+  margin:8px 0 0;
+    &__text{
+      display:inline-block;
+      font-size:14px;
+    }
+}
+
+.mypage-tab-container{
+  background-color:#fff;
+  margin:0;
+}
+
+.mypage-tabs{
+  background-color:#eee;
+  font-size:0;
+  list-style:none;
+    li{
+      width:50%;
+      display:inline-block;
+      text-align:center;
+      vertical-align:top;
+    }
+}
+ 
+.mypage-active-list{
+  background-color:#fff;
+    &__h3{
+      font-size:22px;
+    }
+}
+
+#mypage-tab__notification{
+  display:block;
+    li{
+      position:relative;
+      border-bottom:1px solid #eee;
+    }
+    .mypage-item__body{
+      margin:0 40px 0 68px;
+    }
+    time{
+      display: inline-block;
+      color: #888;
+        i{
+          margin:8px 0 8px 8px;
+        }
+    }
+    .mypage-item__text{
+      overflow: hidden;
+      display: block;
+      max-height: 4.4em;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      line-height: 1.5;
+    }
+    .mypage-item__picture{
+      position:relative;
+      overflow:hidden;
+      float:left;
+      width: 48px;
+      height: 48px;
+    }
+    .mypage-tag__item__link{
+      display: block;
+      min-height: 50px;
+      background-color:#fff;
+      padding:16px;
+      color: #333;
+    }
+    img{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+    }
+    .fa.fa-chevron-right{
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+}
+
+.mypage-go__list{
+  border:0;
+  padding:16px;
+}
+.mypage-index{
+  display: block;
+  height: 56px;
+  margin: 0 auto;
+  background: #eee;
+  color: #333;
+  line-height: 56px;
+  text-align: center;
+}
+.mypage-index:hover{
+  background-color:rgba(#eee,0.5);
+}
+
+.mypage-info__container{
+  margin:40px 0;
+  background-color:#fff;
+    &__tag-head{
+    padding:0 16px;
+    background-color:#fff;
+    font-size:16px;
+    line-height:72px;
+    }
+}
+
+
+.mypage-nav-head{
+  margin:40px 0 0;
+  font-size:17px;
+  font-weight: bold;
+}
+ 
+.mypage-user-name{
+  margin:8px 0 0;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.4;
+  
+}
+.mypage-number__text{
+  span{
+    font-size:16px;
+    margin:0 0 0 8px;
+  }
+}
+
+.fa-angle-right{
+  margin:0 8px;
+  font-size:20px;
+  color:#888;
+}

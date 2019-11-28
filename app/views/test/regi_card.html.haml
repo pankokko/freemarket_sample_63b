@@ -1,0 +1,51 @@
+%body.mypage
+  = render "shared/header"
+  - breadcrumb :mypage_regi_card
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content.change-profile
+      %h2.regi_card-content__head
+        クレジットカード情報入力
+      %form.regi_card-form{action: "#", "data-adyen-id" => "card-form", method: "POST", novalidate: "novalidate"}
+        .regi_card-form-list
+          .form__group
+            %label{for: "payment_card_no"} カード番号
+            %span.form__group-alert 必須
+            %input.input-def{"data-input-type" => "card", maxlength: "19", placeholder: "半角数字のみ", type: "text", value: ""}/
+            %ul.card-list
+              %li
+                %i.fa.fa-cc-visa.card-icon
+              %li
+                %i.fa.fa-cc-mastercard.card-icon
+              %li
+                %i.fa.fa-cc-amex.card-icon
+              %li
+                %i.fa.fa-cc-jcb.card-icon
+              %li
+                %i.fa.fa-cc-amex.card-icon
+              %li
+                %i.fa.fa-cc-diners-club.card-icon
+              %li
+                %i.fa.fa-cc-discover.card-icon
+          .form__group
+            %label{for: "payment_card_expire"} 有効期限
+            %span.form__group-alert 必須
+            %br
+            %select.select-def.half
+              = @months.each do |month|
+                %option{value: month[:value]} #{month[:value]}
+            %span 月
+            %select.select-def.half
+              = @cardyears.each do |cardyear|
+                %option{value: cardyear[:value]} #{cardyear[:value]}
+            %span 年
+          .form__group
+            %label{for: "payment_card_security_code"} セキュリティコード
+            %span.form__group-alert 必須
+            %input.input-def{placeholder: "カード背面4桁もしくは3桁の番号", type: "number", value: ""}/
+            .signup-seqcode-text{"data-js" => "show-tips-toggle"}
+              %p.regi_card-form-text カード裏面の番号とは？
+          %button.regi_card-btn-submit{type: "button"} 追加する
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"

@@ -1,0 +1,22 @@
+%body.mypage
+  = render "shared/header"
+  - breadcrumb :mypage_edit
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content.change-profile
+      %section.mypage-i-container
+        %h2.mypage-i-container__head
+          プロフィール
+      %form.mypage-i-container__form{action: "", method: "POST"}
+        %input{name: "__csrf_value", type: "hidden", value: ""}/
+        .mypage-i-container__form-profile-icon
+          .mypage-i-container__form-profile-icon-image
+            = image_tag  "//static.mercdn.net/images/member_photo_noimage_thumb.png" , :size => "60x60"
+          %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "UserName"}/
+        .mypage-i-container__form-profile-content
+          %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          %input{name: "after_save_callback", type: "hidden", value: ""}/
+          %button.btn-default.btn-red{type: "submit"} 変更する
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"

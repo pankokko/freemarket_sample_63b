@@ -1,0 +1,96 @@
+.change-profile {
+    .identification-content__head {
+      height: 55px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 55px;
+      border-bottom: solid 1px #f5f5f5;
+    }
+    .identification-form {
+      padding: 64px;
+        &__list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+            .form-textbox {
+              width: 100%;
+                &-top {
+                  text-align: center;
+                  font-size: 14px;
+                  margin-top: 8px;
+                }
+                &-bottom {
+                  text-align: right;
+                  margin-top: 8px;
+                    &-text {
+                      font-size: 14px;
+                      color: #0099e8;
+                    }
+                }
+            }
+            .form__group {
+              box-sizing: border-box;
+              margin-top: 32px;
+              width: 100%;
+                label {
+                  display: inline-block;
+                }
+                .lavel-text {
+                  font-weight: bold;
+                  font-size: 15px;
+                  margin-bottom: 8px;
+                }
+                &-arbitrary {
+                  background-color: #888;
+                  color: white;
+                  font-size: 12px;
+                  padding: 3px 6px;
+                  margin: 0 0 0 8px;
+                  border-radius: 2px;
+                }
+                .input-def {
+                  box-sizing: border-box;
+                  width: 100%;
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .select-def {
+                  background-color: white;
+                  width: 100%;
+                  height: 48px;
+                  margin-top: 8px;
+                  border: 1px solid #ccc;
+                }
+            }
+            .identification-btn-submit {
+              display: block;
+              width: 100%;
+              height: 48px;
+              font-size: 14px;
+              background-color: #ea352d;
+              color: white;
+              line-height: 48px;
+              text-align: center;
+              margin-top: 32px;
+            }
+            .form-group-textbox {
+              box-sizing: border-box;
+              margin-top: 32px;
+              width: 100%;
+              text-align: right;
+                .form-group-text {
+                  font-size: 14px;
+                  color: #0099e8;
+                }
+            }
+        }
+    }
+}
