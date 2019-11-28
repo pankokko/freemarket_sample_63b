@@ -18,14 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
  
    def create
-    if verify_recaptcha(model: @User)
-      @User = User.create!(user_params)
-      @User.save
-      redirect_to "/signup/sms_confirmation" ,  notice: 'ログインとデータの保存に成功しました。'
-    else 
-      super
+    @User = User.create!(user_params)
+    @User.save
+    redirect_to "/signup/sms_confirmation" ,  notice: 'ログインとデータの保存に成功しました。'
    end
-  end
 
    def edit
      super
@@ -42,13 +38,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   
 
-def user_params
-  params.permit(:nickname, :email, :password, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day)
-end
+  def user_params
+    params.permit(:nickname, :email, :password, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day)
+  end
 
 
 
- def configure_sign_up_params
+  def configure_sign_up_params
   devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :nickname, :family_name_kana, :family_name_kanji, :first_name_kana, :first_name_kanji, :year, :month, :day])
- end
+  end
+
 end
