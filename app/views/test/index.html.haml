@@ -1,4 +1,5 @@
 %body.mypage
+  = render "shared/header"
   - breadcrumb :mypage
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -96,4 +97,4 @@
                 一覧を見る
     .mypage-l-side
       = render 'shared/sidebar'
-      
+  = render "shared/footer"

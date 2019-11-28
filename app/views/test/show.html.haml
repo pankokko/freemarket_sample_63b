@@ -1,4 +1,5 @@
 %body.mypage
+  = render "shared/header"
   - breadcrumb :mypage_edit
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -18,3 +19,4 @@
           %button.btn-default.btn-red{type: "submit"} 変更する
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"

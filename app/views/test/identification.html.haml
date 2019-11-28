@@ -1,4 +1,5 @@
 %body.mypage
+  = render "shared/header"
   - breadcrumb :mypage_identification
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -54,3 +55,4 @@
                 本人情報の登録について
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"

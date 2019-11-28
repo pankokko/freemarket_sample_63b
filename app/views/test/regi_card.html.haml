@@ -1,4 +1,5 @@
 %body.mypage
+  = render "shared/header"
   - breadcrumb :mypage_regi_card
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -47,3 +48,4 @@
           %button.regi_card-btn-submit{type: "button"} 追加する
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"
