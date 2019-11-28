@@ -1,15 +1,7 @@
 %body.mypage
   = render "shared/header"
-  %nav.mypage-header-nav
-    %ul.mypage-header-nav__ul
-      %li
-        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
-        %i.fa.fa-angle-right
-      %li
-        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
-        %i.fa.fa-angle-right
-      %li
-        = link_to "本人情報の登録", root_path, class:"nav-mercari_mypage" 
+  - breadcrumb :mypage_identification
+  = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content.change-profile
       %h2.identification-content__head
