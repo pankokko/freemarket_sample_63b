@@ -19,7 +19,7 @@
 
 .container{
   width:1020px;
-  margin:40px auto 0;
+  margin:40px auto 40px;
 }
 
 .clearfix:after{
@@ -114,14 +114,6 @@
     text-align:center;
     vertical-align:top;
   }
-}
- 
-.fa.fa-chevron-right{
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
 }
 
 .mypage-go__list{

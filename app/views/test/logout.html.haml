@@ -1,4 +1,7 @@
 %body.mypage
+  = render "shared/header"
+  - breadcrumb :mypage_logout
+  = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content
       .i-content-logout-container
@@ -8,3 +11,4 @@
             %button.btn-default.btn-red{type: "submit"} ログアウト
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"

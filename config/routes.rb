@@ -3,12 +3,18 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
   } 
-
-  root  'signup#index'
+  root 'signup#index'
+  resources :product, only: [:index]
+  resources :homelogin, only: [:index]
+  resources :confirmation, only: [:index]
+  resources :homes, only: [:index]
+  resources :exhibit, only: [:index]
   resources :test, only: [:index, :show] do
     collection do 
       get :logout
       get :identification
+      get :card
+      get :regi_card
     end
   end
   resources :signup, only: [:index] do

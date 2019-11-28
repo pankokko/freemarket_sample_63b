@@ -1,14 +1,7 @@
 %body.mypage
-  %nav.mypage-header-nav
-    %ul.mypage-header-nav__ul
-      %li
-        = link_to "メルカリ", root_path, class:"nav-mercari_mercari"
-        %i.fa.fa-angle-right
-      %li
-        = link_to "マイページ", root_path, class:"nav-mercari_mypage" 
-        %i.fa.fa-angle-right
-      %li
-        = link_to "プロフィール", root_path, class:"nav-mercari_mypage" 
+  = render "shared/header"
+  - breadcrumb :mypage_edit
+  = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content.change-profile
       %section.mypage-i-container
@@ -26,3 +19,4 @@
           %button.btn-default.btn-red{type: "submit"} 変更する
     .mypage-l-side
       = render 'shared/sidebar'
+  = render "shared/footer"
