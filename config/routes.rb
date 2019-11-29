@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'signup#index'
+  devise_for :users
+  root 'homes#index'
   resources :product, only: [:index]
   resources :homelogin, only: [:index]
   resources :confirmation, only: [:index]

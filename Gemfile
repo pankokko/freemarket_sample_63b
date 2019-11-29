@@ -85,3 +85,4 @@ gem 'pry-rails'
 gem 'active_hash'
 gem "recaptcha", require: "recaptcha/rails"
 gem "gretel"
+gem "devise"

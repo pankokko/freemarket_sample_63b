@@ -29,4 +29,8 @@
           .signup-contents__bottom__btn--Google.btn-def
             %i.fa.fa-google.signup-icon
             Googleで登録する
+          - if user_signed_in?
+            %p ログインしています
+          - else
+            %p ログアウトしています
     = render "shared/sabfooter"
