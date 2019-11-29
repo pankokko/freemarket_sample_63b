@@ -1,0 +1,100 @@
+%body.mypage
+  = render "shared/header"
+  - breadcrumb :mypage
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content
+      %section.mypage-user__icon
+        = link_to root_path, class:"mypage-user__icon-container" do
+          .mypage-user__icon-container-picture
+            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => "60x60"
+          %h2.mypage-user-name
+            #{@nickname}
+          .mypage-number
+            .mypage-number__text
+              評価
+              %span.mypage-bold
+                4
+            .mypage-number__text
+              出品数
+              %span.bold
+                5
+      %section.mypage-tab-container
+        %ul.mypage-tabs
+          %li.mypage-active-list
+            %h3 
+              = link_to "お知らせ", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "やることリスト", root_path, class:"main-info"
+        .mypage-tab__content
+          %ul#mypage-tab__notification
+            %li 
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture
+                  = image_tag "//static.mercdn.net/images/mercari_profile.png", :size => '60x60'
+                .mypage-item__body
+                  .mypage-item__text
+                    「今なら販売手数料無料！詳細はこちらから」
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        1時間前
+                  %i.fa.fa-chevron-right
+            %li 
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture                   
+                  = image_tag "//static.mercdn.net/images/mercari_profile.png", :size => '60x60'
+                .mypage-item__body
+                  .mypage-item__text
+                    「タイムセール実施中！詳細はこちらから」
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        2時間前
+                  %i.fa.fa-chevron-right
+            %li.mypage-go__list
+              = link_to root_path, class:"mypage-index" do
+                一覧を見る
+      %section.mypage-info__container
+        %h2.mypage-info__container__tag-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.mypage-active-list
+            %h3 
+              = link_to "取引中", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "過去の取引", root_path, class:"main-info"
+        .mypage-tab__content
+          %ul#mypage-tab__notification
+            %li 
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture                  
+                  = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => '60x60'
+                .mypage-item__body
+                  .mypage-item__text
+                    「いちばんよくわかるHTML5 & CSS3デザインきちんと入門」を購入しました。取引が完了しました。
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        1時間前
+                  %i.fa.fa-chevron-right
+            %li 
+              = link_to root_path, class:"mypage-tag__item__link" do
+                .mypage-item__picture
+                  = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", :size => '60x60'
+                .mypage-item__body
+                  .mypage-item__text
+                    「PHPの絵本」を購入しました。取引が完了しました。
+                  %time
+                    %i.fa.fa-clock-o
+                      %span 
+                        2時間前
+                  %i.fa.fa-chevron-right
+            %li.mypage-go__list
+              = link_to root_path, class:"mypage-index" do
+                一覧を見る
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"

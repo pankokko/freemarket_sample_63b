@@ -1,4 +1,7 @@
-= render "shared/header"
+- if user_signed_in?
+  = render "shared/loginHeader"
+- else
+  = render "shared/header"
 .home--wrapper
   -#メインコンテンツ
   .home--content
