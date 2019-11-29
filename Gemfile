@@ -83,6 +83,5 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'pry-rails'
 gem 'active_hash'
-gem 'devise' 
 gem "recaptcha", require: "recaptcha/rails"
 gem "gretel"
