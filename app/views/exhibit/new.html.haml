@@ -20,8 +20,7 @@
         .sell-main-tertiary
           %h2
             商品の情報を入力
-          %form.form-information
-          
+          = form_for @exhibit, url: exhibit_index_path, html:{class:"form-information"} do |f|
             .img-box
               %h3
                 出品画像
@@ -48,6 +47,7 @@
                     必須
                 .product-name-input
                   %input.sell-product-input{name:"product",value: "",placeholder:"商品名(必須 40文字まで)"}/
+                  = f.text_field :product, class:"sell-product-input", placeholder:"商品名(必須 40文字まで)"
               .description
                 %label
                   商品の説明

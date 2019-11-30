@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :homelogin, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
-  resources :exhibit, only: [:index]
+  resources :exhibit, only: [:index, :new,:create]
   resources :test, only: [:index, :show] do
     collection do 
       get :logout
