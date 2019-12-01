@@ -24,5 +24,12 @@ Rails.application.routes.draw do
       get :complete
     end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit] do
+    member do
+      get :logout
+      get :identification
+      get :card
+      get :regi_card
+    end
+  end
 end

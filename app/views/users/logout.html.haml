@@ -1,0 +1,17 @@
+%body.mypage
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
+  - breadcrumb :mypage_logout
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content
+      .i-content-logout-container
+        %form.i-content-logout-container-btn{action: "", method: "POST"}
+          .i-content-logout-container-btn-wrapper
+            = link_to destroy_user_session_path, method: :delete, class: "logout-btn-submit" do
+              %p ログアウト
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"
