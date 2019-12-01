@@ -33,7 +33,10 @@
                   .upload-box-items-secondary
                     %ul
                 .upload-box-img
-                  %input.upload-box-img-file{multiple:"multiple",name:"image1",style:"display: none;",type:"file"}/
+                  = f.label :image, class: 'form__mask__image' do
+                    = fa_icon 'picture-o', class: 'icon'
+                    = f.fields_for :images do |i|
+                      = i.file_field :image
                   %pre.sell-pre 
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
@@ -52,7 +55,7 @@
                   商品の説明
                   %span
                     必須
-                = f.text_area :name, class:"sell-textarea",rows:"5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                = f.text_area :description, class:"sell-textarea",rows:"5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             .details-box
               %h3.details-h3
                 商品の詳細
@@ -65,7 +68,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.select :name, [["---", ""] ,["レディース","1"], ["メンズ","2"] ], {} ,{class: 'select-default'}
+                      /= f.select :name, [["---", ""] ,["レディース","1"], ["メンズ","2"] ], {} ,{class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態
@@ -73,7 +76,7 @@
                       必須
                   .details-Status
                     %i.icon-arrow-bottom
-                    = f.select :name, [["---", ""] ,["新品","1"], ["中古","2"] ], {}, {class: "select-default"}
+                    = f.select :status, [["---", ""] ,["新品","新品"], ["中古","中古"] ], {}, {class: "select-default"}
             .delivery-box
               %h3.delivery-h3
                 配送について
@@ -86,7 +89,7 @@
                       必須
                   .burden-box
                     %i.icon-arrow-bottom
-                    = f.select :name, [ ["---",""], ["送料込み","1"], ["着払い","2"] ], {}, {class: "select-default"}
+                    = f.select :ship_fee, [ ["---",""], ["送料込み","送料込み"], ["着払い","着払い"] ], {}, {class: "select-default"}
                 .delivery-form-region
                   %label
                     配送元の地域
@@ -94,7 +97,7 @@
                       必須
                   .region-box
                     %i.icon-arrow-bottom
-                    = f.select :name, [ ["---",""], ["東京","1"], ["大阪","2"] ], {}, {class: "select-default"}
+                    = f.select :prefecture, [ ["---",""], ["東京","東京"], ["大阪","大阪"] ], {}, {class: "select-default"}
                 .delivery-form-days
                   %label
                     発送までの日数
@@ -102,7 +105,7 @@
                       必須
                   .days-box
                     %i.icon-arrow-bottom
-                    = f.select :name, [ ["---",""], ["1~2日で発送","1"], ["2~3日で発送","2"] ], {}, {class: "select-default"}
+                    = f.select :ship, [ ["---",""], ["1~2日で発送","1"], ["2~3日で発送","2"] ], {}, {class: "select-default"}
             .price-box
               %h3.price-h3
                 販売価格(300〜9,999,999)
@@ -118,7 +121,7 @@
                       .sell-right-price
                         ¥
                         .sell-right-price-input
-                          = f.text_field :name , class:"sell-price-input" ,value: "",placeholder:"例）300"
+                          = f.text_field :price , class:"sell-price-input" ,value: "",placeholder:"例）300"
                   %li.fee-group
                     .fee-left
                       販売手数料 (10%)

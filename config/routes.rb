@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'homes#index'
+  root 'exhibit#index'
   resources :product, only: [:index]
   resources :homelogin, only: [:index]
   resources :confirmation, only: [:index]
