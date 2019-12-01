@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :logout
       get :identification
       get :card
-      get
+      get :regi_card
     end
   end
 end

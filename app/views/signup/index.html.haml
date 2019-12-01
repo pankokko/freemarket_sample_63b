@@ -20,7 +20,7 @@
           新規会員登録
       .signup-contents__bottom
         .signup-contents__bottom__btn
-          %a.signup-contents__bottom__btn--mail.btn-def{href: "http://localhost:3000/signup/login"}
+          = link_to new_user_registration_path, class: "signup-contents__bottom__btn--mail" do
             %i.fa.fa-envelope-o.fa-lg.signup-icon
             メールアドレスで登録する
           .signup-contents__bottom__btn--Facebook.btn-def
@@ -29,6 +29,4 @@
           .signup-contents__bottom__btn--Google.btn-def
             %i.fa.fa-google.signup-icon
             Googleで登録する
-          - if user_signed_in?
-            = link_to "ログアウト" destroy_user_session_path, method: :delete, class: "header__right--btn"
     = render "shared/sabfooter"
