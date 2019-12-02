@@ -1,5 +1,8 @@
 %body.mypage
-  = render "shared/header"
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
   - breadcrumb :mypage_regi_card
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -33,11 +36,11 @@
             %br
             %select.select-def.half
               = @months.each do |month|
-                %option{value: month[:value]} #{month[:value]}
+                %option{value: month[:month]} #{month[:month]}
             %span 月
             %select.select-def.half
               = @cardyears.each do |cardyear|
-                %option{value: cardyear[:value]} #{cardyear[:value]}
+                %option{value: cardyear[:year]} #{cardyear[:year]}
             %span 年
           .form__group
             %label{for: "payment_card_security_code"} セキュリティコード

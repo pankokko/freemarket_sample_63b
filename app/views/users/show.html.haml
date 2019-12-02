@@ -1,6 +1,9 @@
 %body.mypage
-  = render "shared/header"
-  - breadcrumb :mypage
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
+  - breadcrumb :mypage, @user
   = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content
