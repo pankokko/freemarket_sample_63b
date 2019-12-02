@@ -1,0 +1,48 @@
+
+
+
+
+
+%body.sell-body
+  .sell-wrapper
+    %main.sell-main
+      .sell-main-secondary
+        .sell-main-tertiary
+          // .form-information{action: "/exhibit", method: "POST", novalidate: "novalidate"}
+          = form_for(Image.new, html: {multipart: true, class: "dropzone"}) do |f|
+            .img-box
+              %h3
+                出品画像
+                %span
+                  必須
+              %p
+                最大10枚までアップロードできます
+              %button{type:"submit"} 出品する
+              .upload-box
+                .upload-box-items
+                  .upload-box-items-secondary
+                    %ul
+                .upload-box-img
+                  %input.upload-box-img-file{multiple:"multiple",name:"image1",style:"display: none;",type:"file"}/
+                  %pre.sell-pre 
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  %i.icon-camera
+                  
+                    .fallback
+                      = f.file_field :file_name, multiple: true
+                    
+                  :javascript
+                    $(function() {
+                      // disable auto discover
+                      Dropzone.autoDiscover = false;
+
+                      $(".dropzone").dropzone({
+                        maxFilesize: 1,
+                        addRemoveLinks: true
+                      });
+                    });
+                    
+                    
+                    
+
