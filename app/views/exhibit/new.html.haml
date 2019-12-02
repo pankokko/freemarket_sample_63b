@@ -41,7 +41,6 @@
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
                   %i.icon-camera
-
             .product-name-box
               .product-name
                 %label 
@@ -68,7 +67,8 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      /= f.select :name, [["---", ""] ,["レディース","1"], ["メンズ","2"] ], {} ,{class: 'select-default'}
+                      /= f.fields_for :categories do |i|
+                      /= f.select :category, [["---", ""] ,["レディース","レディース"], ["メンズ","メンズ"] ], {} ,{class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態

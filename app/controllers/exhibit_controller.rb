@@ -1,7 +1,6 @@
 class ExhibitController < ApplicationController
   def index
     @exhibit = Exhibit.all.includes(:images)
-    #@image = @exhibit.Images.all
     end
 
 def new
@@ -19,7 +18,33 @@ end
 
 
 def exhibit_params
-params.require(:exhibit).permit(:name, :price, :status, :description, :ship, :ship_fee, :prefecture,:size,  images_attributes: [:image])
+params.require(:exhibit).permit(:name, :price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image])
+end
+end
 
-end
-end
+
+# exhibitのレコードを作成する
+# 同時にアソシエーションを組んでいるカテゴリーのレコードも作成する。
+# 同じく画像も・・・。
+
+
+
+# url=>/sample/:id/edit
+
+# :id
+# params[:id]
+
+# {name: "aaaa", name2:{text:"bbb"}}
+
+# name2[:text]=>bbb
+
+# params[:name] => aaaa
+
+# params[:text] => bbb  NO!!
+
+# params.require(:exhibit).permit(:name, text: params[:name2], :id)  No!!
+# params.require(:exhibit).permit(:name).merge(params[:id])
+
+
+
+
