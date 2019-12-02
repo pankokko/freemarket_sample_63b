@@ -9,6 +9,7 @@ class CreateExhibits < ActiveRecord::Migration[5.2]
       t.string  :ship_fee 
       t.string  :prefecture
       t.integer  :size
+      t.string   :category
       t.timestamps
     end
   end

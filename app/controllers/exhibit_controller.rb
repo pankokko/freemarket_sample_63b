@@ -18,7 +18,7 @@ end
 
 
 def exhibit_params
-params.require(:exhibit).permit(:name, :price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image])
+params.require(:exhibit).permit(:name, :price, :category, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image])
 end
 end
 

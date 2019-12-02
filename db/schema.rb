@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_121023) do
     t.string "ship_fee"
     t.string "prefecture"
     t.integer "size"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
