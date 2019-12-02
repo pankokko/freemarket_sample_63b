@@ -20,17 +20,12 @@ end
     end
     end
 
-    describe 'Post #create' do
-      context '有効なパラメータの場合' do
-        before do
-          @Exhibit = attributes_for(:exhibit, {name: "たこやき"})
-        end
-        it 'データベースに新しいデータが保存される' do
-          expect{
-            post :create, exhibit: @Exhibit
-          }.to change(Exhibit, :count).by(1)
-        end
+    describe 'POST #create' do
+      it "データベースにデータが保存されるか" do
+        expect{
+          post :create, exhibit: attributes_for(:exhibit)
+        }.to change(Exhibit, :count).by(1)
+      end
         
       end
-    end
   end
