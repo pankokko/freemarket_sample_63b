@@ -78,6 +78,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+        .new_user {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+        }
         .input-def {
           width: 328px;
           height: 48px;

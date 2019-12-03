@@ -1,5 +1,8 @@
 %body.mypage
-  = render "shared/header" 
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
   - breadcrumb :mypage_card
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -10,7 +13,7 @@
         %p.card-content__middle-text
           クレジットカード一覧
         .card-content-btnbox
-          = link_to regi_card_test_index_path, class:"card-btn-submit" do
+          = link_to regi_card_user_path(current_user), class:"card-btn-submit" do
             %i.fa.fa-credit-card
             クレジットカードを追加する
         .card-content-textbox

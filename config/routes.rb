@@ -2,18 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'exhibit#index'
   resources :product, only: [:index]
-  resources :homelogin, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
   resources :exhibit, only: [:index, :new,:create]
-  resources :test, only: [:index, :show] do
-    collection do 
-      get :logout
-      get :identification
-      get :card
-      get :regi_card
-    end
-  end
   resources :signup, only: [:index] do
     collection do
       get :login
@@ -24,5 +15,12 @@ Rails.application.routes.draw do
       get :complete
     end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit] do
+    member do
+      get :logout
+      get :identification
+      get :card
+      get :regi_card
+    end
+  end
 end
