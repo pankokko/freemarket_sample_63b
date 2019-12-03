@@ -12,6 +12,11 @@ crumb :mypage_edit do
   parent :mypage
 end
 
+crumb :mypage_selling do
+  link "購入した商品 - 取引中", selling_user_path(current_user)
+  parent :mypage
+end
+
 crumb :mypage_card do
   link "支払い方法", card_user_path(current_user)
   parent :mypage
