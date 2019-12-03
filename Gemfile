@@ -87,3 +87,4 @@ gem "recaptcha", require: "recaptcha/rails"
 gem "gretel"
 gem "devise"
 gem 'payjp'
+gem 'jquery-turbolinks'
