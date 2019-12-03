@@ -13,12 +13,12 @@ crumb :mypage_edit do
 end
 
 crumb :mypage_card do
-  link "支払い方法", card_user_path(current_user)
+  link "支払い方法", cards_path
   parent :mypage
 end
 
 crumb :mypage_regi_card do
-  link "クレジットカード情報入力", regi_card_user_path(current_user)
+  link "クレジットカード情報入力", new_card_path
   parent :mypage_card
 end
 
