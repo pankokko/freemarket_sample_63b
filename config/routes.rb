@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit] do
     member do
       get :logout
+      get :selling
       get :identification
       get :card
       get :regi_card

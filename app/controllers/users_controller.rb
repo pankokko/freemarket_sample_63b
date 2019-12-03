@@ -36,6 +36,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def selling
+    user = User.find(params[:id])
+    item = user.exhibits.all
+    @items = item.all.includes(:images)
+    if user_signed_in?  && current_user.id == user.id
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
+
   def identification
     @user = User.find(params[:id])
     @prefecture = Prefecture.all
