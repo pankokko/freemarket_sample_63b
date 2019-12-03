@@ -3,32 +3,32 @@ crumb :root do
 end
 
 crumb :mypage do
-  link "マイページ", test_index_path
+  link "マイページ", user_path(current_user)
   parent :root
 end
 
 crumb :mypage_edit do
-  link "プロフィール", test_path
+  link "プロフィール", edit_user_path(current_user)
   parent :mypage
 end
 
 crumb :mypage_card do
-  link "支払い方法", card_test_index_path
+  link "支払い方法", card_user_path(current_user)
   parent :mypage
 end
 
 crumb :mypage_regi_card do
-  link "クレジットカード情報入力", regi_card_test_index_path
+  link "クレジットカード情報入力", regi_card_user_path(current_user)
   parent :mypage_card
 end
 
 crumb :mypage_identification do
-  link "本人情報の登録", identification_test_index_path
+  link "本人情報の登録", identification_user_path(current_user)
   parent :mypage
 end
 
 crumb :mypage_logout do
-  link "ログアウト", logout_test_index_path
+  link "ログアウト", logout_user_path(current_user)
   parent :mypage
 end
 

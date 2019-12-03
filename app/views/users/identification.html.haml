@@ -1,5 +1,8 @@
 %body.mypage
-  = render "shared/header"
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
   - breadcrumb :mypage_identification
   = render "layouts/breadcrumbs"
   %main.container.clearfix
@@ -18,13 +21,13 @@
                 本人確認書類のアップロードについて
           .form__group
             %label.lavel-text お名前
-            %p 佐々木 遥馬
+            %p #{@user.family_name_kanji} #{@user.first_name_kanji}
           .form__group
             %label.lavel-text お名前カナ
-            %p ササキ ハルマ
+            %p #{@user.family_name_kana} #{@user.first_name_kana}
           .form__group
             %label.lavel-text{for: "birthday"} 生年月日
-            %p 1999/02/19
+            %p #{@user.year}/#{@user.month}/#{@user.day}
           .form__group
             %label{for: "zip_code"} 郵便番号
             %span.form__group-arbitrary 任意
