@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production? 
   before_action :configure_sign_up_params, if: :devise_controller?
   before_action :get_active_hash, only: [:create]
+  
   protect_from_forgery with: :null_session
 
   private
@@ -19,6 +20,7 @@ class ApplicationController < ActionController::Base
     @month = Months.all
     @day = Days.all
   end
+
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
