@@ -19,21 +19,22 @@
               = link_to "売却済み", root_path, class:"main-info"
         .mypage-tab__content
           %ul#mypage-tab__notification
-            %li 
-              = link_to root_path, class:"mypage-tag__item__link" do
-                .mypage-item__picture
-                  = image_tag "//static.mercdn.net/images/mercari_profile.png", :size => '60x60'
-                .mypage-item__body
-                  .mypage-item__text
-                    「今なら販売手数料無料！詳細はこちらから」
-                  %time
-                    %i.fa.fa-heart
-                      %span 
-                        1
-                    %i.fa.fa-comment
-                      %span 
-                        0
-                  %i.fa.fa-chevron-right
+            - @items.each do |item|
+              %li 
+                = link_to root_path, class:"mypage-tag__item__link" do
+                  .mypage-item__picture
+                    = image_tag item.images[0].image.url  :size => '60x60'
+                  .mypage-item__body
+                    .mypage-item__text
+                      = item.name
+                    %time
+                      %i.fa.fa-heart
+                        %span 
+                          1
+                      %i.fa.fa-comment
+                        %span 
+                          0
+                    %i.fa.fa-chevron-right
     .mypage-l-side
       = render 'shared/sidebar'
   = render "shared/footer"

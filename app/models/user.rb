@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :exhibits
   has_many :likes
-  has_many :items
   has_many :users, through: :users_historys
   has_many :users_historys
   has_one :address
