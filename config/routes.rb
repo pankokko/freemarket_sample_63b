@@ -24,4 +24,5 @@ Rails.application.routes.draw do
       get :regi_card
     end
   end
+  resources :cards, only: [:index, :new, :create, :destroy]
 end

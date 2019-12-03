@@ -1,0 +1,41 @@
+%body.mypage
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
+  - breadcrumb :mypage_card
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content.change-profile
+      %h2.card-content__head
+        支払い方法
+      .card-content__middle
+        %p.card-content__middle-text
+          クレジットカード一覧
+        .card-content-btnbox
+          - if @card.present?
+            %ul.content__credit-cards__list
+              %li
+                = form_with url: card_path(@card.id), method: :delete, local: true, id: 'charge-form' do |f|
+                  .content__credit-cards__number
+                    .content__credit-cards__number-text
+                      = render "shared/cardbrand"
+                      = "**** **** **** " + @card_information.last4
+                      %br
+                      - exp_month = @card_information.exp_month.to_s
+                      - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                      = exp_month + " / " + exp_year
+                  .content__credit-cards__btnbox
+                    %input{type: "hidden", name: "card_id", value: ""}
+                    = f.submit "削除する", {class: "card-btn-destroy"}
+          - else
+            = link_to new_card_path, class:"card-btn-submit" do
+              %i.fa.fa-credit-card
+              クレジットカードを追加する
+        .card-content-textbox
+          = link_to root_path, class:"card-content__bottom-text" do
+            支払い方法について
+            %i.fa.fa-chevron-right
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"
