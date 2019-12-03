@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'homes#index'
+  root 'exhibit#index'
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
-  resources :exhibit, only: [:index]
+  resources :exhibit, only: [:index, :new,:create]
   resources :signup, only: [:index] do
     collection do
       get :login
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit] do
     member do
       get :logout
+      get :selling
       get :identification
       get :card
       get :regi_card

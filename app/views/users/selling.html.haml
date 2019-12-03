@@ -1,0 +1,43 @@
+%body.mypage-product
+  = render "shared/header"
+  - breadcrumb :mypage_selling
+  = render "layouts/breadcrumbs"
+  %main.container.clearfix
+    .i-content
+      %section.mypage-tab-container
+        %h2.mypage-info__container__tag-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.mypage-active-list
+            %h3 
+              = link_to "出品中", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "取引中", root_path, class:"main-info"
+          %li
+            %h3
+              = link_to "売却済み", root_path, class:"main-info"
+        .mypage-tab__content
+          %ul#mypage-tab__notification
+            - @items.each do |item|
+              %li 
+                = link_to root_path, class:"mypage-tag__item__link" do
+                  .mypage-item__picture
+                    = image_tag item.images[0].image.url  :size => '60x60'
+                  .mypage-item__body
+                    .mypage-item__text
+                      = item.name
+                    %time
+                      %i.fa.fa-heart
+                        %span 
+                          1
+                      %i.fa.fa-comment
+                        %span 
+                          0
+                    %i.fa.fa-chevron-right
+    .mypage-l-side
+      = render 'shared/sidebar'
+  = render "shared/footer"
+
+
+  
