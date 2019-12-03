@@ -5,6 +5,7 @@ class ExhibitController < ApplicationController
 
 def new
   @exhibit = Exhibit.new
+  @grandcildren = Category.find(2).children
   @exhibit.images.new
  end
 
@@ -18,7 +19,7 @@ end
 
 
 def exhibit_params
-params.require(:exhibit).permit(:name, :price, :category, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image])
+params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image]).merge(user_id: current_user.id)
 end
 end
 

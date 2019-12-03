@@ -67,7 +67,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.select :category, [["---", ""] ,["レディース","レディース"], ["メンズ","メンズ"] ], {} ,{class: 'select-default'}
+                      = f.collection_select :category_id, @grandcildren, :id, :name, {class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態

@@ -2,14 +2,16 @@ class CreateExhibits < ActiveRecord::Migration[5.2]
   def change
     create_table :exhibits do |t|
       t.string   :name 
-      t.integer  :price   
+      t.integer  :price
       t.text     :description
       t.string  :status
       t.integer  :ship
       t.string  :ship_fee 
       t.string  :prefecture
       t.integer  :size
-      t.string   :category
+      t.integer   :category_id , null:false, foreign_key: true 
+      t.integer  :user_id, null:false, foreign_key: true 
+      t.integer  :buyer_id
       t.timestamps
     end
   end
