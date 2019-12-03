@@ -38,8 +38,8 @@ class UsersController < ApplicationController
 
   def selling
     user = User.find(params[:id])
-    item = user.exhibits.all
-    @items = item.all.includes(:images)
+    item = user.exhibits.all.where(buyer_id: nil)
+    @items = item.includes(:images)
     if user_signed_in?  && current_user.id == user.id
     else
       redirect_to new_user_session_path
