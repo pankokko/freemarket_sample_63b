@@ -17,10 +17,10 @@
                 %line.cls-1{x1: "72.32", x2: "36.41", y1: "33.2", y2: "50.88"}
                 %text.cls-2{transform: "translate(86.41 62.77)"}Fmarket
       .header__form
-        %form#form2{action: "", method: "get"}
-        %input#sbox2{name: "s", placeholder: "何かお探しですか？", type: "text"}/
-        %button#sbtn2{type: "submit", value: "btm",}
-          %i.fa.fa-search
+        = form_tag(search_exhibit_index_path,:method => 'get' ,local:true, id: "form2" ) do 
+          = text_field_tag :search ,"", id: "sbox2",placeholder:"何かお探しですか"
+          = submit_tag '', :name => nil , id: "sbtn2", disable:false;
+        %i.fa.fa-search
     .header__down
       .header__list
         .header__listbox

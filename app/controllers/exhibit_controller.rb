@@ -1,6 +1,6 @@
 class ExhibitController < ApplicationController
   def index
-    @exhibit = Exhibit.all.includes(:images)
+    @exhibit = Exhibit.includes(:images)
   end
 
   def new
@@ -17,6 +17,10 @@ class ExhibitController < ApplicationController
       render :new
     end
   end
+  
+  def search 
+    @exhibit = Exhibit.search(params[:search])
+  end
 
   def show
     @exhibit = Exhibit.find(params[:id])
@@ -29,25 +33,3 @@ class ExhibitController < ApplicationController
   end
   
 end
-
-# exhibitのレコードを作成する
-# 同時にアソシエーションを組んでいるカテゴリーのレコードも作成する。
-# 同じく画像も・・・。
-
-
-
-# url=>/sample/:id/edit
-
-# :id
-# params[:id]
-
-# {name: "aaaa", name2:{text:"bbb"}}
-
-# name2[:text]=>bbb
-
-# params[:name] => aaaa
-
-# params[:text] => bbb  NO!!
-
-# params.require(:exhibit).permit(:name, text: params[:name2], :id)  No!!
-# params.require(:exhibit).permit(:name).merge(params[:id])
