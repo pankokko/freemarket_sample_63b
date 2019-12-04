@@ -1,11 +1,11 @@
-require 'rails_helper'
+  require 'rails_helper'
 
-RSpec.describe ExhibitController, type: :controller do
-  describe 'GET #new' do
-    before do
-      get :new 
+ RSpec.describe ExhibitController, type: :controller do
+   describe 'GET #new' do
+     before do
+       get :new 
     end 
-    it "newアクションが実行されるか" do 
+     it "newアクションが実行されるか" do 
       expect(response).to render_template :new
     end 
     it "インスタンスが作成されるか" do 
