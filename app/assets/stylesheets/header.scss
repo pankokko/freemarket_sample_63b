@@ -87,6 +87,7 @@
       border-color: initial;
       border-image: initial;
       font: inherit;
+      width:100%;
     }
     #sbox2{
       background-color: rgb(245, 245, 245);
@@ -102,7 +103,7 @@
       border-image: initial;
       border-radius: 4px;
       outline: none;
-      padding: 0px 50px 0px 10px;
+      padding: 0px 300px 0px 10px;
       transition: all 0.3s ease-out 0s;
     }
     #sbtn2{
@@ -194,7 +195,9 @@
       max-height: 100%;
       color: rgb(34, 34, 34);
       height: 14px;
-      margin-top: 2px;
+      margin-top: 10px;
+      position:absolute;
+      right:10px;
       width: 14px;
     }
 
