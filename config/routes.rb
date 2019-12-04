@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
-  resources :exhibit, only: [:index, :new, :create]
+  resources :exhibit, only: [:index, :new, :create, :show]
   resources :signup, only: [:index] do
     collection do
       get :login
@@ -24,5 +24,12 @@ Rails.application.routes.draw do
       get :regi_card
     end
   end
-  resources :cards, only: [:index, :new, :create, :destroy]
+  resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      post :pay
+    end
+    collection do
+      get :done
+    end
+  end
 end
