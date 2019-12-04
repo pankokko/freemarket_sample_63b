@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :search_list
     end
   end
+
   resources :signup, only: [:index] do
     collection do
       get :login
@@ -30,4 +31,5 @@ Rails.application.routes.draw do
       get :regi_card
     end
   end
+  resources :cards, only: [:index, :new, :create, :destroy]
 end
