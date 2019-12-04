@@ -23,7 +23,6 @@ class CardsController < ApplicationController
   end
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
-    card = Card.where(user_id: current_user.id).first
     redirect_to action: "index" if card.present?
   end
 
@@ -49,12 +48,11 @@ class CardsController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     exhibit = Exhibit.find(params[:id])
     Payjp::Charge.create(
     :amount => exhibit.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
+    :customer => @card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
     exhibit[:buyer_id] = current_user.id
