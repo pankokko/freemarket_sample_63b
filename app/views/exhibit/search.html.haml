@@ -34,5 +34,5 @@
         .categories--new__item--lists
           %div
             %ul.category--new
-              = render partial: "shared/product-list", locals: {exhibit: @exhibit} 
+              = render partial: "shared/product-list",  collection: @exhibit, as: :exhibit
 = render "shared/footer"
