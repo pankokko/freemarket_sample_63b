@@ -33,10 +33,9 @@
                   .upload-box-items-secondary
                     %ul
                 .upload-box-img
-                  = f.label :image, class: 'form__mask__image' do
-                    = fa_icon 'picture-o', class: 'icon'
-                    = f.fields_for :images do |i|
-                      = i.file_field :image
+                  = fa_icon 'picture-o', class: 'icon'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image, class:"file_field"
                   %pre.sell-pre 
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
@@ -67,7 +66,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.collection_select :category_id, @grandcildren, :id, :name, {class: 'select-default'}
+                      = f.collection_select :category_id, @grandcildren, :id, :name,{}, {class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態
