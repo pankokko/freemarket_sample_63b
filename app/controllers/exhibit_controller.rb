@@ -19,9 +19,6 @@ class ExhibitController < ApplicationController
   end 
   end 
 
-  def show 
-    @exhibit = Exhibit.find(params[:id])
-  end
 
   def search 
     @exhibit = Exhibit.search(params[:search])
