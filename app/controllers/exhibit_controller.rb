@@ -22,9 +22,14 @@ class ExhibitController < ApplicationController
     @exhibit = Exhibit.search(params[:search])
   end
 
+  def show
+    @exhibit = Exhibit.find(params[:id])
+  end
+
   private
 
   def exhibit_params
     params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image]).merge(user_id: current_user.id)
   end
+  
 end
