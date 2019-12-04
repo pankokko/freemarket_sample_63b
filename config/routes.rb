@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
-  resources :exhibit, only: [:index, :new,:create]
+  resources :exhibit, only: [:index, :new, :create]
   resources :signup, only: [:index] do
     collection do
       get :login

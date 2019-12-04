@@ -9,22 +9,21 @@ class ExhibitController < ApplicationController
     @exhibit.images.new
    end
 
+  def create 
+    @Exhibit = Exhibit.create(exhibit_params)
+    if @Exhibit.save
+      redirect_to root_path   
+    else 
+      render :new
+    end
+  end
 
-def create 
-   @Exhibit = Exhibit.create(exhibit_params)
-   if @Exhibit.save
-    redirect_to root_path   
-   else 
-    render :new 
- end 
-end 
+  private
 
-
-def exhibit_params
-  params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image]).merge(user_id: current_user.id)
- end
+  def exhibit_params
+    params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:image]).merge(user_id: current_user.id)
+  end
 end
-
 
 # exhibitのレコードを作成する
 # 同時にアソシエーションを組んでいるカテゴリーのレコードも作成する。
@@ -47,7 +46,3 @@ end
 
 # params.require(:exhibit).permit(:name, text: params[:name2], :id)  No!!
 # params.require(:exhibit).permit(:name).merge(params[:id])
-
-
-
-
