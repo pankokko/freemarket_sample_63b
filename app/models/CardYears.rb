@@ -1,16 +1,16 @@
 class Cardyears < ActiveHash::Base
   self.data = [
     {year: ""},
-    {year: "19"},
-    {year: "20"},
-    {year: "21"},
-    {year: "22"},
-    {year: "23"},
-    {year: "24"},
-    {year: "25"},
-    {year: "26"},
-    {year: "27"},
-    {year: "28"},
-    {year: "29"},
+    {year: "2019"},
+    {year: "2020"},
+    {year: "2021"},
+    {year: "2022"},
+    {year: "2023"},
+    {year: "2024"},
+    {year: "2025"},
+    {year: "2026"},
+    {year: "2027"},
+    {year: "2028"},
+    {year: "2029"},
   ]
 end
