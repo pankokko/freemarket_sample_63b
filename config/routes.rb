@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
+<<<<<<< Updated upstream
   resources :exhibit, only: [:index, :new,:create] do 
+=======
+
+  resources :exhibit, only: [:index, :new, :create,:edit,:update, :show] do 
+>>>>>>> Stashed changes
     collection do 
       get :search 
       get :search_list
