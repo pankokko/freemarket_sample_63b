@@ -1,0 +1,37 @@
+.exhibit-btn{
+  bottom: 100px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  position:fixed;
+  text-align:center;
+  z-index:2;
+    &-logo{
+      width: 60px;
+      height: 54px;
+      margin-top: 8px;
+      max-width: 100%;
+      max-height: 100%;
+      color: rgb(255, 255, 255);
+      display: block;
+      height: 24px;
+      width: 26px;
+      margin: 5px auto 0px;
+    }
+    &-link{
+      display:block;
+      text-decoration:none;
+        &__wrapper{
+        width: 160px;
+        height: 160px;
+        padding-top: 55px;
+        background-color: rgb(176, 21, 55);
+        border-radius: 50%;
+          &-text{
+            color: rgb(255, 255, 255);
+            font-size:32px;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
         .list--url__content__image
           %span{ aria: {label: "Price"}}
             ¥#{exhibit.price} 
-          = image_tag exhibit.images[0].image.url
+          = image_tag(exhibit.images[0].image.url, class:"index-picture")
         %figcaption
           %span
             #{exhibit.name}
