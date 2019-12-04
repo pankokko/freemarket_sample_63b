@@ -20,7 +20,6 @@ class ExhibitController < ApplicationController
 
   def edit
   @exhibit = Exhibit.find(params[:id])
-  @images = @exhibit.images
   @grandcildren = Category.find(2).children
   
   end
