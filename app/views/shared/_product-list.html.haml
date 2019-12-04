@@ -1,0 +1,12 @@
+- exhibit.each do |item|
+  %li.category--new__list
+    %div.category--new__list__content
+      = link_to "#", class: "list--url" do
+        %figure.list--url__content
+          .list--url__content__image
+            %span{ aria: {label: "Price"}}
+              ¥#{item.price} 
+            = image_tag item.images[0].image.url
+          %figcaption
+            %span
+              #{item.name}

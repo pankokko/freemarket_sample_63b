@@ -34,16 +34,5 @@
         .categories--new__item--lists
           %div
             %ul.category--new
-              - @exhibit.each do |item|
-                %li.category--new__list
-                  %div.category--new__list__content
-                    = link_to "#", class: "list--url" do
-                      %figure.list--url__content
-                        .list--url__content__image
-                          %span{ aria: {label: "Price"}}
-                            ¥#{item.price} 
-                          = image_tag item.images[0].image.url
-                        %figcaption
-                          %span
-                            #{item.name}
+              = render partial: "shared/product-list", locals: {exhibit: @exhibit} 
 = render "shared/footer"
