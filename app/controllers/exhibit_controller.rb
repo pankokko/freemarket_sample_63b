@@ -1,6 +1,6 @@
 class ExhibitController < ApplicationController
   def index
-    @exhibit = Exhibit.all.includes(:images)
+    @exhibit = Exhibit.includes(:images)
   end
 
   def new
@@ -18,6 +18,12 @@ def create
     render :new 
  end 
 end 
+
+def search 
+@exhibit = Exhibit.search(params[:search])
+end
+
+
 
 
 def exhibit_params
