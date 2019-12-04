@@ -1,0 +1,11 @@
+%li.category--new__list
+  %div.category--new__list__content
+    = link_to "#", class: "list--url" do
+      %figure.list--url__content
+        .list--url__content__image
+          %span{ aria: {label: "Price"}}
+            ¥#{exhibit.price} 
+          = image_tag exhibit.images[0].image.url
+        %figcaption
+          %span
+            #{exhibit.name}

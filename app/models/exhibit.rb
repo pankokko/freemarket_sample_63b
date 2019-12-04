@@ -14,4 +14,12 @@ validates :description, presence: true
 validates :status, presence: true
 validates :price, presence:  true
 
+
+
+def self.search(search)
+  return Exhibit.all unless search
+  Exhibit.where(['name LIKE ?', "%#{search}%"])
+end
+
+
 end
