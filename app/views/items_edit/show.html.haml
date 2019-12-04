@@ -1,0 +1,185 @@
+- if user_signed_in?
+  = render "shared/loginHeader"
+- else
+  = render "shared/header"
+.product--page
+
+
+  .items_container
+    %h1.items-name
+      =@post.name
+    .item-product
+      .items-main
+        .items-img-box
+          .items-img-box-a
+            .items-image-main
+              = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s"
+            .items-image-list
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+              .items-image-elements
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s", width: 60;
+      %table.item-detail
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              = link_to @name.nickname, "#"
+              .right
+                .evaluation
+                  %i.fa.fa-battery-4
+                    %span 1
+
+                .evaluation
+                  %i.fa.fa-battery-2
+                    %span 0
+                
+                .evaluation
+                  %i.fa.fa-battery-0
+                    %span 2
+          %tr.category_title
+            %th カテゴリー
+            %td.category_list
+              =link_to "卵", "#"
+              =link_to ">タマゴ", "#"
+              =link_to ">egg","#"
+          %tr
+            %th ブランド
+            %td
+              =link_to @post.brand_id, "#"
+          %tr
+            %th 商品の状態
+            %td 傷や汚れあり
+          
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+
+          %tr
+            %th 配送の方法
+            %td らくらくFmarket便
+          
+          %tr
+            %th 発送元地域
+            %td
+              =link_to @post.ship_area, "#"
+          %tr
+            %th 発送日の目安
+            %td 2~3日で発送
+    .item-price-box
+      %span.iteme-price
+        =@post.price
+      %span.iteme-tax (税込)
+      %span.iteme-shipping 送料込み
+    =link_to "購入画面に進む", "#",class: "buy-btn"
+    .item-message-box
+      %p.item-message 
+        =@post.description
+    .iteme-btn-box
+      .item-btn-left
+        %button.item-button{"data-ga": "element", "data-ga-category": "LIKE", "data-ga-label": "like!", "data-id": "m23133422522", "data-toggle": "like", name: "like!", type: "button"}
+          %i.fa.fa-heart-o
+          %span いいね!
+          %span.fade-in-down{"data-num": "like"} 6
+        
+        =link_to "#",class: "item-button-report" do
+          %i.fa.fa-flag-o          
+          %span 不適切な商品の報告
+      .item-btn-right
+        =link_to "#", target: "_blank" do
+          %i.fa.fa-lock
+          %span あんしん・あんぜんへの取り組み
+  %ul.nav-link.clearfix
+    %li.nav-link__left
+      =link_to "#" do
+        %i.fa.fa-chevron-left 
+        %span アイウエオ
+    %li.nav-link__right
+      =link_to "カキクケコ", "#"
+  .items_change_box
+    =link_to "商品の編集", edit_items_edit_path(@post), class: "edit-button"
+    %p or
+    =link_to "この商品を削除する", "#", class: "delete-button"
+  .product--indexes
+    %section.product--index
+      %h2.product--index__caption
+        = link_to "たかさんのその他の作品", "#"
+      .product--index__item--lists
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+
+
+
+= render "shared/footer"

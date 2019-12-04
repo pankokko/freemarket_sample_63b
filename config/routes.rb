@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'items_edit/edit'
+  get 'items_edit/update'
+  get 'items_edit/show'
   devise_for :users
   root 'homes#index'
+  resources :items_edit, only: [:show, :edit, :update]
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]

@@ -1,0 +1,154 @@
+- if user_signed_in?
+  = render "shared/loginHeader"
+- else
+  = render "shared/header"
+
+%main.sell-main
+  .sell-main-secondary
+    .sell-main-tertiary
+      %h2
+        商品の情報を入力
+      %form.form-information
+        .img-box
+          %h3
+            出品画像
+            %span
+              必須
+          %p
+            最大10枚までアップロードできます
+          .upload-box
+            .upload-box-items
+              .upload-box-items-secondary
+                %ul
+            .upload-box-img
+              %input.upload-box-img-file{multiple:"multiple",name:"image1",style:"display: none;",type:"file"}/
+              %pre.sell-pre 
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+              %i.icon-camera
+
+        .product-name-box
+          .product-name
+            %label 
+              商品名
+              %span
+                必須
+            .product-name-input
+              %input.sell-product-input{name:"product",value: @post.name,placeholder:"商品名(必須 40文字まで)"}/
+          .description
+            %label
+              商品の説明
+              %span
+                必須
+            %textarea.sell-textarea{name:"sell-textarea",rows:"5",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+              = @post.description
+        .details-box
+          %h3.details-h3
+            商品の詳細
+          .details-category
+            .details-group1
+              %label
+                カテゴリー
+                %span
+                  必須
+              .details-group1-category
+                .details-group1-category-secondary
+                  %i.icon-arrow-bottom
+                  %select.select-default
+                    %option{value:""}---
+                    %option{value:"1"}レディース
+                    %option{value:"2"}メンズ
+            .details-group2
+              %label
+                商品の状態
+                %span
+                  必須
+              .details-Status
+                %i.icon-arrow-bottom
+                %select.select-default
+                  %option{value:""}---
+                  %option{value:"1"}新品
+                  %option{value:"2"}中古
+
+        .delivery-box
+          %h3.delivery-h3
+            配送について
+          %a{href:"",target:"_blank"}?
+          .delivery-category-box
+            .delivery-form-burden
+              %label
+                配送の負担
+                %span
+                  必須
+              .burden-box
+                %i.icon-arrow-bottom
+                %select.select-default
+                  %option{value:""}---
+                  %option{value:"1"}送料込み
+                  %option{value:"2"}着払い
+            .delivery-form-region
+              %label
+                配送元の地域
+                %span
+                  必須
+              .region-box
+                %i.icon-arrow-bottom
+                %select.select-default
+                  %option{value:""}---
+                  %option{value:"1"}東京
+                  %option{value:"2"}大阪
+            .delivery-form-days
+              %label
+                発送までの日数
+                %span
+                  必須
+              .days-box
+                %i.icon-arrow-bottom
+                %select.select-default
+                  %option{value:""}---
+                  %option{value:"1"}1~2で発送
+                  %option{value:"2"}2~3で発送
+
+        .price-box
+          %h3.price-h3
+            販売価格(300〜9,999,999)
+          %a{href:"",target:"_blank"}?
+          .price-input-box
+            %ul.price-input
+              %li.price-group
+                .price-group-secondary
+                  %label.sell-left
+                    価格
+                    %span
+                      必須
+                  .sell-right-price
+                    ¥
+                    .sell-right-price-input
+                      %input.sell-price-input{name:"price",value: @post.price,placeholder:"例）300"}/
+              %li.fee-group
+                .fee-left
+                  販売手数料 (10%)
+                .fee-right -
+              %li.profit-group
+                .profit-left
+                  販売利益
+                .profit-right -
+        
+        .exhibit-btn-box
+          .exhibit-caution
+            %p
+              %a{href:"",target:"_blank"}禁止されている出品 
+              、
+              %a{href:"",target:"_blank"}行為
+              を必ず確認してください
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              %a{href:"",target:"_blank"}偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+            %p
+              また、出品をもちまして
+              %a{href:"",target:"_blank"}加盟店規約
+              に同意したことになります。
+          = link_to "変更する", items_edit_path(@post), class: "sell-return-btn__change"
+          = link_to "キャンセル", items_edit_path(@post), class: "sell-return-btn"
+= render "shared/footer"

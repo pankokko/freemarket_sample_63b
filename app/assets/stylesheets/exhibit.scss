@@ -574,7 +574,7 @@
       .sell-return-btn{
         width: 45%;
         margin: 24px auto 0;
-        background: #aaa;
+        background-color: #aaa;
         border: 1px solid #aaa;
         color: #fff;
         display: block;
@@ -583,10 +583,26 @@
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
+        text-decoration: none;
+        &__change{
+        width: 100%;
+        margin: 24px auto 0;
+        background-color: red;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        }
       }
     }
   }
 }
+
 
 .sell-footer{
   width: 456px;
