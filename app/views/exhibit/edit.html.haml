@@ -20,7 +20,7 @@
         .sell-main-tertiary
           %h2
             商品の情報を入力
-          = form_for @exhibit, url: exhibit_index_path, html:{class:"form-information"} do |f|
+          = form_for @exhibit, url: exhibit_path(@exhibit), html:{class:"form-information"} do |f|
             .img-box
               %h3
                 出品画像
@@ -35,7 +35,7 @@
                 .upload-box-img
                   = f.label :image, class: 'form__mask__image' do
                     = fa_icon 'picture-o', class: 'icon'
-                    = f.fields_for :images do |i|
+                    = f.fields_for :images ,@exhibit.images  do |i|
                       = i.file_field :image
                   %pre.sell-pre 
                     ドラッグアンドドロップ
@@ -145,9 +145,9 @@
                   また、出品をもちまして
                   %a{href:"",target:"_blank"}加盟店規約
                   に同意したことになります。
-              = f.submit "出品する"
+              = f.submit "編集する"
               %a.sell-return-btn
-                もどる
+                キャンセル
         
     %footer.sell-footer
       %mav

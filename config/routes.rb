@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'exhibit#index'
-  resources :item_edit, only: [:edit,:update]
+ # resources :item_edit, only: [:edit,:update]
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
 
-  resources :exhibit, only: [:index, :new, :create, :show] do 
+  resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update] do 
     collection do 
       get :search 
       get :search_list
