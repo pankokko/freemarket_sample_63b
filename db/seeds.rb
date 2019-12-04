@@ -182,3 +182,11 @@ lady_clock.children.create([
 lady_.children.create([
   {:name=>""},
 ])
+
+100.times do
+  User.create(
+     name: Faker::Name.first_name,
+     uuid: Faker::Internet.password,
+     age: rand(0..100)
+   )
+end
