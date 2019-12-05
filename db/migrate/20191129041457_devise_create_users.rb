@@ -16,16 +16,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :month, null:false
       t.integer :day, null:false
       t.integer :phone_number, null: false, unique: true
-      t.string :address_last_name_kanji, null: false
-      t.string :address_last_name_kana, null: false
-      t.string :address_first_name_kanji, null: false
-      t.string :address_first_name_kana, null: false
-      t.string :address_number, null: false
-      t.integer :address_prefecture, null: false, default: 0
-      t.string :address_name, null: false
-      t.string :address_block, null: false
-      t.string :address_building
-      t.integer :address_phone_number
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
