@@ -22,14 +22,12 @@ class ExhibitController < ApplicationController
   end
 
   def edit 
-    # @exhibit = Exhibit.find(params[:id])
     @images = @exhibit.images.all
     @grandcildren = Category.find(2).children
   end 
 
 
   def update
-    # @exhibit = Exhibit.find(params[:id])
     if @exhibit.update(exhibit_params)
        @exhibit.save
       redirect_to root_path
@@ -44,7 +42,6 @@ class ExhibitController < ApplicationController
   end
 
   def show
-    # @exhibit = Exhibit.find(params[:id])
   end
 
   private
