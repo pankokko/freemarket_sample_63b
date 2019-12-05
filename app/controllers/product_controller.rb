@@ -6,10 +6,16 @@ class ProductController < ApplicationController
     # @product = id.includes(:images)
     
     @product = Exhibit.find(params[:id])
-    @image = Image.includes(:exhibit).find(@product.id)
-    @products = Exhibit.where(user_id: current_user.id)
+    @image = Image.find(params[:id])
     @images = Image.all
     @user = User.find(@product.user_id)
-    @products = Exhibit.joins(:images).where(user_id: @product.user_id).limit(6).order('id DESC')
-  end 
+    @products = Exhibit.where(user_id: @product.user_id).limit(6).order('id DESC')
+    binding.pry
+  end
+  
+  # private
+  # def product_params
+  #   params.require(:product).permit(:image, :text).merge(user_id: current_user.id)
+  # end
+  
 end
