@@ -1,6 +1,6 @@
 class ExhibitController < ApplicationController
 
-  before_action :exhibit_update, only:[:edit, :update, :show]
+  before_action :set_exhibit, only:[:edit, :update, :show]
 
   def index
     @exhibit = Exhibit.includes(:images)
@@ -29,7 +29,6 @@ class ExhibitController < ApplicationController
 
   def update
     if @exhibit.update(exhibit_params)
-       @exhibit.save
       redirect_to root_path
     else 
       render :new
@@ -50,7 +49,7 @@ class ExhibitController < ApplicationController
     params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:exhibit_id,:image,:id]).merge(user_id: current_user.id)
   end
 
-  def exhibit_update
+  def set_exhibit
     @exhibit = Exhibit.find(params[:id])
   end
 end
