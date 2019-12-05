@@ -40,6 +40,7 @@ class ExhibitController < ApplicationController
     @exhibit = Exhibit.search(params[:search])
   end
 
+
   def show
   end
 
