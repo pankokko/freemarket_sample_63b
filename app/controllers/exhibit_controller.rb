@@ -9,7 +9,7 @@ class ExhibitController < ApplicationController
   def new
     @exhibit = Exhibit.new
     @grandcildren = Category.find(2).children
-    @exhibits.images.new
+    @exhibits = Image.new
    end
 
   def create 
