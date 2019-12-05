@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'exhibit#index'
- # resources :item_edit, only: [:edit,:update]
   resources :product, only: [:index]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
