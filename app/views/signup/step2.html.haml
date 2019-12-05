@@ -33,7 +33,7 @@
     .sms_confirmation-contents
       %h2.sms_confirmation-contents__head
         電話番号の確認
-      = form_for @user, url: signup_index_path, method: :post, html: {class: 'sms_confirmation-form'} do |f|
+      = form_for @user, url: signup_index_path, method: :post,　class: 'sms_confirmation-form' do |f|
         .sms_confirmation-form-list
           .form__group
             = f.label :phone_number, "電話番号" do
