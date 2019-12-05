@@ -12,14 +12,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :signup, only: [:index] do
+  resources :signup, only: [:index, :create] do
     collection do
       get :login
       get :registration
       get :sms_confirmation
       get :address
       get :card
+      get :step1
+      get :step2
+      get :step4
       get :complete
+      get :done
+    end
+  end
+
+  resources :address, only: [:create] do
+    collection do
+      get :step3
     end
   end
   
@@ -38,6 +48,7 @@ Rails.application.routes.draw do
       post :pay
     end
     collection do
+      get :step4
       get :done
     end
   end
