@@ -3,10 +3,9 @@ class ProductController < ApplicationController
   end
   def show
     @product = Exhibit.find(params[:id])
-    @image = Image.find(params[:id])
+    @image = @product.images[0].image
     @images = Image.all
     @user = @product.user
-    @products = Exhibit.where(user_id: @product.user).limit(6).order('id DESC')
-    
+    @products = @user.exhibits.limit(6).order('id DESC')
   end
 end
