@@ -153,6 +153,40 @@
         =link_to "#", target: "_blank" do
           %i.fa.fa-lock
           %span あんしん・あんぜんへの取り組み
+  -# コメントビュー開始
+  .items_detail-message
+    .message-form
+      = form_for [@comments], url: product_comments_path(:id) do |form|
+        
+        -# = f.hidden_field :reply_comment, :value => comment.id
+        = form.text_area :comment, placeholder: "コメントする" , rows: "2" , class:"textbox"
+        = form.submit "SEND"
+        
+    .message-container
+      .message-content 
+        %ul.message-items
+          %li.clearfix
+            = link_to "#" do
+              %figure
+                %div
+                  .user-icon-image
+                %figcaption.bold
+              .message-is-seller 出品者
+            .message-body
+              .message-body-text ここにコメント内容が来る
+              .message-icons.clearfix
+                %time.message-icon-left
+                  -# ファーアイコン&befor
+                  %span
+                    １日前
+                .message-icon-right
+                  -# フォームアクション&ボタン&インプット
+              .icon-balloon 
+                -# 吹き出しの飛び出てる部分
+              
+
+
+  -# コメントビュー終了
   %ul.nav-link.clearfix
     %li.nav-link__left
       =link_to "#" do

@@ -34,7 +34,7 @@
                     %ul
                 .upload-box-img
                   = fa_icon 'picture-o', class: 'icon'
-                  = f.fields_for :images do |i|
+                  = f.fields_for :images , @exhibits do |i|
                     = i.file_field :image, class:"file_field"
                   %pre.sell-pre 
                     ドラッグアンドドロップ
