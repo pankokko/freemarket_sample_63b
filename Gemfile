@@ -88,3 +88,4 @@ gem "gretel"
 gem "devise"
 gem 'payjp'
 gem "ancestry"
+gem "ransack"
