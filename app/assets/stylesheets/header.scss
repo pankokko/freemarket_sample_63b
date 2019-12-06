@@ -256,13 +256,17 @@
 }
 
 .category_list {
-  line-height: 50px;
   margin-left: 30px;
+
   &:hover ul.category_ul{
     display: block;
   }
 }
 
+li{
+
+  list-style:none;
+}
 
 .category_ul{
   position: absolute;
