@@ -254,3 +254,29 @@
     color: skyblue;
     }
 }
+
+.category_list {
+  line-height: 50px;
+  margin-left: 30px;
+  &:hover ul.category_ul{
+    display: block;
+  }
+}
+
+
+.category_ul{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: #fafafa;
+  width: 200px;
+  height: 100px;
+  li {
+    margin-left: 0;
+    &:hover {
+      background-color: red;
+    }
+  }
+}
