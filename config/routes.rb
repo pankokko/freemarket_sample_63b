@@ -7,25 +7,22 @@ Rails.application.routes.draw do
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
 
-  resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update] do 
+  resources :exhibit, only: [:index, :new, :create, :edit ,:show,:update] do 
     collection do 
       get :search 
       get :search_list
+    end
+    member do
+      get :purchase
     end
   end
 
   resources :signup, only: [:index, :create] do
     collection do
       get :login
-      get :registration
-      get :sms_confirmation
-      get :address
-      get :card
       get :step1
       get :step2
-      get :step4
       get :complete
-      get :done
     end
   end
 

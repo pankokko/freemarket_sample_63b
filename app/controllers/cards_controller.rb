@@ -44,7 +44,11 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to complete_signup_index_path
+        if get_action ==  "new"
+          redirect_to cards_path
+        else
+          redirect_to complete_signup_index_path
+        end
       else
         redirect_to action: "create"
       end
@@ -73,4 +77,8 @@ class CardsController < ApplicationController
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 
+  def get_action
+    path = Rails.application.routes.recognize_path(request.referer)
+    return path[:action]
+  end
 end
