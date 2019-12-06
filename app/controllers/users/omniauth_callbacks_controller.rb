@@ -1,14 +1,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # callback for facebook
-  def facebook
+   # callback for facebook
+   def facebook
     callback_for(:facebook)
   end
-
+  
   # callback for google
   def google_oauth2
     callback_for(:google)
   end
-
+  
   # common callback method
   def callback_for(provider)
     info = User.find_oauth(request.env["omniauth.auth"])
@@ -36,7 +36,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session[:provider] = info[:sns][:provider]
       end
       #登録フォームのviewにリダイレクトさせる
-      redirect_to step1_signup_index_path
+      render template: "/signup/step1"
     end
   end
 
@@ -44,4 +44,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to root_path
   end
 end
-
