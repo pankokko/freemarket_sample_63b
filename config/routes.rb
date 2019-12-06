@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get :search 
       get :search_list
     end
+    member do
+      get :purchase
+    end
   end
 
   resources :signup, only: [:index, :create] do
