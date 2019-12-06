@@ -10,13 +10,54 @@
         .top--slide__image__url
           = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"
     
-    .search-main
-      .categories--new
-       
-          
-        .categories--new__item--lists
-          %div
-            %ul.category--new
-              = render partial: "shared/product-list",  collection: @exhibit, as: :exhibit
+    %main.search-main
+      .search-box-right
+        %section.search-box-container
+          %h2.search-result コーヒー
+          %span.search-text の検索結果
+        .search-number 1-132件表示
+        .search-item-box
+          .items-box
+            = link_to "#", class: "items-box__url" do
+              %figure.items-box__photo
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0iufZtgnpnPdzFTPN-OzRCoQWL4_aicBW_jYjsPc99EAQ5hhkw&s", class:"items-box__img"
+              .items-box__body
+                %h3.item-box__text pankokko
+                .items_box__num
+                  .items-box__price ¥10,000
+          .items-box
+            = link_to "#", class: "items-box__url" do
+              %figure.items-box__photo
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0iufZtgnpnPdzFTPN-OzRCoQWL4_aicBW_jYjsPc99EAQ5hhkw&s", class:"items-box__img"
+              .items-box__body
+                %h3.item-box__text pankokko
+                .items_box__num
+                  .items-box__price ¥10,000
+          .items-box
+            = link_to "#", class: "items-box__url" do
+              %figure.items-box__photo
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0iufZtgnpnPdzFTPN-OzRCoQWL4_aicBW_jYjsPc99EAQ5hhkw&s", class:"items-box__img"
+              .items-box__body
+                %h3.item-box__text pankokko
+                .items_box__num
+                  .items-box__price ¥10,000
+          .items-box
+            = link_to "#", class: "items-box__url" do
+              %figure.items-box__photo
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0iufZtgnpnPdzFTPN-OzRCoQWL4_aicBW_jYjsPc99EAQ5hhkw&s", class:"items-box__img"
+              .items-box__body
+                %h3.item-box__text pankokko
+                .items_box__num
+                  .items-box__price ¥10,000
+          .items-box
+            = link_to "#", class: "items-box__url" do
+              %figure.items-box__photo
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0iufZtgnpnPdzFTPN-OzRCoQWL4_aicBW_jYjsPc99EAQ5hhkw&s", class:"items-box__img"
+              .items-box__body
+                %h3.item-box__text pankokko
+                .items_box__num
+                  .items-box__price ¥10,000
+      .search-box-left
+        %h2 ここにform
 = render "shared/exhibit-btn"
 = render "shared/footer"

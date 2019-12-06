@@ -21,7 +21,8 @@
         background-size: auto;
         .homeimage {
           width: 100%;
-          height: 100%;
+          height: 390px;
+          object-fit: cover;
         }
       }
     }
@@ -223,13 +224,11 @@
   }
   div {
     vertical-align: baseline;
-    margin: 0;
     padding: 0;
     border-width: 0px;
     border-style: initial;
     border-color: initial;
     border-image: initial;
-    font: initial;
   }
 }
 .index-picture{
