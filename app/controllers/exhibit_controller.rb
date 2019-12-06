@@ -9,11 +9,12 @@ class ExhibitController < ApplicationController
   def new
     @exhibit = Exhibit.new
     @grandcildren = Category.find(2).children
-    @exhibits = Image.new
+    @exhibits = Image.new.limit(10)
    end
 
   def create 
-    @Exhibit = Exhibit.create(exhibit_params)
+  
+    @Exhibit = Exhibit.new(exhibit_params)
     if @Exhibit.save
       redirect_to root_path   
     else 
