@@ -38,6 +38,14 @@ class ExhibitController < ApplicationController
   
   def search 
     @exhibit = Exhibit.search(params[:search])
+    @search = Exhibit.ransack(params[:q])
+   
+  
+  end
+
+  def complex_search
+    @search = Exhibit.ransack(params[:q])
+   @exhibit = @search.result.includes(:category)
   end
 
 
@@ -49,6 +57,11 @@ class ExhibitController < ApplicationController
   def exhibit_params
     params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:exhibit_id,:image,:id]).merge(user_id: current_user.id)
   end
+
+  # def search_params
+  #   params.require(:q).permit(:sorts, :category_id,:name_cont)
+
+  # end 
 
   def set_exhibit
     @exhibit = Exhibit.find(params[:id])

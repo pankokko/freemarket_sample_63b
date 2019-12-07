@@ -85,11 +85,11 @@
                     商品の状態
               .search-box-left__form-search-group-checkbox
                 .search-box-left__form-search-group-checkbox-btn
-                  -# = s.check_box :ship_fee_matches
+                  %input{:name => "skill", :type => "checkbox", :value => "word"}>/
                   %label.search-box-left__form-search-group-checkbox-btn__label
                     すべて
                 .search-box-left__form-search-group-checkbox-btn
-                  -# = s.check_box :ship_matches, value: "1" 
+                  %input{:name => "skill", :type => "checkbox", :value => "word"}>/
                   %label.search-box-left__form-search-group-checkbox-btn__label
                     新品、未使用
                 .search-box-left__form-search-group-checkbox-btn#condition-new
@@ -123,7 +123,7 @@
                   %label.search-box-left__form-search-group-checkbox-btn__label
                     すべて
                 .search-box-left__form-search-group-checkbox-btn
-                  = s.check_box :ship_fee_matches,  {}, '着払い'
+                  %input{:name => "skill", :type => "checkbox", :value => "word"}>/
                   %label.search-box-left__form-search-group-checkbox-btn__label
                     着払い(購入者負担)
                 .search-box-left__form-search-group-checkbox-btn#condition-new

@@ -43,7 +43,7 @@ class SignupController < ApplicationController
     session[:year] = user_params[:year]
     session[:month] = user_params[:month]
     session[:day] = user_params[:day]
-    @user = User.new # 新規インスタンス作成
+    @user = User.new # 新規インスタンス作成”
   end
 
   def step3

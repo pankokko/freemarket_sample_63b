@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do 
       get :search 
       get :search_list
+      get :complex_search
     end
   end
 

@@ -86,18 +86,121 @@
   white-space: normal;
 }
 
+.search-box-left__form-sort__dropdown:first-child{
+margin:0;
+}
 
-
-
-
-
-
+.fa-angle-down {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 8px;
+}
 
 .search-box-left{
   float: left;
   width: 280px;
   margin: 0 40px 0 0;
-  background-color: green;
+    &__form{
+      position:relative;
+      &-sort{
+        opacity: 1;
+        position: static;
+        width: auto;
+         &__dropdown-select {
+          background: #fff;
+          text-align: left;
+          margin:0;
+            &-menu{
+              height: 48px;
+              width: 100%;
+              padding: 0 16px;
+              border: 1px solid #ccc;
+              position: relative;
+              z-index: 3;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+         }
+       }
+     }
+  }
+}
+
+.select-box-left__form-search {
+  position: static;
+  display: block;
+  background:#fff;
+  margin: 40px 0 0 ;
+  box-shadow: none;
+  padding: 16px;
+  &-text{
+    font-size:16px;
+    display:block;
+    font-weight:bold;
+  } 
+}
+
+.select-box-left__form-search-group {
+margin-top:24px;
+  #input-price{
+    width:45%;
+  }
+  &-input{
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
 }
 
 
+.search-box-left__form-search-group-checkbox-btn{
+  margin:16px 0 0 ;
+  display: inline-block;
+  width: 48%;
+  vertical-align: middle;
+}
+
+.select-box-left__form-search-group i{
+  position: relative;
+  top: -1px;
+  margin: 0 4px 0 0;
+  color: #888;
+  font-size: 16px;
+  vertical-align: middle;
+    span{
+    color:black;
+    font-weight:bold;
+  }
+}
+
+.search-box-left__form-search-group-checkbox{
+  padding:40px 0 0 ;
+    &-clear{
+      float:left;
+      width:45%;
+      background:#aaa;
+      border: 1px solid #aaa;
+      color: #fff;
+    }
+   &-confirm_submit{
+     float:right;
+     width:45%;
+     background:red;
+     border: 1px solid #aaa;
+     color:#fff;
+   }
+}

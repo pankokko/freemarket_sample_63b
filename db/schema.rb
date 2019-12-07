@@ -69,23 +69,6 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.text "description"
-    t.integer "status"
-    t.integer "ship_fee"
-    t.integer "ship"
-    t.integer "ship_area"
-    t.integer "date"
-    t.integer "size"
-    t.integer "user_id"
-    t.integer "buyer_id"
-    t.integer "brand_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
