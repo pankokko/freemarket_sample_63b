@@ -1,4 +1,3 @@
 = form_for @user, url: signup_index_path(@user.id), method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
-  - binding.pry
   = f.number_field :phone_number, placeholder: '携帯電話の番号を入力'
   = f.submit "次へ進む", class: "registration-btn-submit"

@@ -1,0 +1,125 @@
+= search_form_for search ,url: complex_search_exhibit_index_path do |s|
+  .search-box-left__form-sort
+    .search-box-left__form-sort__dropdown 
+      .search-box-left__form-sort__dropdown-select 
+        -# %i.fa.fa-angle-down
+        = s.select :sorts ,[["選択してください",""],["価格の安い順","price asc"],["価格の高い順","price desc"],["出品の古い順","updated_at asc"],["出品の新しい順","updated_at desc"] ], {}, class:"search-box-left__form-sort__dropdown-select-menu"
+  .select-box-left__form-search 
+    %h3.select-box-left__form-search-text 
+      詳細検索
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-plus
+          %span
+            キーワードを追加する
+      = s.search_field :name_cont, class: "select-box-left__form-search-group-input", placeholder:"例)値下げ"
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-list
+          %span
+            カテゴリーを選択する
+      .search-box-left__form-sort__dropdown-select 
+      -# %i.fa.fa-angle-down}
+      = s.select :category_name_matches ,[["選択してください",""],["ポロシャツ","ポロシャツ"],["Tシャツ/カットソー(半袖/袖なし)","Tシャツ/カットソー(半袖/袖なし)"],["Tシャツ/カットソー(七分/長袖)","Tシャツ/カットソー(七分/長袖)"] ], {}, class:"search-box-left__form-sort__dropdown-select-menu"
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-tag
+          %span
+            ブランド名から探す
+      %input.select-box-left__form-search-group-input{type: "text", value: "", name: "keyword", placeholder: "シャネル" }
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-tag
+          %span
+            サイズを指定する
+      .search-box-left__form-sort__dropdown-select 
+      -# %i.fa.fa-angle-down
+      %select.search-box-left__form-sort__dropdown-select-menu{name:  "category"}
+        %option{:value => ""} すべて
+        %option{:value => "price_dsec"} 洋服のサイズ
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-tag
+          %span
+            価格
+      .search-box-left__form-sort__dropdown-select 
+      -# %i.fa.fa-angle-down
+      = s.select :price ,[["選択してください",""],["300 ~ 1000","price"],["1000 ~ 5000","price"],["50000 ~ 10000","price"] ], {}, class:"search-box-left__form-sort__dropdown-select-menu"
+      = s.text_field :price_gteq ,id: "input-price", class: "select-box-left__form-search-group-input", placeholder: "¥Min"
+      %span 
+        〜
+      = s.text_field :price_lteq ,id: "input-price", class: "select-box-left__form-search-group-input", placeholder: "¥Max"
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-star
+          %span
+            商品の状態
+      .search-box-left__form-search-group-checkbox
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            すべて
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            新品、未使用
+        .search-box-left__form-search-group-checkbox-btn#condition-new
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            未使用に近い
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            目立った傷や汚れなし
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            やや傷や汚れあり
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            傷や汚れあり
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            全体的に状態が悪い
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-car
+          %span
+            配送料の負担
+      .search-box-left__form-search-group-checkbox
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            すべて
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            着払い(購入者負担)
+        .search-box-left__form-search-group-checkbox-btn#condition-new
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            送料込み(出品者負担)
+    .select-box-left__form-search-group
+      %label.select-box-left__form-search-group-label
+        %i.fa.fa-car
+          %span
+            販売状況
+      .search-box-left__form-search-group-checkbox
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            すべて
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            販売中
+        .search-box-left__form-search-group-checkbox-btn
+          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+          %label.search-box-left__form-search-group-checkbox-btn__label
+            売り切れ
+    .search-box-left__form-search-group-checkbox
+      .search-box-left__form-search-group-checkbox-clear クリア
+      = s.submit "完了" ,class:"search-box-left__form-search-group-checkbox-confirm_submit"
+

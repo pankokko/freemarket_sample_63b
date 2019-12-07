@@ -1,5 +1,4 @@
 class ExhibitController < ApplicationController
-
   before_action :set_exhibit, only:[:edit, :update, :show]
 
   def index
@@ -37,15 +36,16 @@ class ExhibitController < ApplicationController
 
   
   def search 
-    @exhibit = Exhibit.search(params[:search])
     @search = Exhibit.ransack(params[:q])
+    @exhibit = Exhibit.search(params[:search])
+    @result = params[:search]
    
   
   end
 
   def complex_search
-    @search = Exhibit.ransack(params[:q])
-   @exhibit = @search.result.includes(:category)
+  @search = Exhibit.ransack(params[:q])
+  @exhibit = @search.result.includes(:category)
   end
 
 
@@ -58,10 +58,6 @@ class ExhibitController < ApplicationController
     params.require(:exhibit).permit(:name, :category_id, :buyer_id ,:price, :status, :description, :ship, :ship_fee, :prefecture,:size, images_attributes: [:exhibit_id,:image,:id]).merge(user_id: current_user.id)
   end
 
-  # def search_params
-  #   params.require(:q).permit(:sorts, :category_id,:name_cont)
-
-  # end 
 
   def set_exhibit
     @exhibit = Exhibit.find(params[:id])
