@@ -1,7 +1,7 @@
 class ExhibitController < ApplicationController
   before_action :set_exhibit, only:[:edit, :update, :show]
   before_action :set_ransack, only:[:search, :complex_search]
-  
+
   def index
     @exhibit = Exhibit.includes(:images)
   end
@@ -47,6 +47,7 @@ class ExhibitController < ApplicationController
 
   def complex_search
   #@search = Exhibit.ransack(params[:q])
+  @status = Exhibit.all
   @exhibit = @search.result.includes(:category)
   end
 
