@@ -79,7 +79,7 @@ class ExhibitController < ApplicationController
 
   def purchase
     @exhibit = Exhibit.find(params[:id])
-    if @exhibit.user_id != current_user.id
+    if @exhibit.user_id != current_user.id && @exhibit.buyer_id == nil
       @image = Image.where(exhibit_id: @exhibit.id).first
       @address = Address.where(user_id: current_user.id).first
       @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
