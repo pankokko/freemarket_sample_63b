@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
 
-  resources :exhibit, only: [:index, :new, :create, :edit ,:show, :update] do 
+  resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update ,:destroy] do
     resources :comments, only: [:create]
+    member do 
+      get :exhibiting
+    end 
+
     collection do 
       get :search 
       get :search_list
