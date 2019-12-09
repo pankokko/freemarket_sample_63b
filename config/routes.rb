@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
 
   resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update ,:destroy] do
+    resources :comments, only: [:create]
     member do 
     get :index2
     get :exhibiting

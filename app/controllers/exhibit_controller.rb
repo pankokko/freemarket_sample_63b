@@ -1,5 +1,6 @@
 class ExhibitController < ApplicationController
 
+  require "payjp"
   before_action :set_exhibit, only:[:edit, :update,:show,:exhibiting]
 
   def index
@@ -42,7 +43,8 @@ class ExhibitController < ApplicationController
 
   def destroy
     @exhibit = Exhibit.find(params[:id])
-    if @exhibit.destroy
+    if @exhibit.user_id == current_user.id
+      @exhibit.destroy
       redirect_to root_path
     else
       redirect_to exhibiting_exhibit_path
