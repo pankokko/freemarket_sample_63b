@@ -129,7 +129,7 @@
         = @product.price
       %span.iteme-tax (税込)
       %span.iteme-shipping 送料込み
-    =link_to "購入画面に進む", "#",class: "buy-btn"
+    =link_to "購入画面に進む", "/exhibit/#{@product.id}/purchase",class: "buy-btn"
     .item-message-box
       %p.item-message 
         = @product.description
@@ -210,7 +210,6 @@
           - image_item = @images.where(exhibit_id: item.id).first
           %section.list--card 
             = link_to product_path(item.id) do
-              - binding.pry
               = image_tag "#{image_item.image.url}", class:"list--card__image"
               %div.list--url
                 %h3.list--url__content
