@@ -25,10 +25,11 @@
       .login-contents__second
         .login-contents__second--Facebook
           %i.fa.fa-facebook-square.fa-lg.login-icon
-          Facebookでログイン
+            Facebookでログイン
         .login-contents__second--Google
-          %i.fa.fa-google.login-icon
-          Googleでログイン
+          = link_to user_google_oauth2_omniauth_authorize_path, class: "google" do
+            %i.fa.fa-google.login-icon
+            Googleでログイン
       .login-contents__therd
         .login-form--mail
           %input.login-input-mail.input-def{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
