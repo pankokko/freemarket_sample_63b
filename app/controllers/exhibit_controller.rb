@@ -110,7 +110,8 @@ class ExhibitController < ApplicationController
     @statuses = [["", "すべて"],["新品", "新品・未使用"],["未使用に近い"," 未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],[" 全体的に状態が悪い"," 全体的に状態が悪い"]]
   end
 
-
+  
+  
   def set_exhibit
     @exhibit = Exhibit.find(params[:id])
   end
