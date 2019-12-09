@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
 
-  resources :exhibit, only: [:index, :new, :create, :edit ,:show,:update] do 
+  resources :exhibit, only: [:index, :new, :create, :edit ,:show, :update] do 
     collection do 
       get :search 
       get :search_list
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     member do
       get :logout
       get :selling
+      get :sold
       get :identification
       get :card
       get :regi_card
