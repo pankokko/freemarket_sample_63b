@@ -129,8 +129,9 @@
         = @product.price
       %span.iteme-tax (税込)
       %span.iteme-shipping 送料込み
-    - if @product.id == current_user.id
+    - if @product.user_id == current_user.id
       =link_to "編集画面に進む", "/exhibit/#{@product.id}/edit",class: "buy-btn"
+      =link_to "この商品を削除する",exhibit_path,method: :DELETE, class: "exhibiting-delete-button",data: {confirm: "削除確認\n削除すると二度と復活できません。\n本当に削除しますか？"}
     - else
       =link_to "購入画面に進む", "/exhibit/#{@product.id}/purchase",class: "buy-btn"
     .item-message-box

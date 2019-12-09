@@ -9,10 +9,6 @@ Rails.application.routes.draw do
 
   resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update ,:destroy] do
     resources :comments, only: [:create]
-    member do 
-      get :exhibiting
-    end 
-
     collection do 
       get :search 
       get :search_list
