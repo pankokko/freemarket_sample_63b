@@ -78,8 +78,20 @@
   background-color:#eee;
   font-size:0;
   list-style:none;
-    li{
+    .li-selling {
       width:33%;
+      display:inline-block;
+      text-align:center;
+      vertical-align:top;
+    }
+    .li-comment {
+      width:33%;
+      display:inline-block;
+      text-align:center;
+      vertical-align:top;
+    }
+    .li-sold {
+      width:34%;
       display:inline-block;
       text-align:center;
       vertical-align:top;

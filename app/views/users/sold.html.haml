@@ -1,6 +1,6 @@
 %body.mypage-product
   = render "shared/header" 
-  - breadcrumb :mypage_selling
+  - breadcrumb :mypage_sold
   = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content
@@ -8,13 +8,13 @@
         %h2.mypage-info__container__tag-head
           購入した商品
         %ul.mypage-tabs
-          %li.li-selling.mypage-active-list
+          %li.li-selling
             %h3 
               = link_to "出品中", selling_user_path(current_user), class:"main-info"
           %li.li-comment
             %h3
               = link_to "取引中", root_path, class:"main-info"
-          %li.li-sold
+          %li.li-sold.mypage-active-list
             %h3
               = link_to "売却済み", sold_user_path(current_user), class:"main-info"
         .mypage-tab__content
@@ -38,6 +38,3 @@
     .mypage-l-side
       = render 'shared/sidebar'
   = render "shared/footer"
-
-
-  

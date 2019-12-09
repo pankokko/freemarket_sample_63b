@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+
   root 'exhibit#index'
   resources :product, only: [:index, :show]
   resources :confirmation, only: [:index]
   resources :homes, only: [:index]
 
-  resources :exhibit, only: [:index, :new, :create, :edit ,:show,:update] do 
+  resources :exhibit, only: [:index, :new, :create, :edit ,:show, :update] do 
+    resources :comments, only: [:create]
     collection do 
       get :search 
       get :search_list
+    end
+    member do
+      get :purchase
     end
   end
 
@@ -31,6 +37,7 @@ Rails.application.routes.draw do
     member do
       get :logout
       get :selling
+      get :sold
       get :identification
       get :card
       get :regi_card

@@ -1,7 +1,7 @@
 .mypage-l-side__nav
   %ul.mypage-l-side__nav-ul
     %li.mypage-l-side__nav-ul__list
-      = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
+      = link_to user_path(current_user), class:"mypage-l-side-nav-ul__list-item" do
         マイページ
         %i.fa.fa-chevron-right
     %li.mypage-l-side__nav-ul__list
@@ -19,7 +19,7 @@
         いいね！一覧
         %i.fa.fa-chevron-right
     %li.mypage-l-side__nav-ul__list
-      = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
+      = link_to new_exhibit_path, class:"mypage-l-side-nav-ul__list-item" do
         出品する
         %i.fa.fa-chevron-right
     %li.mypage-l-side__nav-ul__list
@@ -31,7 +31,7 @@
         出品した商品 - 取引中
         %i.fa.fa-chevron-right
     %li.mypage-l-side__nav-ul__list
-      = link_to root_path, class:"mypage-l-side-nav-ul__list-item" do
+      = link_to sold_user_path(current_user), class:"mypage-l-side-nav-ul__list-item" do
         出品した商品 - 売却済み
         %i.fa.fa-chevron-right
     %li.mypage-l-side__nav-ul__list

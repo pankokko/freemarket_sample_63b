@@ -24,9 +24,11 @@
             %i.fa.fa-envelope-o.fa-lg.signup-icon
             メールアドレスで登録する
           .signup-contents__bottom__btn--Facebook.btn-def
-            %i.fa.fa-facebook-square.fa-lg.signup-icon
-            Facebookで登録する
+            = link_to user_facebook_omniauth_authorize_path, class: "facebook_link" do
+              %i.fa.fa-facebook-square.fa-lg.signup-icon
+              Facebookで登録する
           .signup-contents__bottom__btn--Google.btn-def
-            %i.fa.fa-google.signup-icon
-            Googleで登録する
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "google_link" do
+              %i.fa.fa-google.signup-icon
+              Googleで登録する
     = render "shared/sabfooter"

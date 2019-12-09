@@ -286,6 +286,7 @@ men_bag.children.create([
   {:name=>"その他"},
 ])
 
+
 men_Suits.children.create([
   {:name=>"スーツジャケット"},
   {:name=>"スーツベスト"},
@@ -379,5 +380,4 @@ men_underwear.children.create([
   {:name=>"ボクサーパンツ"},
   {:name=>"その他"},
 ])
-
 
