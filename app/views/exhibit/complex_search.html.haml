@@ -13,8 +13,11 @@
     %main.search-main
       .search-box-right
         %section.search-box-container
-          %h2.search-result #{@search.name_cont}
-          %span.search-text の検索結果
+          - if @search.name_cont
+            %h2.search-result #{@search.name_cont}
+            %span.search-text の検索結果
+          - else 
+            %h2.search-result 検索結果
         .search-number 
         .search-item-box
           - @exhibit.each do |exhibit|
