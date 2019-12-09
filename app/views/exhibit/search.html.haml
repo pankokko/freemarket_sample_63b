@@ -18,7 +18,7 @@
         .search-item-box
           - @exhibit.each do |exhibit|
             .items-box
-              = link_to "#", class: "items-box__url" do
+              = link_to "#{exhibit.id}", class: "items-box__url" do
                 %figure.items-box__photo
                   = image_tag(exhibit.images[0].image.url, class:"items-box__img")
                 .items-box__body
