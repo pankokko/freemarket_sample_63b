@@ -43,8 +43,7 @@ class ExhibitController < ApplicationController
 
   def destroy
     @exhibit = Exhibit.find(params[:id])
-    if @exhibit.user_id == current_user.id
-      @exhibit.destroy
+    if @exhibit.user_id == current_user.id && @exhibit.destroy
       redirect_to root_path
     else
       redirect_to exhibiting_exhibit_path
