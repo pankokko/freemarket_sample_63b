@@ -55,33 +55,34 @@
             商品の状態
       .search-box-left__form-search-group-checkbox
         .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_eq,{}, "", ""
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            すべて
-        .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_eq,{}, "新品" ,""
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            新品、未使用
-        .search-box-left__form-search-group-checkbox-btn#condition-new
-          = s.check_box :status_eq ,{}, "未使用に近い", ""
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            未使用に近い
-        .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_eq ,{}, "目立った傷や汚れなし", ""
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            目立った傷や汚れなし
-        .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_cont ,{}, "やや傷や汚れあり", ""
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            やや傷や汚れあり
-        .search-box-left__form-search-group-checkbox-btn
-          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            傷や汚れあり
-        .search-box-left__form-search-group-checkbox-btn
-          %input{:name => "skill", :type => "checkbox", :value => "word"}>/
-          %label.search-box-left__form-search-group-checkbox-btn__label
-            全体的に状態が悪い
+        -#   = s.check_box :status_eq,{}, "", ""
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     すべて
+        -# .search-box-left__form-search-group-checkbox-btn
+        -#   = s.check_box :status_eq,{}, "新品" ,""
+        -#   -# = s.collection_check_boxes :status_eq, @exhibit, :status, :status
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     新品、未使用
+        -# .search-box-left__form-search-group-checkbox-btn#condition-new
+        -#   = s.check_box :status_eq ,{}, "未使用に近い", ""
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     未使用に近い
+        -# .search-box-left__form-search-group-checkbox-btn
+        -#   = s.check_box :status_eq ,{}, "目立った傷や汚れなし", ""
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     目立った傷や汚れなし
+        -# .search-box-left__form-search-group-checkbox-btn
+        -#   = s.check_box :status_cont ,{}, "やや傷や汚れあり", ""
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     やや傷や汚れあり
+        -# .search-box-left__form-search-group-checkbox-btn
+        -#   %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     傷や汚れあり
+        -# .search-box-left__form-search-group-checkbox-btn
+        -#   %input{:name => "skill", :type => "checkbox", :value => "word"}>/
+        -#   %label.search-box-left__form-search-group-checkbox-btn__label
+        -#     全体的に状態が悪い
     .select-box-left__form-search-group
       %label.select-box-left__form-search-group-label
         %i.fa.fa-car

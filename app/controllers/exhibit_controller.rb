@@ -63,6 +63,7 @@ class ExhibitController < ApplicationController
 
   def set_ransack
     @search = Exhibit.ransack(params[:q])
+
   end
 
 
