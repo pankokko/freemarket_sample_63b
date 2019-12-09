@@ -34,18 +34,26 @@ class ExhibitController < ApplicationController
 
 
   def update
-    if @exhibit.update(exhibit_params)
+    if @exhibit.user_id == current_user.id
+      if @exhibit.update(exhibit_params)
+        redirect_to root_path
+      else 
+        render :new
+      end
+    else
       redirect_to root_path
-    else 
-      render :new
     end
   end
 
   def destroy
-    if @exhibit.user_id == current_user.id && @exhibit.destroy
-      redirect_to root_path
+    if @exhibit.user_id == current_user.id
+      if @exhibit.user_id == current_user.id && @exhibit.destroy
+        redirect_to root_path
+      else
+        redirect_to exhibiting_exhibit_path
+      end
     else
-      redirect_to exhibiting_exhibit_path
+      redirect_to root_path
     end
   end
   

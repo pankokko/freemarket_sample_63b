@@ -145,7 +145,8 @@
                   また、出品をもちまして
                   %a{href:"",target:"_blank"}加盟店規約
                   に同意したことになります。
-              = f.submit "編集する"
+              - if @exhibit.user_id == current_user.id
+                = f.submit "編集する"
               %a.sell-return-btn
                 キャンセル
         
