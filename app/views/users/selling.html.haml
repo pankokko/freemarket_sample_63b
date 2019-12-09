@@ -8,15 +8,15 @@
         %h2.mypage-info__container__tag-head
           購入した商品
         %ul.mypage-tabs
-          %li.mypage-active-list
+          %li.li-selling.mypage-active-list
             %h3 
-              = link_to "出品中", root_path, class:"main-info"
-          %li
+              = link_to "出品中", selling_user_path(current_user), class:"main-info"
+          %li.li-comment
             %h3
               = link_to "取引中", root_path, class:"main-info"
-          %li
+          %li.li-sold
             %h3
-              = link_to "売却済み", root_path, class:"main-info"
+              = link_to "売却済み", sold_user_path(current_user), class:"main-info"
         .mypage-tab__content
           %ul#mypage-tab__notification
             - @items.each do |item|

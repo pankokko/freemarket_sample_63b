@@ -8,32 +8,24 @@
     .top--slide
       .top--slide__image
         .top--slide__image__url
-          = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"
-    .popular--category
-      -#人気のカテゴリ４種類
-      %h2.popular--category__title
-        人気のカテゴリー
-      .popular--category__button
-        %ul.category--button
-          %li.category--button__list
-            = link_to "レディース", "#",class: "category--button__list__url"
-          %li.category--button__list
-            = link_to "メンズ", "#",class: "category--button__list__url"
-          %li.category--button__list
-            = link_to "家電・スマホ・カメラ", "#",class: "category--button__list__url"
-          %li.category--button__list
-            = link_to "おもちゃ・ホビー・グッズ", "#",class: "category--button__list__url"
-    .home--categories
-      .categories--new
-        %div{ name: "category1", class: "categories--new__caption"}
-          %h3.categoies--new__caption__name
-            レディース新着アイテム
-          = link_to "#", class: "categories--new__caption__add" do
-            %span もっと見る
-            %i.fa.fa-chevron-right
-        .categories--new__item--lists
-          %div
-            %ul.category--new
-              = render partial: "shared/product-list",  collection: @exhibit, as: :exhibit
+          = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"   
+    %main.search-main
+      .search-box-right
+        %section.search-box-container
+          %h2.search-result #{@result}
+          %span.search-text の検索結果
+        .search-number 0 - #{@exhibit.size}件表示
+        .search-item-box
+          - @exhibit.each do |exhibit|
+            .items-box
+              = link_to "#{exhibit.id}", class: "items-box__url" do
+                %figure.items-box__photo
+                  = image_tag(exhibit.images[0].image.url, class:"items-box__img")
+                .items-box__body
+                  %h3.item-box__text #{exhibit.name}
+                  .items_box__num
+                    .items-box__price ￥#{exhibit.price}
+      .search-box-left  
+        = render partial: "shared/complex-search" ,locals: {search: @search}
 = render "shared/exhibit-btn"
 = render "shared/footer"

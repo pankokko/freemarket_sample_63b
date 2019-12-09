@@ -5,7 +5,7 @@ class AddressController < ApplicationController
   end
 
   def create
-    @address = Address.create(user_params)
+    @address = Address.create(address_params)
     if @address.save
       redirect_to step4_cards_path
     else 
@@ -15,7 +15,7 @@ class AddressController < ApplicationController
 
   private
 
-  def user_params
+  def address_params
     params.require(:address).permit(
       :address_family_name_kanji,
       :address_family_name_kana,

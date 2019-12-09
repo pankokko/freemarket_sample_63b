@@ -1,12 +1,82 @@
-= form_for @address, url: address_index_path, method: :post, html: {class: 'second-wrapper__box'} do |f|
-  = f.text_field :address_family_name_kanji, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_first_name_kanji, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_family_name_kana, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_first_name_kana, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_number, placeholder: '例) メルカリ太郎'
-  = f.collection_select :address_prefecture, Prefecture.all, :id, :name, {class: "select-def"}
-  = f.text_field :address_name, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_block, placeholder: '例) メルカリ太郎'
-  = f.text_field :address_building, placeholder: '例) メルカリ太郎'
-  = f.number_field :address_phone_number, placeholder: '携帯電話の番号を入力'
-  = f.submit "次へ進む", class: "registration-btn-submit"
+%body
+  .address-wrapper
+    .address-header
+      %svg.address-header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg" }
+        %defs
+          :css
+            .cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
+        %title アセット 3
+        %g{"data-name" => "レイヤー 2", id: "レイヤー_2"}
+          %g{"data-name" => "レイヤー 1", id: "レイヤー_1-2"}
+            %polygon.cls-1{points: "36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"}
+            %polyline.cls-1{points: "0.5 21.31 36.41 42.04 72.32 21.31"}
+            %polyline.cls-1{points: "36.41 83.5 36.41 49.36 36.41 42.04"}
+            %line.cls-1{x1: "36.41", x2: "0.5", y1: "52.41", y2: "31.67"}
+            %line.cls-1{x1: "72.32", x2: "36.41", y1: "33.2", y2: "50.88"}
+            %text.cls-2{transform: "translate(86.41 62.77)"} Fmarket
+      %ul.progress-var
+        %li.progress-var__list
+          会員情報
+          .progress-var__list--status.storough#first
+        %li.progress-var__list
+          電話番号認証
+          .progress-var__list--status.storough
+        %li.active-list.progress-var__list
+          お届け先住所入力
+          .progress-var__list--status.active
+        %li.progress-var__list
+          支払い方法
+          .progress-var__list--status
+        %li.progress-var__list
+          完了
+          .progress-var__list--status#last
+    .address-contents
+      %h2.address-contents__head
+        発送元・お届け先住所入力
+      = form_for @address, url: address_index_path, method: :post, html: {class: 'address-form'} do |f|
+        .address-form-list
+          .form__group
+            = f.label :address_family_name_kanji, "名前" do
+              お名前
+            %span.form__group-alert 必須
+            = f.text_field :address_family_name_kanji, placeholder: '例) 山田', class: "input-def"
+            = f.text_field :address_first_name_kanji, placeholder: '例) 彩', class: "input-def"
+          .form__group
+            = f.label :address_family_name_kana, "名前(カナ)" do
+              お名前(カナ)
+            %span.form__group-alert 必須
+            = f.text_field :address_family_name_kana, placeholder: '例) ヤマダ', class: "input-def"
+            = f.text_field :address_first_name_kana, placeholder: '例) アヤ', class: "input-def"
+          .form__group
+            = f.label :address_number, "郵便番号" do
+              郵便番号
+            %span.form__group-alert 必須
+            = f.text_field :address_number, maxlength: "8" , pattern: "\\d{3}-\\d{4}", placeholder: '例) 123-4567', class: "input-def"
+          .form__group
+            = f.label :address_prefecture, "都道府県" do
+              都道府県
+            %span.form__group-alert 必須
+            %br
+            = f.collection_select :address_prefecture, Prefecture.all, :name, :name, {class: "select-def"}
+          .form__group
+            = f.label :address_number, "市区町村" do
+              市区町村
+            %span.form__group-alert 必須
+            = f.text_field :address_name, placeholder: '例) 横浜市緑区', class: "input-def"
+          .form__group
+            = f.label :address_block, "番地" do
+              番地
+            %span.form__group-alert 必須
+            = f.text_field :address_block, placeholder: '例) 青山1−1−1', class: "input-def"
+          .form__group
+            = f.label :address_building, "建物名" do
+              建物名
+            %span.form__group-arbitrary 任意
+            = f.text_field :address_building, placeholder: '例) 柳ビル103', class: "input-def"
+          .form__group
+            = f.label :address_phone_number, "電話" do
+              電話
+            %span.form__group-arbitrary 任意
+            = f.number_field :address_phone_number, placeholder: '携帯電話の番号を入力', class: "input-def"
+          = f.submit "次へ進む", class: "address-btn-submit"
+    = render "shared/sabfooter"

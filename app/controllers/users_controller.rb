@@ -46,6 +46,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def sold
+    user = User.find(params[:id])
+    item = user.exhibits.all.where.not(buyer_id: nil)
+    @items = item.includes(:images)
+    if user_signed_in?  && current_user.id == user.id
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
 
   def identification
     @user = User.find(params[:id])
@@ -64,10 +74,9 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
   def get_card_day
     @months = Months.all
     @cardyears = Cardyears.all
   end
+
 end
