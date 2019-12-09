@@ -10,9 +10,9 @@ class ExhibitController < ApplicationController
     @exhibit = Exhibit.new
     @grandcildren = Category.find(2).children
     @exhibits = Image.new
-   end
+  end
 
-  def create 
+  def create
     @Exhibit = Exhibit.create(exhibit_params)
     if @Exhibit.save
       redirect_to root_path   
@@ -42,6 +42,19 @@ class ExhibitController < ApplicationController
 
 
   def show
+    @product = Exhibit.find(params[:id])
+    # @comment = @product.comments.new
+    # @comments = @comment.current_user.id.new
+
+    @comment = @product.comments.new
+    @comments = @product.comments.includes(:user).order('id DESC')
+    
+    @image = @product.images[0].image
+    @images = Image.all
+    @user = @product.user
+
+    @products = @user.exhibits.limit(6).order('id DESC')
+    
   end
 
   private
@@ -53,4 +66,7 @@ class ExhibitController < ApplicationController
   def set_exhibit
     @exhibit = Exhibit.find(params[:id])
   end
+
+ 
+  
 end
