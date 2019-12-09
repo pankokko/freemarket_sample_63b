@@ -55,19 +55,19 @@
             商品の状態
       .search-box-left__form-search-group-checkbox
         .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_cont,{}, "", ""
+          = s.check_box :status_eq,{}, "", ""
           %label.search-box-left__form-search-group-checkbox-btn__label
             すべて
         .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_cont,{}, "新品" ,""
+          = s.check_box :status_eq,{}, "新品" ,""
           %label.search-box-left__form-search-group-checkbox-btn__label
             新品、未使用
         .search-box-left__form-search-group-checkbox-btn#condition-new
-          = s.check_box :status_cont ,{}, "未使用に近い", ""
+          = s.check_box :status_eq ,{}, "未使用に近い", ""
           %label.search-box-left__form-search-group-checkbox-btn__label
             未使用に近い
         .search-box-left__form-search-group-checkbox-btn
-          = s.check_box :status_cont ,{}, "目立った傷や汚れなし", ""
+          = s.check_box :status_eq ,{}, "目立った傷や汚れなし", ""
           %label.search-box-left__form-search-group-checkbox-btn__label
             目立った傷や汚れなし
         .search-box-left__form-search-group-checkbox-btn
@@ -118,7 +118,7 @@
           %input{:name => "skill", :type => "checkbox", :value => "word"}>/
           %label.search-box-left__form-search-group-checkbox-btn__label
             売り切れ
-    .search-box-left__form-search-group-checkbox
-      .search-box-left__form-search-group-checkbox-clear クリア
-      = s.submit "完了" ,class:"search-box-left__form-search-group-checkbox-confirm_submit"
+    .search-box-left__form-search-group-checkbox-wrapper
+      .search-box-left__form-search-group-checkbox-wrapper-clear クリア
+      = s.submit "完了" ,class:"search-box-left__form-search-group-checkbox-wrapper-confirm_submit"
 

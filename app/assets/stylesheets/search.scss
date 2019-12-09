@@ -190,20 +190,28 @@ margin:0;
   }
 }
 
-.search-box-left__form-search-group-checkbox{
-  padding:40px 0 0 ;
-    &-clear{
-      float:left;
-      width:45%;
-      background:#aaa;
-      border: 1px solid #aaa;
-      color: #fff;
-    }
-   &-confirm_submit{
-     float:right;
-     width:45%;
-     background:red;
-     border: 1px solid #aaa;
-     color:#fff;
-   }
+.search-box-left__form-search-group-checkbox-wrapper{
+  height:90px;
+  padding-top:40px;
+  &-clear{
+    float:left;
+    width:45%;
+    background:#aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    line-height: 48px;
+    font-size: 14px;
+    text-align:center;
+    cursor:pointer;
+  }
+  &-confirm_submit{
+    float:right;
+    width:45%;
+    background:red;
+    border: 1px solid #aaa;
+    color:#fff;
+    line-height: 48px;
+    font-size: 14px;
+    cursor:pointer;
+  }
 }

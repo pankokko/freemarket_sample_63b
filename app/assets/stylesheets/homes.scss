@@ -207,7 +207,17 @@
           }
         }          
       }
+      div {
+        vertical-align: baseline;
+        padding: 0;
+        border-width: 0px;
+        border-style: initial;
+        border-color: initial;
+        border-image: initial;
+      }
+      
     }
+    
   }
   a {
     text-decoration: none;
@@ -222,14 +232,7 @@
     display: list-item;
     text-align: -webkit-match-parent;
   }
-  div {
-    vertical-align: baseline;
-    padding: 0;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
-  }
+  
 }
 .index-picture{
   width:100px;
