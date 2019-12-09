@@ -88,6 +88,7 @@ gem "gretel"
 gem "devise"
 gem 'payjp'
 gem "ancestry"
+gem "ransack"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
