@@ -1,6 +1,6 @@
 class ExhibitController < ApplicationController
 
-  before_action :set_exhibit, only:[:edit, :update, :show]
+  before_action :set_exhibit, only:[:edit, :update,:show,:exhibiting]
 
   def index
     @exhibit = Exhibit.includes(:images)
@@ -35,11 +35,25 @@ class ExhibitController < ApplicationController
     end
   end
 
+  def exhibiting
+    @images = @exhibit.images.all
+    @grandcildren = Category.find(2).children
+  end
+
+  def destroy
+    @exhibit = Exhibit.find(params[:id])
+    if @exhibit.destroy
+      redirect_to root_path
+    else
+      redirect_to exhibiting_exhibit_path
+    end
+  end
   
   def search 
     @exhibit = Exhibit.search(params[:search])
   end
 
+  
 
   def show
   end

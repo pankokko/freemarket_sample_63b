@@ -1,0 +1,153 @@
+- if user_signed_in?
+  = render "shared/loginHeader"
+- else
+  = render "shared/header"
+.product--page
+
+
+  .items_container
+    %h1.items-name
+
+    .item-product
+      .items-main
+        .items-img-box
+          .items-img-box-a
+            .items-image-main
+              = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1myLndAd3stNk_wjQdfPOPZbkXuulmxRmBdOU_OZ7WhGXlMFA&s"
+      %table.item-detail
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              .right
+                .evaluation
+                  %i.fa.fa-battery-4
+                    %span 1
+
+                .evaluation
+                  %i.fa.fa-battery-2
+                    %span 0
+                
+                .evaluation
+                  %i.fa.fa-battery-0
+                    %span 2
+          %tr.category_title
+            %th カテゴリー
+            %td.category_list
+              =link_to "卵", "#"
+              =link_to ">タマゴ", "#"
+              =link_to ">egg","#"
+          %tr
+            %th ブランド
+            %td
+          
+          %tr
+            %th 商品の状態
+            %td 傷や汚れあり
+          
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+
+          %tr
+            %th 配送の方法
+            %td らくらくFmarket便
+          
+          %tr
+            %th 発送元地域
+            %td
+        
+          %tr
+            %th 発送日の目安
+            %td 2~3日で発送
+    .item-price-box
+      %span.iteme-price
+      
+      %span.iteme-tax (税込)
+      %span.iteme-shipping 送料込み
+    =link_to "商品の編集",  edit_exhibit_path,class: "buy-btn"
+    %p.iteme-praice-or or
+    =link_to "この商品を削除する",exhibit_path,method: :DELETE, class: "exhibiting-delete-button",data: {confirm: "削除確認\n削除すると二度と復活できません。\n本当に削除しますか？"}
+    
+    .item-message-box
+      %p.item-message 
+  
+  %ul.nav-link.clearfix
+    %li.nav-link__left
+      =link_to "#" do
+        %i.fa.fa-chevron-left 
+        %span アイウエオ
+    %li.nav-link__right
+      =link_to "カキクケコ", "#"
+  .items_change_box
+    
+    
+  .product--indexes
+    %section.product--index
+      %h2.product--index__caption
+        = link_to "たかさんのその他の作品", "#"
+      .product--index__item--lists
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+        %section.list--card 
+          = link_to "#" do
+            = image_tag "8a346a0a-60497.png", class:"list--card__image"
+              
+            %div.list--url
+              %h3.list--url__content
+                レシート付きナイキSBダンク
+              .list--url__under
+                .list--url__under__price
+                  ¥500,000
+
+
+
+= render "shared/footer"
