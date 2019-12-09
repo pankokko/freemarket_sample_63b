@@ -96,14 +96,22 @@
                   .region-box
                     %i.icon-arrow-bottom
                     = f.select :prefecture, [ ["---",""], ["東京","東京"], ["大阪","大阪"] ], {}, {class: "select-default"}
-                .delivery-form-days
+                .delivery-form-ship
                   %label
-                    発送までの日数
+                    発送の方法
                     %span
                       必須
                   .days-box
                     %i.icon-arrow-bottom
-                    = f.select :ship, [ ["---",""], ["1~2日で発送","1"], ["2~3日で発送","2"] ], {}, {class: "select-default"}
+                    = f.select :ship, [ ["---",""], ["らくらくメルカリ便","らくらくメルカリ便"], ["白猫ヤマト","白猫ヤマト"] ], {}, {class: "select-default"}
+                .delivery-form-days
+                  %label
+                    発送日の目安
+                    %span
+                      必須
+                  .days-box
+                    %i.icon-arrow-bottom
+                    = f.select :date, [ ["---",""], ["1~2日で発送","1~2日で発送"], ["2~3日で発送","2~3日で発送"] ], {}, {class: "select-default"}
             .price-box
               %h3.price-h3
                 販売価格(300〜9,999,999)
