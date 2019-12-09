@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :year, null:false
       t.integer :month, null:false
       t.integer :day, null:false
-      t.integer :phone_number, null: false, unique: true
+      t.string :phone_number, null: false, unique: true
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable

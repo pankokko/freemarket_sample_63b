@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_042639) do
+ActiveRecord::Schema.define(version: 2019_12_09_031009) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
     t.string "address_first_name_kanji", null: false
     t.string "address_first_name_kana", null: false
     t.string "address_number", null: false
-    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_prefecture", null: false
     t.string "address_name", null: false
     t.string "address_block", null: false
     t.string "address_building"
-    t.integer "address_phone_number"
+    t.string "address_phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
     t.datetime "updated_at", null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "comment"
+    t.integer "exhibit_id"
+    t.integer "user_id"
   end
 
   create_table "exhibits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,21 +77,13 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.text "description"
-    t.integer "status"
-    t.integer "ship_fee"
-    t.integer "ship"
-    t.integer "ship_area"
-    t.integer "date"
-    t.integer "size"
-    t.integer "user_id"
-    t.integer "buyer_id"
-    t.integer "brand_id"
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -111,4 +111,5 @@ ActiveRecord::Schema.define(version: 2019_12_05_042639) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "sns_credentials", "users"
 end

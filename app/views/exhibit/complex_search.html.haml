@@ -1,0 +1,32 @@
+- if user_signed_in?
+  = render partial: "shared/loginHeader"  ,locals: {exhibit: @exhibit}
+- else
+  = render partial: "shared/header" ,locals: {exhibit: @exhibit}
+.home--wrapper
+  -#メインコンテンツ
+  .home--content
+    .top--slide
+      .top--slide__image
+        .top--slide__image__url
+          = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"
+
+    %main.search-main
+      .search-box-right
+        %section.search-box-container
+          %h2.search-result #{@search.name_cont}
+          %span.search-text の検索結果
+        .search-number 
+        .search-item-box
+          - @exhibit.each do |exhibit|
+            .items-box
+              = link_to "#{exhibit.id}", class: "items-box__url" do
+                %figure.items-box__photo
+                  = image_tag(exhibit.images[0].image.url, class:"items-box__img")
+                .items-box__body
+                  %h3.item-box__text #{exhibit.name}
+                  .items_box__num
+                    .items-box__price ￥#{exhibit.price}
+      .search-box-left  
+        = render partial: "shared/complex-search" ,locals: {search: @search}
+= render "shared/exhibit-btn"
+= render "shared/footer"
