@@ -1,7 +1,7 @@
 class ExhibitController < ApplicationController
-  
+
   require "payjp"
-  before_action :set_exhibit, only:[:edit, :update, :show]
+  before_action :set_exhibit, only:[:edit, :update,:show,:exhibiting]
   before_action :set_ransack, only:[:search, :complex_search]
 
   def index
@@ -41,6 +41,19 @@ class ExhibitController < ApplicationController
     end
   end
 
+  def exhibiting
+    @images = @exhibit.images.all
+    @grandcildren = Category.find(2).children
+  end
+
+  def destroy
+    @exhibit = Exhibit.find(params[:id])
+    if @exhibit.user_id == current_user.id && @exhibit.destroy
+      redirect_to root_path
+    else
+      redirect_to exhibiting_exhibit_path
+    end
+  end
   
   def search 
     @exhibit = Exhibit.where(buyer_id: nil).search(params[:search])
@@ -55,6 +68,7 @@ class ExhibitController < ApplicationController
   # @ship = [["","全て"],["着払い","着払い(購入者負担)"],["送料込み","送料込み(出品者負担)"]]
   end
 
+  
 
   def show
     @product = Exhibit.find(params[:id])

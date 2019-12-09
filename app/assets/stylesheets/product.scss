@@ -367,7 +367,27 @@ a{
   font-weight: 600;
   -webkit-transition: all ease-out .3s;
   transition: all ease-out .3s;
-  font-size: 24px;
+  font-size: 15px;
+  line-height: 60px;
+}
+
+.iteme-praice-or{
+  text-align: center;
+  margin-top: 16px;
+}
+
+.exhibiting-delete-button{
+  display: block;
+  margin-top: 16px;
+  background: #aaa;
+  font-size: 14px;
+  color: #fff;
+  line-height: 56px;
+  text-align: center;
+  font-weight: 600;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  font-size: 15px;
   line-height: 60px;
 }
 
