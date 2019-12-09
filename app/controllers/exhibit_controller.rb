@@ -4,7 +4,7 @@ class ExhibitController < ApplicationController
   before_action :set_exhibit, only:[:edit, :update, :show]
 
   def index
-    @exhibit = Exhibit.includes(:images)
+    @exhibit = Exhibit.where(buyer_id: nil).includes(:images)
   end
 
   def new
@@ -23,9 +23,13 @@ class ExhibitController < ApplicationController
   end
 
   def edit 
-    @images = @exhibit.images.all
-    @grandcildren = Category.find(2).children
-  end 
+    if @exhibit.user_id == current_user.id
+      @images = @exhibit.images.all
+      @grandcildren = Category.find(2).children
+    else
+      redirect_to root_path
+    end
+  end
 
 
   def update
@@ -44,17 +48,17 @@ class ExhibitController < ApplicationController
 
   def show
     @product = Exhibit.find(params[:id])
-    # @comment = @product.comments.new
-    # @comments = @comment.current_user.id.new
-    @category = Category.find(@product.category_id)
-    @comment = @product.comments.new
-    @comments = @product.comments.includes(:user).order('id DESC')
-    
-    @image = @product.images[0].image
-    @images = Image.all
-    @user = @product.user
-
-    @products = @user.exhibits.limit(6).order('id DESC')
+    if @product.buyer_id == nil
+      @category = Category.find(@product.category_id)
+      @comment = @product.comments.new
+      @comments = @product.comments.includes(:user).order('id DESC')
+      @image = @product.images[0].image
+      @images = Image.all
+      @user = @product.user
+      @products = @user.exhibits.limit(6).order('id DESC')
+    else
+      redirect_to root_path
+    end
   end
 
   def purchase

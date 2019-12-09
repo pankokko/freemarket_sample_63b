@@ -74,10 +74,9 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
   def get_card_day
     @months = Months.all
     @cardyears = Cardyears.all
   end
+
 end

@@ -25,6 +25,7 @@ class User < ApplicationRecord
   validates :family_name_kanji, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :family_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
+  validates :phone_number, format: { with: /\A\d{10,11}\z/}
 
 
   def self.find_oauth(auth)

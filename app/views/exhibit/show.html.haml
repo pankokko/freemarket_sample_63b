@@ -129,7 +129,10 @@
         = @product.price
       %span.iteme-tax (税込)
       %span.iteme-shipping 送料込み
-    =link_to "購入画面に進む", "/exhibit/#{@product.id}/purchase",class: "buy-btn"
+    - if @product.id == current_user.id
+      =link_to "編集画面に進む", "/exhibit/#{@product.id}/edit",class: "buy-btn"
+    - else
+      =link_to "購入画面に進む", "/exhibit/#{@product.id}/purchase",class: "buy-btn"
     .item-message-box
       %p.item-message 
         = @product.description
