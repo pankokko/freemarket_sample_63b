@@ -35,7 +35,6 @@
       .search-box-left__form-sort__dropdown-select 
       -# %i.fa.fa-angle-down
       = s.select :size_matches , [["全て",""],["洋服のサイズ",""]] ,{},  class:"search-box-left__form-sort__dropdown-select-menu"
-      
     .select-box-left__form-search-group
       %label.select-box-left__form-search-group-label
         %i.fa.fa-tag
@@ -70,17 +69,6 @@
             .search-box-left__form-search-group-checkbox-btn
               = b.check_box
               = b.label  { b.text }
-        -#   %input{:name => "skill", :type => "checkbox", :value => "word"}>/
-        -#   %label.search-box-left__form-search-group-checkbox-btn__label
-        -#     すべて
-        -# .search-box-left__form-search-group-checkbox-btn
-        -#   %input{:name => "skill", :type => "checkbox", :value => "word"}>/
-        -#   %label.search-box-left__form-search-group-checkbox-btn__label
-        -#     着払い(購入者負担)
-        -# .search-box-left__form-search-group-checkbox-btn#condition-new
-        -#   %input{:name => "skill", :type => "checkbox", :value => "word"}>/
-        -#   %label.search-box-left__form-search-group-checkbox-btn__label
-        -#     送料込み(出品者負担)
     .select-box-left__form-search-group
       %label.select-box-left__form-search-group-label
         %i.fa.fa-car
