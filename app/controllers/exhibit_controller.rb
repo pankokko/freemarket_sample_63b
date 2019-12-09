@@ -46,7 +46,7 @@ class ExhibitController < ApplicationController
     @product = Exhibit.find(params[:id])
     # @comment = @product.comments.new
     # @comments = @comment.current_user.id.new
-
+    @category = Category.find(@product.category_id)
     @comment = @product.comments.new
     @comments = @product.comments.includes(:user).order('id DESC')
     

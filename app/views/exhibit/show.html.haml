@@ -96,9 +96,9 @@
           %tr.category_title
             %th カテゴリー
             %td.category_list
-              =link_to "卵", "#"
-              =link_to ">タマゴ", "#"
-              =link_to ">egg","#"
+              =link_to "#{@category.root.name}", "#"
+              =link_to ">#{@category.parent.name}", "#"
+              =link_to ">#{@category.name}","#"
           %tr
             %th ブランド
             %td
