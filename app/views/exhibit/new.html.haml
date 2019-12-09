@@ -20,7 +20,6 @@
         .sell-main-tertiary
           %h2
             商品の情報を入力
-            
           = form_for @exhibit, url: exhibit_index_path, html:{class:"form-information"} do |f|
             .img-box
               %h3
@@ -35,7 +34,7 @@
                     %ul
                 .upload-box-img
                   = fa_icon 'picture-o', class: 'icon'
-                  = f.fields_for :images , @exhibits do |i|
+                  = f.fields_for :images, @exhibits do |i|
                     = i.file_field :image, class:"file_field"
                   %pre.sell-pre 
                     ドラッグアンドドロップ
@@ -174,7 +173,3 @@
               %text.cls-4{transform:"translate(0.5 117.04)"} Fmarket
       %p
         %small © 2019 Mercari
-
-
-
-
