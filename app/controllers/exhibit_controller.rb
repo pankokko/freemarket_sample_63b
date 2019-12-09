@@ -1,4 +1,6 @@
 class ExhibitController < ApplicationController
+  
+  require "payjp"
   before_action :set_exhibit, only:[:edit, :update, :show]
   before_action :set_ransack, only:[:search, :complex_search]
 
@@ -51,6 +53,31 @@ class ExhibitController < ApplicationController
 
 
   def show
+    @product = Exhibit.find(params[:id])
+    # @comment = @product.comments.new
+    # @comments = @comment.current_user.id.new
+    @category = Category.find(@product.category_id)
+    @comment = @product.comments.new
+    @comments = @product.comments.includes(:user).order('id DESC')
+    
+    @image = @product.images[0].image
+    @images = Image.all
+    @user = @product.user
+
+    @products = @user.exhibits.limit(6).order('id DESC')
+  end
+
+  def purchase
+    @exhibit = Exhibit.find(params[:id])
+    @image = Image.where(exhibit_id: @exhibit.id).first
+    @address = Address.where(user_id: current_user.id).first
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    if @card.present?
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @card_information.brand
+    end
   end
 
   private

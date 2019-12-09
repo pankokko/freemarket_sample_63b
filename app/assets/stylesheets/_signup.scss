@@ -84,10 +84,21 @@
   font-size: 1.3rem;
   }
 
+  .facebook_link {
+    text-decoration: none;
+    color: white;
+  }
+
+  .google_link {
+    text-decoration: none;
+    color: black;
+  }
+
 .signup-footer {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
     &-logo {
       width: 100px;
     }

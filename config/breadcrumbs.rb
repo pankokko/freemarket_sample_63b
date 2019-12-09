@@ -17,6 +17,11 @@ crumb :mypage_selling do
   parent :mypage
 end
 
+crumb :mypage_sold do
+  link "購入した商品 - 売却済み", sold_user_path(current_user)
+  parent :mypage
+end
+
 crumb :mypage_card do
   link "支払い方法", cards_path
   parent :mypage
