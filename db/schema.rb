@@ -59,14 +59,13 @@ ActiveRecord::Schema.define(version: 2019_12_09_031009) do
     t.integer "price"
     t.text "description"
     t.string "status"
-    t.string "ship"
+    t.integer "ship"
     t.string "ship_fee"
     t.string "prefecture"
     t.integer "size"
     t.integer "category_id", null: false
     t.integer "user_id", null: false
     t.integer "buyer_id"
-    t.string "shipment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
