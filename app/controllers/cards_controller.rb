@@ -56,16 +56,20 @@ class CardsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     exhibit = Exhibit.find(params[:id])
-    Payjp::Charge.create(
-    :amount => exhibit.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => @card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
-  )
-    exhibit[:buyer_id] = current_user.id
-    exhibit.save
-  redirect_to action: 'done' #完了画面に移動
+    if exhibit.user_id != current_user.id && exhibit.buyer_id == nil
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp::Charge.create(
+      :amount => exhibit.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+      :customer => @card.customer_id, #顧客ID
+      :currency => 'jpy', #日本円
+      )
+      exhibit[:buyer_id] = current_user.id
+      exhibit.save
+      redirect_to action: 'done' #完了画面に移動
+    else
+      redirect_to root_path
+    end
   end
 
   def done

@@ -1,5 +1,8 @@
 %body.sell-body
   .sell-wrapper
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     %header.sell-header
       %h1 
         %svg.complete-header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg" }
@@ -74,37 +77,44 @@
                       必須
                   .details-Status
                     %i.icon-arrow-bottom
-                    = f.select :status, [["---", ""] ,["新品","新品"],["未使用に近い","未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]], {}, {class: "select-default"}
+                    = f.collection_select :status, Status.all, :status, :status, {}, {class: "select-default"}
             .delivery-box
               %h3.delivery-h3
                 配送について
               %a{href:"",target:"_blank"}?
               .delivery-category-box
-                .delivery-form-burden
+                .delivery-form-select
                   %label
                     配送の負担
                     %span
                       必須
-                  .burden-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.select :ship_fee, [ ["---",""], ["送料込み","送料込み"], ["着払い","着払い"] ], {}, {class: "select-default"}
-                .delivery-form-region
+                    = f.select :ship_fee, [ ["---",""], ["送料込み","送料込み"], ["着払い","着払い"] ], {class: "select-default"}
+                .delivery-form-select
                   %label
                     配送元の地域
                     %span
                       必須
-                  .region-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture, {class: "select-default"}
-                    
-                .delivery-form-days
+                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture, {}, {class: "select-default"}
+                .delivery-form-select
                   %label
-                    発送までの日数
+                    発送の方法
                     %span
                       必須
-                  .days-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.select :ship, [ ["---",""], ["1~2日で発送","1"], ["2~3日で発送","2"] ], {}, {class: "select-default"}
+                    = f.collection_select :ship, Ship.all, :ship, :ship, {class: "select-default"}
+                .delivery-form-select
+                  %label
+                    発送日の目安
+                    %span
+                      必須
+                  .select-box
+                    %i.icon-arrow-bottom
+                    = f.collection_select :shipment, Shipment.all, :shipment, :shipment, {class: "select-default"}
             .price-box
               %h3.price-h3
                 販売価格(300〜9,999,999)
@@ -129,7 +139,6 @@
                     .profit-left
                       販売利益
                     .profit-right -
-            
             .exhibit-btn-box
               .exhibit-caution
                 %p
@@ -148,7 +157,6 @@
               = f.submit "出品する"
               %a.sell-return-btn
                 もどる
-        
     %footer.sell-footer
       %mav
         %ul

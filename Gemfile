@@ -92,3 +92,4 @@ gem "ransack"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'rails-i18n'
