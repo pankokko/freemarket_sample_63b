@@ -331,82 +331,11 @@
             vertical-align: top;
           }
         }
-        .burden-box{
-          margin: 8px 0 0;
-          position: relative;
-          background: #fff;
-          .icon-arrow-bottom{
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            z-index: 2;
-            color: #888;
-            font-size: 8px;
-            transform: translate(0, -50%);
-            display: inline-block;
-            font-family: 'icon-font';
-            speak: none;
-            font-style: normal;
-            font-weight: 400;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-          }
-          .select-default{
-            width: 100%;    
-            position: relative;
-            z-index: 2;
-            height: 48px;
-            padding: 0 16px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: 0;
-            font-size: 16px;
-            line-height: 1.5;
-          }
+        
         }
-        .delivery-form-region{
+        .delivery-form-select{
           margin: 40px 0 0;
-          .region-box{
-            margin: 8px 0 0;
-            position: relative;
-            background: #fff;
-            .icon-arrow-bottom{
-              position: absolute;
-              right: 16px;
-              top: 50%;
-              z-index: 2;
-              color: #888;
-              font-size: 8px;
-              transform: translate(0, -50%);
-              display: inline-block;
-              font-family: 'icon-font';
-              speak: none;
-              font-style: normal;
-              font-weight: 400;
-              font-variant: normal;
-              text-transform: none;
-              line-height: 1;
-              -webkit-font-smoothing: antialiased;
-            }
-            .select-default{
-              width: 100%;    
-              position: relative;
-              z-index: 2;
-              height: 48px;
-              padding: 0 16px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: 0;
-              font-size: 16px;
-              line-height: 1.5;
-            }
-          }
-        }
-        .delivery-form-days{
-          margin: 40px 0 0;
-          .days-box{
+          .select-box{
             margin: 8px 0 0;
             position: relative;
             background: #fff;
@@ -608,7 +537,7 @@
       }
     }
   }
-}
+
 
 .sell-footer{
   width: 456px;

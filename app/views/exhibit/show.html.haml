@@ -86,7 +86,8 @@
         ¥
         = @product.price
       %span.iteme-tax (税込)
-      %span.iteme-shipping 送料込み
+      %span.iteme-shipping
+        = @product.ship_fee
     - if @product.user_id == current_user.id
       =link_to "編集画面に進む", "/exhibit/#{@product.id}/edit",class: "buy-btn"
       =link_to "この商品を削除する",exhibit_path,method: :DELETE, class: "exhibiting-delete-button",data: {confirm: "削除確認\n削除すると二度と復活できません。\n本当に削除しますか？"}
@@ -122,13 +123,15 @@
         %ul.message-items
           - @comments.each do |comment|
             %li.clearfix
-              = link_to "#" , {class: "message-user"} do
+              = link_to user_path(comment.user) , {class: "message-user"} do
                 %figure
                   .user-icon-image
                   %figcaption.bold
                     = comment.user.nickname
-                .message-is-seller 
-                  出品者
+                - if @product.user == comment.user
+                  .message-is-seller
+                    出品者                
+                - else
               .message-body
                 .message-body-text                  
                   = comment.comment
@@ -147,11 +150,14 @@
   -# コメントビュー終了
   %ul.nav-link.clearfix
     %li.nav-link__left
-      =link_to "#" do
-        %i.fa.fa-chevron-left 
-        %span アイウエオ
+      - if @exhibit.previous.present?
+        = link_to exhibit_path(@exhibit.previous) do
+          %i.fa.fa-chevron-left 
+          = @exhibit.previous.name
     %li.nav-link__right
-      =link_to "カキクケコ", "#"
+      - if @exhibit.next.present?
+        = link_to exhibit_path(@exhibit.next) do
+          = @exhibit.next.name
   .media-box
     %ul.media-box__social
       %li
@@ -171,7 +177,7 @@
         - @products.each do |item|
           - image_item = @images.where(exhibit_id: item.id).first
           %section.list--card 
-            = link_to product_path(item.id) do
+            = link_to exhibit_path(item.id) do
               = image_tag "#{image_item.image.url}", class:"list--card__image"
               %div.list--url
                 %h3.list--url__content
