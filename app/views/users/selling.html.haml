@@ -1,6 +1,9 @@
 %body.mypage-product
-  = render "shared/header" 
-  - breadcrumb :mypage_selling
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
+  - breadcrumb :mypage
   = render "layouts/breadcrumbs"
   %main.container.clearfix
     .i-content
@@ -21,7 +24,7 @@
           %ul#mypage-tab__notification
             - @items.each do |item|
               %li 
-                = link_to root_path, class:"mypage-tag__item__link" do
+                = link_to exhibit_path(item.id), class:"mypage-tag__item__link" do
                   .mypage-item__picture
                     = image_tag item.images[0].image.url  :size => '60x60'
                   .mypage-item__body
