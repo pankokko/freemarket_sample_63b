@@ -95,18 +95,21 @@ class ExhibitController < ApplicationController
 
   def purchase
     @exhibit = Exhibit.find(params[:id])
-    if @exhibit.user_id != current_user.id && @exhibit.buyer_id == nil
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    if @exhibit.user_id != current_user.id && @exhibit.buyer_id == nil && @card != nil
       @image = Image.where(exhibit_id: @exhibit.id).first
       @address = Address.where(user_id: current_user.id).first
-      @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
       if @card.present?
         Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
         customer = Payjp::Customer.retrieve(@card.customer_id)
         @card_information = customer.cards.retrieve(@card.card_id)
         @card_brand = @card_information.brand
       end
-    else
-      redirect_to root_path
+    elsif
+      user_signed_in?  
+      redirect_to cards_path
+    else 
+      redirect_to root_path 
     end
   end
 
