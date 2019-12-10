@@ -39,18 +39,6 @@
             %th 出品者
             %td
               = link_to @user.nickname, user_path
-              .right
-                -# .evaluation
-                -#   %i.fa.fa-battery-4
-                -#     %span 1
-
-                -# .evaluation
-                -#   %i.fa.fa-battery-2
-                -#     %span 0
-                
-                -# .evaluation
-                -#   %i.fa.fa-battery-0
-                -#     %span 2
           %tr.category_title
             %th カテゴリー
             %td.category_list
@@ -60,7 +48,7 @@
           %tr
             %th ブランド
             %td
-              /=link_to "コーチ", "#"
+              =link_to "コーチ", "#"
           %tr
             %th 商品の状態
             %td
@@ -80,7 +68,6 @@
           %tr
             %th 発送日の目安
             %td 2~3日で発送
-            /dateカラム未設定
     .item-price-box
       %span.iteme-price
         ¥
@@ -109,7 +96,6 @@
         =link_to "#", target: "_blank" do
           %i.fa.fa-lock
           %span あんしん・あんぜんへの取り組み
-  -# コメントビュー開始
   .items_detail-message
     .message-form
       = form_for [@exhibit], url: exhibit_comments_path(:id), html: {method: 'post'} do |form|
@@ -137,17 +123,13 @@
                   = comment.comment
                 .message-icons.clearfix
                   %time.message-icon-left
-                    -# ファーアイコン&befor
                     %i.fa.fa-clock-o.fa-lg.fa-flip-horizontal
                     %span
                       = time_ago_in_words(comment.created_at)
                   .message-icon-right
-                    -# フォームアクション&ボタン&インプット
                     = link_to "#" do
                       %i.fa.fa-flag-o.fa-lg
                 .icon-balloon 
-                  -# 吹き出しの飛び出てる部分
-  -# コメントビュー終了
   %ul.nav-link.clearfix
     %li.nav-link__left
       - if @exhibit.previous.present?
