@@ -3,14 +3,12 @@
 - else
   = render partial: "shared/header" ,locals: {exhibit: @exhibit}
 .home--wrapper
-  -#メインコンテンツ
   .home--content
     .top--slide
       .top--slide__image
         .top--slide__image__url
           = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"
     .popular--category
-      -#人気のカテゴリ４種類
       %h2.popular--category__title
         人気のカテゴリー
       .popular--category__button

@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
 
-  def index #CardのデータをPayjpに送って情報を取り出す
+  def index
     if @card.present?
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -11,18 +11,18 @@ class CardsController < ApplicationController
     end
   end
 
-  def destroy #PayjpとCardのデータベースを削除
+  def destroy
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
-    if @card.destroy #削除に成功した時にポップアップを表示します。
+    if @card.destroy
       redirect_to action: "index", notice: "削除しました"
-    else #削除に失敗した時にアラートを表示します。
+    else
       redirect_to action: "index", alert: "削除できませんでした"
     end
   end
 
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
+  def new
     redirect_to action: "index" if @card.present?
   end
 
@@ -30,17 +30,16 @@ class CardsController < ApplicationController
     redirect_to action: "index" if @card.present?
   end
 
-  def create #PayjpとCardのデータベースを作成
+  def create
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
-      # トークンが正常に発行されていたら、顧客情報をPAY.JPに登録します。
       customer = Payjp::Customer.create(
-        description: 'test', # 無くてもOK。PAY.JPの顧客情報に表示する概要です。
+        description: 'test',
         email: current_user.email,
-        card: params['payjp-token'], # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けて永久保存します。
-        metadata: {user_id: current_user.id} # 無くてもOK。
+        card: params['payjp-token'],
+        metadata: {user_id: current_user.id}
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
@@ -60,13 +59,13 @@ class CardsController < ApplicationController
     if exhibit.user_id != current_user.id && exhibit.buyer_id == nil
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(
-      :amount => exhibit.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-      :customer => @card.customer_id, #顧客ID
-      :currency => 'jpy', #日本円
+      :amount => exhibit.price,
+      :customer => @card.customer_id,
+      :currency => 'jpy',
       )
       exhibit[:buyer_id] = current_user.id
       exhibit.save
-      redirect_to action: 'done' #完了画面に移動
+      redirect_to action: 'done'
     else
       redirect_to root_path
     end
