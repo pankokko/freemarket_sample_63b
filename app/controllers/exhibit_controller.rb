@@ -15,11 +15,16 @@ class ExhibitController < ApplicationController
    end
 
   def create 
-    @Exhibit = Exhibit.create(exhibit_params)
-    if @Exhibit.save
-      redirect_to root_path   
-    else 
-      render :new
+    if exhibit_params[:images_attributes] != nil
+      @Exhibit = Exhibit.create(exhibit_params)
+      if @Exhibit.save
+        redirect_to root_path   
+      else 
+        render :new
+      end
+    else
+      flash[:notice] = "画像を投稿して下さい"
+      redirect_to new_exhibit_path
     end
   end
 
@@ -34,11 +39,17 @@ class ExhibitController < ApplicationController
 
 
   def update
+    binding.pry
     if @exhibit.user_id == current_user.id
-      if @exhibit.update(exhibit_params)
-        redirect_to root_path
-      else 
-        render :new
+      if exhibit_params[:images_attributes] != nil
+        if @exhibit.update(exhibit_params)
+          redirect_to root_path
+        else 
+          render :new
+        end
+      else
+        flash[:notice] = "画像を投稿して下さい"
+        redirect_to edit_exhibit_path(@exhibit.id)
       end
     else
       redirect_to root_path
