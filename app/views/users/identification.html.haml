@@ -38,7 +38,7 @@
             %br
             %select.select-def{name: "prefecture"}
               = @prefecture.each do |item|
-                %option{value: item[:name]} #{item[:name]}
+                %option{value: item[:prefecture]} #{item[:prefecture]}
           .form__group
             %label{for: "city"} 市区町村
             %span.form__group-arbitrary 任意
