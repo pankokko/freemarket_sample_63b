@@ -1,7 +1,7 @@
 class ExhibitController < ApplicationController
 
   require "payjp"
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except:[:index, :show]
   before_action :set_exhibit, only:[:edit, :update, :show, :destroy]
   before_action :set_ransack, only:[:search, :complex_search]
 
