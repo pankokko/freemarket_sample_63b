@@ -39,7 +39,6 @@ class ExhibitController < ApplicationController
 
 
   def update
-    binding.pry
     if @exhibit.user_id == current_user.id
       if exhibit_params[:images_attributes] != nil
         if @exhibit.update(exhibit_params)
