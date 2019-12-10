@@ -70,7 +70,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.collection_select :category_id, @grandcildren, :id, :name, {class: 'select-default'}
+                      = f.collection_select :category_id, @grandcildren, :id, :name,{}, {class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態
@@ -132,7 +132,7 @@
                     .profit-left
                       販売利益
                     .profit-right -
-            
+
             .exhibit-btn-box
               .exhibit-caution
                 %p
