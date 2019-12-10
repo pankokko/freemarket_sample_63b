@@ -26,8 +26,12 @@
         .header__listbox
           .header__itemlist
             .itemlist
-              %i.fa.fa-list-ul
-              = link_to "カテゴリーから探す", "#",class: "list__category"
+              %li.category_list
+                %i.fa.fa-list-ul
+                = link_to "カテゴリーから探す", "#",class: "list__category"
+                %ul.category_ul
+                  %li.ladies レディース
+                  %li.mens メンズ
           .header__brandlist
             .brandlist
               %i.fa.fa-list-alt

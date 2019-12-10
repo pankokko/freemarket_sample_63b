@@ -1,5 +1,8 @@
 %body.sell-body
   .sell-wrapper
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     %header.sell-header
       %h1 
         %svg.complete-header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg" }
@@ -95,7 +98,7 @@
                       必須
                   .select-box
                     %i.icon-arrow-bottom
-                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture, {}, {class: "select-default"}
+                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture,　{class: "select-default"}
                 .delivery-form-select
                   %label
                     発送の方法

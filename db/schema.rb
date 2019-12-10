@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2019_12_09_031009) do
     t.string "address_first_name_kanji", null: false
     t.string "address_first_name_kana", null: false
     t.string "address_number", null: false
-    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_prefecture", null: false
     t.string "address_name", null: false
     t.string "address_block", null: false
     t.string "address_building"
-    t.integer "address_phone_number"
+    t.string "address_phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_031009) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

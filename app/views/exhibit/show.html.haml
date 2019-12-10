@@ -3,7 +3,6 @@
 - else
   = render partial: "shared/header" ,locals: {exhibit: @exhibit}
 .product--page
-  
   .items_container
     %h1.items-name
       = @product.name
@@ -55,9 +54,9 @@
           %tr.category_title
             %th カテゴリー
             %td.category_list
-              =link_to "卵", "#"
-              =link_to ">タマゴ", "#"
-              =link_to ">egg","#"
+              =link_to "#{@category.root.name}", "#"
+              =link_to ">#{@category.parent.name}", "#"
+              =link_to ">#{@category.name}","#"
           %tr
             %th ブランド
             %td
@@ -89,7 +88,11 @@
       %span.iteme-tax (税込)
       %span.iteme-shipping
         = @product.ship_fee
-    =link_to "購入画面に進む", "#",class: "buy-btn"
+    - if @product.user_id == current_user.id
+      =link_to "編集画面に進む", "/exhibit/#{@product.id}/edit",class: "buy-btn"
+      =link_to "この商品を削除する",exhibit_path,method: :DELETE, class: "exhibiting-delete-button",data: {confirm: "削除確認\n削除すると二度と復活できません。\n本当に削除しますか？"}
+    - else
+      =link_to "購入画面に進む", "/exhibit/#{@product.id}/purchase",class: "buy-btn"
     .item-message-box
       %p.item-message 
         = @product.description

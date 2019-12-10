@@ -4,7 +4,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
 
-  resize_to_fit(100, 100)
   # Choose what kind of storage to use for this uploader:
   if Rails.env.development? || Rails.env.test?
     storage :file
@@ -18,10 +17,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
-  
-
-
 
   version :thumb do
     process :resize_to_limit => [60, 60]

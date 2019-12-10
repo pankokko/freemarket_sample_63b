@@ -57,7 +57,7 @@
               都道府県
             %span.form__group-alert 必須
             %br
-            = f.collection_select :address_prefecture, Prefecture.all, :prefecture, :prefecture, {}, {class: "select-def"}
+            = f.collection_select :address_prefecture, Prefecture.all, :prefecture, :prefecture, {class: "select-def"}
           .form__group
             = f.label :address_number, "市区町村" do
               市区町村
