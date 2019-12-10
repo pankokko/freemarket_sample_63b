@@ -20,8 +20,9 @@
       .login-contents__first
         %p.login-contents__first--text
           アカウントをお持ちでない方はこちら
-        .login-contents__first--btn
-          新規会員登録
+          = link_to step1_signup_index_path , class:"new-link" do
+            .login-contents__first--btn
+              新規会員登録
       .login-contents__second
         .login-contents__second--Facebook
           = link_to user_facebook_omniauth_authorize_path, class: "facebook_link" do

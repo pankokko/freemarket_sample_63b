@@ -1,9 +1,6 @@
 class SignupController < ApplicationController
-
+ before_action :authenticate_user!, except: [:step1, :step2, :create]
   def index
-  end
-
-  def login
   end
 
   def complete

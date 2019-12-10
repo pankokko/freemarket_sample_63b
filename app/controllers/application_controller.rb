@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production? 
   before_action :configure_sign_up_params, if: :devise_controller?
   before_action :get_active_hash, only: [:create]
-  
+
   protect_from_forgery with: :null_session
 
   private
@@ -28,5 +28,3 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-
-  

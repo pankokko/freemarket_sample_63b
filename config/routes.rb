@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   resources :signup, only: [:index, :create] do
     collection do
-      get :login
       get :step1
       get :step2
       get :complete
