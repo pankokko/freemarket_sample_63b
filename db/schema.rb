@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_031009) do
     t.integer "category_id", null: false
     t.integer "user_id", null: false
     t.integer "buyer_id"
-    t.string "date"
+    t.string "shipment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

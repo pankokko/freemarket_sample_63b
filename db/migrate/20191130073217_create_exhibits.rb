@@ -12,7 +12,7 @@ class CreateExhibits < ActiveRecord::Migration[5.2]
       t.integer   :category_id , null:false, foreign_key: true 
       t.integer  :user_id, null:false, foreign_key: true 
       t.integer  :buyer_id
-      t.string :date
+      t.string :shipment
       t.timestamps
     end
   end

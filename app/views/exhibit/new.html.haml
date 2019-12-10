@@ -74,44 +74,44 @@
                       必須
                   .details-Status
                     %i.icon-arrow-bottom
-                    = f.select :status, [["---", ""] ,["新品","新品"], ["中古","中古"] ], {}, {class: "select-default"}
+                    = f.collection_select :status, Status.all, :status, :status, {}, {class: "select-default"}
             .delivery-box
               %h3.delivery-h3
                 配送について
               %a{href:"",target:"_blank"}?
               .delivery-category-box
-                .delivery-form-burden
+                .delivery-form-select
                   %label
                     配送の負担
                     %span
                       必須
-                  .burden-box
+                  .select-box
                     %i.icon-arrow-bottom
                     = f.select :ship_fee, [ ["---",""], ["送料込み","送料込み"], ["着払い","着払い"] ], {}, {class: "select-default"}
-                .delivery-form-region
+                .delivery-form-select
                   %label
                     配送元の地域
                     %span
                       必須
-                  .region-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.select :prefecture, [ ["---",""], ["東京","東京"], ["大阪","大阪"] ], {}, {class: "select-default"}
-                .delivery-form-ship
+                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture, {}, {class: "select-default"}
+                .delivery-form-select
                   %label
                     発送の方法
                     %span
                       必須
-                  .days-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.select :ship, [ ["---",""], ["らくらくメルカリ便","らくらくメルカリ便"], ["白猫ヤマト","白猫ヤマト"] ], {}, {class: "select-default"}
-                .delivery-form-days
+                    = f.collection_select :ship, Ship.all, :ship, :ship, {}, {class: "select-default"}
+                .delivery-form-select
                   %label
                     発送日の目安
                     %span
                       必須
-                  .days-box
+                  .select-box
                     %i.icon-arrow-bottom
-                    = f.select :date, [ ["---",""], ["1~2日で発送","1~2日で発送"], ["2~3日で発送","2~3日で発送"] ], {}, {class: "select-default"}
+                    = f.collection_select :shipment, Shipment.all, :shipment, :shipment, {}, {class: "select-default"}
             .price-box
               %h3.price-h3
                 販売価格(300〜9,999,999)

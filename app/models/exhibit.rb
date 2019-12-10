@@ -1,4 +1,9 @@
 class Exhibit < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :Ship
+  belongs_to_active_hash :Prefecture
+  belongs_to_active_hash :Shipment
+  belongs_to_active_hash :Status
 
   has_many :images
   has_many :comments
