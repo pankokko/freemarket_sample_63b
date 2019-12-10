@@ -52,14 +52,11 @@ class ExhibitController < ApplicationController
   def search 
     @exhibit = Exhibit.where(buyer_id: nil).search(params[:search])
     @result = params[:search]
-    # @ship = [["","全て"],["着払い","着払い(購入者負担)"],["送料込み","送料込み(出品者負担)"]]
-    # @statuses = [["", "すべて"],["新品", "新品・未使用"],["未使用に近い"," 未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],[" 全体的に状態が悪い"," 全体的に状態が悪い"]]
+
   end
 
   def complex_search
   @exhibit = @search.result.includes(:category)
-  # @statuses = [["", "すべて"],["新品", "新品・未使用"],["未使用に近い"," 未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],[" 全体的に状態が悪い"," 全体的に状態が悪い"]]
-  # @ship = [["","全て"],["着払い","着払い(購入者負担)"],["送料込み","送料込み(出品者負担)"]]
   end
 
   def show
