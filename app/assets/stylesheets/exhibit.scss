@@ -227,7 +227,7 @@
             transform: translate(0, -50%);
             display: inline-block;
             font-family: 'icon-font';
-            speak: none;
+            speak-as: none;
             font-style: normal;
             font-weight: 400;
             font-variant: normal;
@@ -264,7 +264,7 @@
               transform: translate(0, -50%);
               display: inline-block;
               font-family: 'icon-font';
-              speak: none;
+              speak-as: none;
               font-style: normal;
               font-weight: 400;
               font-variant: normal;
@@ -339,6 +339,18 @@
             margin: 8px 0 0;
             position: relative;
             background: #fff;
+            select {
+              width: 100%;    
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+            }
             .icon-arrow-bottom{
               position: absolute;
               right: 16px;
@@ -349,7 +361,7 @@
               transform: translate(0, -50%);
               display: inline-block;
               font-family: 'icon-font';
-              speak: none;
+              speak-as: none;
               font-style: normal;
               font-weight: 400;
               font-variant: normal;
@@ -418,7 +430,6 @@
             width: 50%;
             line-height: 48px;
             font-weight: 600;
-            float: left;
             display: inline-block;
 
             span{
