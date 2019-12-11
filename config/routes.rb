@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
 
   root 'exhibit#index'
-  resources :product, only: [:index, :show]
-  resources :confirmation, only: [:index]
-  resources :homes, only: [:index]
-
+  
   resources :exhibit, only: [:index, :new, :create,:edit ,:show,:update ,:destroy] do
     resources :comments, only: [:create]
     collection do 

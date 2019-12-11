@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
+  before_action :authenticate_user!
 
   def index #CardのデータをPayjpに送って情報を取り出す
     if @card.present?
