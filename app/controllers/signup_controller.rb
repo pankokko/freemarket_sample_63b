@@ -11,6 +11,7 @@ class SignupController < ApplicationController
   end
 
   def step2
+    binding.pry
     if verifyRecaptchaToken
       session[:nickname] = user_params[:nickname]
       session[:email] = user_params[:email]
