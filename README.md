@@ -168,7 +168,7 @@
 - belongs_to :history
 
 
-
+変更
 
 
 
