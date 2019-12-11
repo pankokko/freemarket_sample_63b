@@ -36,3 +36,4 @@ RSpec.describe SignupController, type: :controller do
   end
 
 end
+end

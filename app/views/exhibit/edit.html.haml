@@ -36,10 +36,9 @@
                   .upload-box-items-secondary
                     %ul
                 .upload-box-img
-                  = f.label :image, class: 'form__mask__image' do
-                    = fa_icon 'picture-o', class: 'icon'
-                    = f.fields_for :images ,@exhibit.images  do |i|
-                      = i.file_field :image
+                  = fa_icon 'picture-o', class: 'icon'
+                  = f.fields_for :images, @exhibits do |i|
+                    = i.file_field :image, class:"file_field"
                   %pre.sell-pre 
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
@@ -70,7 +69,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.collection_select :category_id, @grandcildren, :id, :name, {class: 'select-default'}
+                      = f.collection_select :category_id, @grandchildren, :id, :name,{}, {class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態
@@ -78,7 +77,7 @@
                       必須
                   .details-Status
                     %i.icon-arrow-bottom
-                    = f.select :status, [["---", ""] ,["新品","新品"], ["中古","中古"] ], {}, {class: "select-default"}
+                    = f.collection_select :status, Status.all, :status, :status, {}, {class: "select-default"}
             .delivery-box
               %h3.delivery-h3
                 配送について
@@ -99,7 +98,15 @@
                       必須
                   .region-box
                     %i.icon-arrow-bottom
-                    = f.select :prefecture, [ ["---",""], ["東京","東京"], ["大阪","大阪"] ], {}, {class: "select-default"}
+                    = f.collection_select :prefecture, Prefecture.all, :prefecture, :prefecture, {}, {class: "select-default"}
+                .delivery-form-select
+                  %label
+                    発送の方法
+                    %span
+                      必須
+                  .select-box
+                    %i.icon-arrow-bottom
+                    = f.collection_select :ship, Ship.all, :ship, :ship, {class: "select-default"}
                 .delivery-form-days
                   %label
                     発送までの日数
@@ -107,7 +114,7 @@
                       必須
                   .days-box
                     %i.icon-arrow-bottom
-                    = f.select :ship, [ ["---",""], ["1~2日で発送","1"], ["2~3日で発送","2"] ], {}, {class: "select-default"}
+                    = f.collection_select :shipment, Shipment.all, :shipment, :shipment, {class: "select-default"}
             .price-box
               %h3.price-h3
                 販売価格(300〜9,999,999)
@@ -132,7 +139,7 @@
                     .profit-left
                       販売利益
                     .profit-right -
-            
+
             .exhibit-btn-box
               .exhibit-caution
                 %p

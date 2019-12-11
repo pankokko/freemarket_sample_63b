@@ -1,8 +1,5 @@
 %body.sell-body
   .sell-wrapper
-    .notifications
-      - flash.each do |key, value|
-        = content_tag(:div, value, class: key)
     %header.sell-header
       %h1 
         %svg.complete-header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg" }
@@ -69,7 +66,7 @@
                   .details-group1-category
                     .details-group1-category-secondary
                       %i.icon-arrow-bottom
-                      = f.collection_select :category_id, @grandcildren, :id, :name,{}, {class: 'select-default'}
+                      = f.collection_select :category_id, @grandchildren, :id, :name,{}, {class: 'select-default'}
                 .details-group2
                   %label
                     商品の状態

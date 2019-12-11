@@ -11,7 +11,7 @@ class ExhibitController < ApplicationController
 
   def new
     @exhibit = Exhibit.new
-    @grandcildren = Category.find(2).children
+    @grandchildren = Category.find(2).children
     @exhibits = Image.new
    end
 
@@ -24,7 +24,6 @@ class ExhibitController < ApplicationController
         render :new
       end
     else
-      flash[:notice] = "画像を投稿して下さい"
       redirect_to new_exhibit_path
     end
   end
@@ -32,7 +31,7 @@ class ExhibitController < ApplicationController
   def edit 
     if @exhibit.user_id == current_user.id
       @images = @exhibit.images.all
-      @grandcildren = Category.find(2).children
+      @grandchildren = Category.find(2).children
     else
       redirect_to root_path
     end
@@ -45,7 +44,7 @@ class ExhibitController < ApplicationController
         if @exhibit.update(exhibit_params)
           redirect_to root_path
         else 
-          render :new
+          redirect_to edit_exhibit_path(@exhibit.id)
         end
       else
         flash[:notice] = "画像を投稿して下さい"
