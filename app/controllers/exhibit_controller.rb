@@ -11,7 +11,7 @@ class ExhibitController < ApplicationController
 
   def new
     @exhibit = Exhibit.new
-    @grandcildren = Category.find(2).children
+    @grandchildren = Category.find(2).children
     @exhibits = Image.new
    end
 
@@ -31,7 +31,7 @@ class ExhibitController < ApplicationController
   def edit 
     if @exhibit.user_id == current_user.id
       @images = @exhibit.images.all
-      @grandcildren = Category.find(2).children
+      @grandchildren = Category.find(2).children
     else
       redirect_to root_path
     end
