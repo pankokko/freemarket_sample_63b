@@ -39,18 +39,6 @@
             %th 出品者
             %td
               = link_to @user.nickname, user_path
-              .right
-                -# .evaluation
-                -#   %i.fa.fa-battery-4
-                -#     %span 1
-
-                -# .evaluation
-                -#   %i.fa.fa-battery-2
-                -#     %span 0
-                
-                -# .evaluation
-                -#   %i.fa.fa-battery-0
-                -#     %span 2
           %tr.category_title
             %th カテゴリー
             %td.category_list
@@ -83,7 +71,7 @@
     .item-price-box
       %span.iteme-price
         ¥
-        = @product.price
+        = @product.price.to_s(:delimited)
       %span.iteme-tax (税込)
       %span.iteme-shipping
         = @product.ship_fee

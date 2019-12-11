@@ -4,7 +4,7 @@
       %figure.list--url__content
         .list--url__content__image
           %span{ aria: {label: "Price"}}
-            ¥#{exhibit.price} 
+            ¥#{exhibit.price.to_s(:delimited)} 
           = image_tag(exhibit.images[0].image.url, class:"index-picture")
         %figcaption
           %span
