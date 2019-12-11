@@ -1,5 +1,5 @@
 class AddressController < ApplicationController
-
+  before_action :authenticate_user!
   def step3
     @address = Address.new
   end
