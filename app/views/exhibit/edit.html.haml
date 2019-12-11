@@ -36,10 +36,9 @@
                   .upload-box-items-secondary
                     %ul
                 .upload-box-img
-                  = f.label :image, class: 'form__mask__image' do
-                    = fa_icon 'picture-o', class: 'icon'
-                    = f.fields_for :images ,@exhibit.images  do |i|
-                      = i.file_field :image
+                  = fa_icon 'picture-o', class: 'icon'
+                  = f.fields_for :images, @exhibits do |i|
+                    = i.file_field :image, class:"file_field"
                   %pre.sell-pre 
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
