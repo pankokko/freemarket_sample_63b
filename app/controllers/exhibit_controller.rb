@@ -44,7 +44,7 @@ class ExhibitController < ApplicationController
         if @exhibit.update(exhibit_params)
           redirect_to root_path
         else 
-          render :new
+          redirect_to edit_exhibit_path(@exhibit.id)
         end
       else
         flash[:notice] = "画像を投稿して下さい"
