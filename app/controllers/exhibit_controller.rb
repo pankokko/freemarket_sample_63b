@@ -24,7 +24,6 @@ class ExhibitController < ApplicationController
         render :new
       end
     else
-      flash[:notice] = "画像を投稿して下さい"
       redirect_to new_exhibit_path
     end
   end
