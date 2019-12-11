@@ -1,5 +1,8 @@
 %body.mypage-product
-  = render "shared/header" 
+  - if user_signed_in?
+    = render "shared/loginHeader"
+  - else
+    = render "shared/header"
   - breadcrumb :mypage_sold
   = render "layouts/breadcrumbs"
   %main.container.clearfix
