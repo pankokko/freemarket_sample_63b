@@ -424,10 +424,6 @@ a{
     span{
       font-size: 14px;
     }
-    span:hover{
-      display: inline-block;
-      animation: hurueru .1s  infinite;
-    }
 }
 
 @keyframes hurueru {
@@ -501,10 +497,6 @@ a{
   font-size: 44px;
   transition: 10s;
   -webkit-transition: 10s;
-}
-.product-hover:hover{
-  transform: rotate(7200deg);
-  -webkit-transform: rotate(7200deg);
 }
 .protwi{
   color:  skyblue;
