@@ -3,17 +3,15 @@
 - else
   = render partial: "shared/header" ,locals: {exhibit: @exhibit}
 .home--wrapper
-  -#メインコンテンツ
   .home--content
-    .top--slide
-      .top--slide__image
-        .top--slide__image__url
-          = image_tag "EGA08CtVUAEVzpA.png", class:"homeimage"   
     %main.search-main
       .search-box-right
         %section.search-box-container
-          %h2.search-result #{@result}
-          %span.search-text の検索結果
+          - if @result 
+            %h2.search-result #{@result}
+            %span.search-text の検索結果
+          - else 
+            %h2.search-result 検索結果
         .search-number 0 - #{@exhibit.size}件表示
         .search-item-box
           - @exhibit.each do |exhibit|

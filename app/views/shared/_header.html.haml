@@ -18,7 +18,7 @@
                 %text.cls-2{transform: "translate(86.41 62.77)"}Fmarket
       .header__form
         = form_tag(search_exhibit_index_path,:method => 'get' ,local:true, id: "form2" ) do 
-          = text_field_tag :search ,"", id: "sbox2",placeholder:"何かお探しですか"
+          = text_field_tag :search ,"", id: "sbox2",placeholder:"何かお探しですか?"
           = submit_tag '', :name => nil , id: "sbtn2", disable:false;
         %i.fa.fa-search
     .header__down
