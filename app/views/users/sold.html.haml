@@ -1,5 +1,8 @@
+- if user_signed_in?
+  = render partial: "shared/loginHeader"  ,locals: {exhibit: @exhibit}
+- else
+  = render partial: "shared/header" ,locals: {exhibit: @exhibit}
 %body.mypage-product
-  = render "shared/header" 
   - breadcrumb :mypage_sold
   = render "layouts/breadcrumbs"
   %main.container.clearfix
